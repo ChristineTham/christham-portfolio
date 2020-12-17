@@ -2,17 +2,17 @@ import { merge } from 'theme-ui'
 import { tailwind } from '@theme-ui/presets'
 
 const theme = merge(tailwind, {
-  initialColorModeName: 'dark',
+  initialColorModeName: 'light',
   useCustomProperties: true,
   colors: {
     primary: '#b565a7',
     secondary: '#93a9d1',
-    text: '#f7caca',
-    heading: '#be9cc1',
-    background: '#27272a',
+    text: '#27272a',
+    heading: '#85677b',
+    background: '#f4dede',
     divider: '#93a9d1',
     textMuted: '#a49e9e',
-    icon_brightest: '#f7caca',
+    icon_brightest: '#be9cc1',
     icon_darker: '#b0879b',
     icon_darkest: '#85677b',
     icon_red: '#d2386c',
@@ -22,19 +22,6 @@ const theme = merge(tailwind, {
     icon_pink: '#F0047F',
     icon_purple: '#be9cc1',
     icon_green: '#64bfa4',
-    modes: {
-      light: {
-        text: '#27272a',
-        heading: '#85677b',
-        primary: '#b565a7',
-        background: '#f4dede',
-        divider: '#93a9d1',
-        textMuted: '#a49e9e',
-        icon_brightest: '#be9cc1',
-        icon_darker: '#b0879b',
-        icon_darkest: '#85677b'
-      }
-    },
     rosely0: '#27272a',
     rosely1: '#615f5f',
     rosely2: '#85677b',
@@ -51,7 +38,19 @@ const theme = merge(tailwind, {
     rosely13: '#eada4f',
     rosely14: '#64bfa4',
     rosely15: '#919bc9',
-    jamstack: '#F0047F'
+    jamstack: '#F0047F',
+    modes: {
+      dark: {
+        text: '#f7caca',
+        heading: '#be9cc1',
+        background: '#27272a',
+        divider: '#93a9d1',
+        textMuted: '#a49e9e',
+        icon_brightest: '#f7caca',
+        icon_darker: '#b0879b',
+        icon_darkest: '#85677b'
+      }
+    }
   },
   breakpoints: ['400px', '600px', '900px', '1200px', '1600px'],
   footer: {
