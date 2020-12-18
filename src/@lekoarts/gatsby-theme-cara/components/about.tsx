@@ -8,10 +8,23 @@ import { UpDown, UpDownWide } from '@lekoarts/gatsby-theme-cara/src/styles/anima
 
 import AboutMDX from '../sections/about.mdx'
 
+import Background from '../assets/backgrounds/floral-spring.svg'
+
 const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>
     <Divider bg="divider" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={offset} factor={factor} />
     <Divider speed={0.1} offset={offset} factor={factor}>
+      <img
+        src={Background}
+        alt="background"
+        sx={{
+          position: 'fixed',
+          left: 0,
+          top: '-25%',
+          width: '100%',
+          opacity: 0.3
+        }}
+      />
       <UpDown>
         <SVG icon="box" hiddenMobile width={6} color="icon_blue" left="50%" top="75%" />
         <SVG icon="upDown" hiddenMobile width={8} color="icon_darkest" left="70%" top="20%" />

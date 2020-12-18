@@ -12,7 +12,7 @@ module.exports = {
     siteUrl: `https://christham.gtsb.io`,
     siteDescription: `Chris Tham portfolio website written in Gatsby`,
     siteLanguage: `en`,
-    siteImage: `./src/@lekoarts/gatsby-theme-cara/assets/backgrounds/portfolio.jpg`,
+    siteImage: `/portfolio.jpg`,
     author: `@chris1tham`
   },
   plugins: [

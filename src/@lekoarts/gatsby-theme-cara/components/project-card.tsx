@@ -28,19 +28,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
       }
     }
   `)
-  // query ImageQuery {
-  //   file(relativePath: { eq: "portfolio/portfolio.jpg" }) {
-  //     childImageSharp {
-  //       fluid(maxWidth: 1024) {
-  //         ...GatsbyImageSharpFluid
-  //       }
-  //     }
-  //   }
-  // }
-  const images = data.allFile.edges.map((item) => item.node.childImageSharp.fluid.originalName)
-  const index = images.indexOf(image)
 
-  console.log(image)
+  type EdgeType = {
+    node: { childImageSharp: { fluid: { originalName: string } } }
+  }
+  const images = data.allFile.edges.map((item: EdgeType) => item.node.childImageSharp.fluid.originalName)
+  const index = images.indexOf(image)
 
   return (
     <a
@@ -53,8 +46,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
         position: `relative`,
         textDecoration: `none`,
         borderRadius: `lg`,
-        px: 4,
-        py: [4, 5],
+        px: 3,
+        py: [3, 3],
         color: `white`,
         background: bg || `none`,
         transition: `all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important`,

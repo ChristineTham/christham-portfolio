@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { Box, Flex, Link, useColorMode, jsx } from "theme-ui"
+import { Box, Flex, Link, useColorMode, jsx } from 'theme-ui'
 
-const Footer = () => {
+const Footer: React.FC = () => {
   const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
-  const toggleColorMode = (e: any) => {
+  const toggleColorMode = (_: unknown) => {
     setColorMode(isDark ? `light` : `dark`)
   }
 
@@ -27,22 +27,18 @@ const Footer = () => {
           mt: 3,
           color: `text`,
           fontWeight: `semibold`,
-          a: { color: `text` },
+          a: { color: `primary` }
         }}
       >
-        <img width="30" height="30" src="https://img.lekoarts.de/gatsby/logo_w30.png" alt="LekoArts Logo" />
+        <img width="30" height="30" src="/logo.svg" alt="Hello Tham Logo" />
         {` `}
-        <Link
-          aria-label="Link to the theme's GitHub repository"
-          sx={{ ml: 2 }}
-          href="https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-cara"
-        >
+        <Link aria-label="Link to the theme's GitHub repository" sx={{ ml: 2 }} href="https://github.com/ChristineTham/gatsby-blog">
           Theme
         </Link>
-        <div sx={{ mx: 1 }}>by</div>
+        <div sx={{ mx: 1, color: 'rosely2' }}>by</div>
         {` `}
-        <Link aria-label="Link to the theme author's website" href="https://www.lekoarts.de/en">
-          LekoArts
+        <Link aria-label="Link to the theme author's website" href="https://hellotham.com">
+          Hello Tham Pty Ltd
         </Link>
       </Flex>
     </Box>

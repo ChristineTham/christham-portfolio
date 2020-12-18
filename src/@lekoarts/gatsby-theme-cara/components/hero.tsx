@@ -14,7 +14,7 @@ import Intro from '../sections/intro.mdx'
 import MonitorIcon from '../assets/icons/monitor.svg'
 import HeadphoneIcon from '../assets/icons/headphones.svg'
 import HeartIcon from '../assets/icons/heart.svg'
-import LoveIcon from '../assets/icons/love.svg'
+import EaselIcon from '../assets/icons/easel.svg'
 import MusicIcon from '../assets/icons/musicnote.svg'
 import CameraIcon from '../assets/icons/photo-camera.svg'
 import TurntableIcon from '../assets/icons/turntable.svg'
@@ -29,7 +29,7 @@ import AustraliaIcon from '../assets/icons/australia.svg'
 import SydneyIcon from '../assets/icons/opera-house.svg'
 import KoalaIcon from '../assets/icons/koala.svg'
 import SpeakerIcon from '../assets/icons/speaker.svg'
-import PianoIcon from '../assets/icons/piano.svg'
+import PianoIcon from '../assets/icons/piano2.svg'
 import MountainIcon from '../assets/icons/mountain.svg'
 import GuitarIcon from '../assets/icons/guitar.svg'
 
@@ -64,7 +64,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
     <Divider speed={0.2} offset={offset} factor={factor}>
       <p
         sx={{
-          color: 'rosely3',
+          color: 'textMuted',
           fontSize: '12px',
           position: 'absolute',
           top: '94%',
@@ -170,7 +170,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
         <TurntableIcon
           sx={{
             position: 'absolute',
-            width: 16,
+            width: 48,
             left: '70%',
             top: '90%'
           }}
@@ -192,7 +192,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           top: '65%'
         }}
       />
-      <LoveIcon
+      <EaselIcon
         sx={{
           position: 'absolute',
           width: 12,

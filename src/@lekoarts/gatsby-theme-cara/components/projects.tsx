@@ -3,13 +3,24 @@ import { jsx } from 'theme-ui'
 import Divider from '@lekoarts/gatsby-theme-cara/src/elements/divider'
 import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
 import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
-import SVG from '@lekoarts/gatsby-theme-cara/src/components/svg'
 import { UpDown, UpDownWide } from '@lekoarts/gatsby-theme-cara/src/styles/animations'
 
-import Background from '../assets/backgrounds/floral-spring.svg'
+import Background from '../assets/backgrounds/river.svg'
 import ProjectCard from './project-card'
 
 // import ProjectsMDX from '../sections/projects.mdx'
+
+import WrenchIcon from '../assets/icons/adjustable-wrench.svg'
+import AgendaIcon from '../assets/icons/agenda.svg'
+import BlueprintIcon from '../assets/icons/blueprint.svg'
+import CheckListIcon from '../assets/icons/check-list.svg'
+import CoffeeIcon from '../assets/icons/coffee.svg'
+import CloudIcon from '../assets/icons/computing-cloud.svg'
+import FolderIcon from '../assets/icons/folders.svg'
+import GearsIcon from '../assets/icons/gears.svg'
+import GraphicsIcon from '../assets/icons/graphics.svg'
+import NotebookIcon from '../assets/icons/notebook2.svg'
+import WorkflowIcon from '../assets/icons/workflow.svg'
 
 const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 2 }) => (
   <div>
@@ -64,6 +75,22 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
           >
             My company web site.
           </ProjectCard>
+          <ProjectCard
+            title="Travels Through A Lens"
+            link="https://travel.christham.net"
+            bg="linear-gradient(to right, #64bfa4 0%, #919bc9 100%)"
+            image="travel.jpg"
+          >
+            This is a web site that documents my travel adventures.
+          </ProjectCard>
+          <ProjectCard
+            title="Visual Voyager"
+            link="https://visualvoyager.net"
+            bg="linear-gradient(to right, #27272a 0%, #a49e9e 100%)"
+            image="visualvoyager.jpg"
+          >
+            Explore the world we live in, as seen through our unique perspectives and experiences.
+          </ProjectCard>
         </div>
       </Inner>
     </Content>
@@ -80,25 +107,137 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
         }}
       />
       <UpDown>
-        <SVG icon="box" width={6} color="icon_brightest" left="85%" top="75%" />
-        <SVG icon="upDown" width={8} color="icon_teal" left="70%" top="20%" />
-        <SVG icon="triangle" width={8} stroke color="icon_orange" left="25%" top="5%" />
-        <SVG icon="circle" hiddenMobile width={24} color="icon_brightest" left="17%" top="60%" />
+        <WrenchIcon
+          sx={{
+            position: 'absolute',
+            width: 16,
+            left: '85%',
+            top: '75%'
+          }}
+        />
+        <AgendaIcon
+          sx={{
+            position: 'absolute',
+            width: 16,
+            left: '70%',
+            top: '20%'
+          }}
+        />
+        <BlueprintIcon
+          sx={{
+            position: 'absolute',
+            width: 48,
+            left: '25%',
+            top: '5%'
+          }}
+        />
+        <CheckListIcon
+          sx={{
+            position: 'absolute',
+            width: 16,
+            left: '17%',
+            top: '60%'
+          }}
+        />
       </UpDown>
       <UpDownWide>
-        <SVG icon="arrowUp" hiddenMobile width={16} color="icon_green" left="20%" top="90%" />
-        <SVG icon="triangle" width={12} stroke color="icon_brightest" left="90%" top="30%" />
-        <SVG icon="circle" width={16} color="icon_yellow" left="70%" top="90%" />
-        <SVG icon="triangle" hiddenMobile width={16} stroke color="icon_teal" left="18%" top="75%" />
-        <SVG icon="circle" width={6} color="icon_brightest" left="75%" top="10%" />
-        <SVG icon="upDown" hiddenMobile width={8} color="icon_green" left="45%" top="10%" />
+        <CoffeeIcon
+          sx={{
+            position: 'absolute',
+            width: 16,
+            left: '20%',
+            top: '90%'
+          }}
+        />
+        <CloudIcon
+          sx={{
+            position: 'absolute',
+            width: 16,
+            left: '90%',
+            top: '30%'
+          }}
+        />
+        <FolderIcon
+          sx={{
+            position: 'absolute',
+            width: 16,
+            left: '70%',
+            top: '90%'
+          }}
+        />
+        <GearsIcon
+          sx={{
+            position: 'absolute',
+            width: 16,
+            left: '18%',
+            top: '75%'
+          }}
+        />
+        <GraphicsIcon
+          sx={{
+            position: 'absolute',
+            width: 16,
+            left: '75%',
+            top: '10%'
+          }}
+        />
+        <NotebookIcon
+          sx={{
+            position: 'absolute',
+            width: 48,
+            left: '45%',
+            top: '10%'
+          }}
+        />
       </UpDownWide>
-      <SVG icon="circle" hiddenMobile width={6} color="icon_brightest" left="4%" top="20%" />
-      <SVG icon="circle" width={12} color="icon_pink" left="80%" top="60%" />
-      <SVG icon="box" width={6} color="icon_orange" left="10%" top="10%" />
-      <SVG icon="box" width={12} color="icon_yellow" left="29%" top="26%" />
-      <SVG icon="hexa" width={16} stroke color="icon_red" left="75%" top="30%" />
-      <SVG icon="hexa" width={8} stroke color="icon_yellow" left="80%" top="70%" />
+      <WorkflowIcon
+        sx={{
+          position: 'absolute',
+          width: 16,
+          left: '4%',
+          top: '20%'
+        }}
+      />
+      <WrenchIcon
+        sx={{
+          position: 'absolute',
+          width: 16,
+          left: '80%',
+          top: '60%'
+        }}
+      />
+      <AgendaIcon
+        sx={{
+          position: 'absolute',
+          width: 16,
+          left: '10%',
+          top: '10%'
+        }}
+      />
+      <BlueprintIcon
+        sx={{
+          position: 'absolute',
+          width: 16,
+          left: '29%',
+          top: '26%'
+        }}
+      />
+      <CheckListIcon
+        sx={{
+          position: 'absolute',
+          width: 16,
+          left: '75%',
+          top: '30%'
+        }}
+      />
+      <CoffeeIcon
+        sx={{
+          position: 'absolute',
+          width: 16,
+          left: '80%',
+          top: '70%'
+        }}
+      />
     </Divider>
   </div>
 )
