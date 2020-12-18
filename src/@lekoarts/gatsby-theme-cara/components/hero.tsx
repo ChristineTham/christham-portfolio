@@ -11,63 +11,63 @@ import { hidden } from '@lekoarts/gatsby-theme-cara/src/styles/utils'
 
 import Intro from '../sections/intro.mdx'
 
-import MonitorIcon from '../../../icons/monitor.svg'
-import HeadphoneIcon from '../../../icons/headphones.svg'
-import HeartIcon from '../../../icons/heart.svg'
-import LoveIcon from '../../../icons/love.svg'
-import MusicIcon from '../../../icons/musicnote.svg'
-import CameraIcon from '../../../icons/photo-camera.svg'
-import TurntableIcon from '../../../icons/turntable.svg'
-import PortfolioIcon from '../../../icons/portfolio.svg'
-import WebsiteIcon from '../../../icons/website.svg'
-import PaletteIcon from '../../../icons/paint-palette.svg'
-import HomeIcon from '../../../icons/home.svg'
-import TravelIcon from '../../../icons/travelling.svg'
-import BicycleIcon from '../../../icons/bicycle.svg'
-import NotebookIcon from '../../../icons/notebook.svg'
-import AustraliaIcon from '../../../icons/australia.svg'
-import SydneyIcon from '../../../icons/opera-house.svg'
-import KoalaIcon from '../../../icons/koala.svg'
-import SpeakerIcon from '../../../icons/speaker.svg'
-import PianoIcon from '../../../icons/piano.svg'
-import MountainIcon from '../../../icons/mountain.svg'
-import GuitarIcon from '../../../icons/guitar.svg'
+import MonitorIcon from '../assets/icons/monitor.svg'
+import HeadphoneIcon from '../assets/icons/headphones.svg'
+import HeartIcon from '../assets/icons/heart.svg'
+import LoveIcon from '../assets/icons/love.svg'
+import MusicIcon from '../assets/icons/musicnote.svg'
+import CameraIcon from '../assets/icons/photo-camera.svg'
+import TurntableIcon from '../assets/icons/turntable.svg'
+import PortfolioIcon from '../assets/icons/portfolio.svg'
+import WebsiteIcon from '../assets/icons/website.svg'
+import PaletteIcon from '../assets/icons/paint-palette.svg'
+import HomeIcon from '../assets/icons/home.svg'
+import TravelIcon from '../assets/icons/travelling.svg'
+import BicycleIcon from '../assets/icons/bicycle.svg'
+import NotebookIcon from '../assets/icons/notebook.svg'
+import AustraliaIcon from '../assets/icons/australia.svg'
+import SydneyIcon from '../assets/icons/opera-house.svg'
+import KoalaIcon from '../assets/icons/koala.svg'
+import SpeakerIcon from '../assets/icons/speaker.svg'
+import PianoIcon from '../assets/icons/piano.svg'
+import MountainIcon from '../assets/icons/mountain.svg'
+import GuitarIcon from '../assets/icons/guitar.svg'
+
+import Background from '../assets/backgrounds/garden-tree.svg'
 
 const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>
     {/* <div
       sx={{
-        position: 'absolute',
+        position: 'fixed',
         top: 0,
         left: 0,
-        zIndex: 1,
         height: '100%',
         width: '100%',
-        backgroundSize: 'cover',
-        // backgroundColor: '#f7caca',
-        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#f7caca',
+        backgroundRepeat: 'repeat',
         backgroundAttachment: 'fixed',
-        backgroundImage: '/landscape.jpg'
-        // backgroundImage: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23be9cc1' fill-opacity='0.3'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E`
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23be9cc1' fill-opacity='0.3'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E")`
       }}
     /> */}
     <img
-      src="/landscape.jpg"
+      src={Background}
       alt="background"
       sx={{
         position: 'fixed',
         top: 0,
         left: 0,
-        width: '100%'
+        width: '100%',
+        opacity: 0.25
       }}
     />
     <Divider speed={0.2} offset={offset} factor={factor}>
       <p
         sx={{
-          color: 'text-muted',
+          color: 'rosely3',
           fontSize: '12px',
           position: 'absolute',
-          top: '92%',
+          top: '94%',
           left: '1%',
           zIndex: 10
         }}
@@ -81,8 +81,6 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           {' '}
           www.flaticon.com
         </a>
-        <br />
-        <a href="https://www.vecteezy.com/free-vector/abstract">Abstract Vectors by Vecteezy (wichan yodsawai)</a>
       </p>
       <UpDown>
         <WebsiteIcon
@@ -99,7 +97,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
             width: 48,
             display: hidden,
             left: '10%',
-            top: '12%'
+            top: '15%'
           }}
         />
         <HeartIcon

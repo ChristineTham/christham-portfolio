@@ -6,3 +6,8 @@ declare module '*.mdx' {
   const content: JSX
   export default content
 }
+
+declare module '*.jpg' {
+  const content: ImageData
+  export default content
+}

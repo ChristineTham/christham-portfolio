@@ -12,7 +12,7 @@ module.exports = {
     siteUrl: `https://christham.gtsb.io`,
     siteDescription: `Chris Tham portfolio website written in Gatsby`,
     siteLanguage: `en`,
-    siteImage: `/banner.jpg`,
+    siteImage: `./src/@lekoarts/gatsby-theme-cara/assets/backgrounds/portfolio.jpg`,
     author: `@chris1tham`
   },
   plugins: [
@@ -29,6 +29,15 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'assets',
+        path: `${__dirname}/src/@lekoarts/gatsby-theme-cara/assets/`
+      }
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
