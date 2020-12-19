@@ -58,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
         }
       }}
     >
-      <Img fluid={data.allFile.edges[index].node.childImageSharp.fluid} alt={image} />
+      <Img fluid={data.allFile.edges[index].node.childImageSharp.fluid} alt={image.replace(/.jpg$/, '')} />
       <div
         sx={{
           letterSpacing: `wide`,

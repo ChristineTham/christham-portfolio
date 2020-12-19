@@ -5,7 +5,7 @@ const theme = merge(tailwind, {
   initialColorModeName: 'light',
   useCustomProperties: true,
   colors: {
-    primary: '#99558c',
+    primary: '#8c4e80',
     secondary: '#93a9d1',
     text: '#27272a',
     heading: '#85677b',

@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           mt: 3,
           color: `text`,
           fontWeight: `semibold`,
-          a: { color: `primary` }
+          a: { color: `text` }
         }}
       >
         <img width="30" height="30" src="/logo.svg" alt="Hello Tham Logo" />
