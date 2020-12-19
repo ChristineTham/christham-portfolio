@@ -5,12 +5,11 @@ import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
 import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
 import { UpDown, UpDownWide } from '@lekoarts/gatsby-theme-cara/src/styles/animations'
 
-import ProjectCard from './project-card'
 import { iconpos } from '../styles/utils'
 
 import Background from '../assets/backgrounds/river.svg'
 
-// import ProjectsMDX from '../sections/projects.mdx'
+import ProjectsMDX from '../sections/projects.mdx'
 
 import WrenchIcon from '../assets/icons/adjustable-wrench.svg'
 import RubikIcon from '../assets/icons/Rubik.svg'
@@ -47,56 +46,7 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
             h2: { gridColumn: `-1/1`, color: `rosely4 !important` }
           }}
         >
-          {/* <ProjectsMDX /> */}
-          <ProjectCard
-            title="Learning Jamstack"
-            link="https://learning-jamstack.now.sh"
-            bg="linear-gradient(to right, #F0047F 0%, #ec809e 100%)"
-            image="learning-jamstack.jpg"
-          >
-            My adventures learning how to build websites and apps in 2020 using the Jamstack architecture, auto workflows and modern build
-            tools.
-          </ProjectCard>
-          <ProjectCard
-            title="ChrisTham.net"
-            link="https://christham.net"
-            bg="linear-gradient(to right, #b565a7 0%, #be9cc1 100%)"
-            image="christham.jpg"
-          >
-            My personal web site.
-          </ProjectCard>
-          <ProjectCard
-            title="Hello COVID19"
-            link="https://hello-covid19.surge.sh"
-            bg="linear-gradient(to right, #615f5f 0%, #85677b 100%)"
-            image="hello-covid19.jpg"
-          >
-            This is a simple web app to display real time information about the spread of CoViD-19 around the world.
-          </ProjectCard>
-          <ProjectCard
-            title="Hello Tham"
-            link="https://hellotham.com"
-            bg="linear-gradient(to right, #660099 0%, #cc3366 100%)"
-            image="hellotham.jpg"
-          >
-            My company web site.
-          </ProjectCard>
-          <ProjectCard
-            title="Travels Through A Lens"
-            link="https://travel.christham.net"
-            bg="linear-gradient(to right, #64bfa4 0%, #919bc9 100%)"
-            image="travel.jpg"
-          >
-            This is a web site that documents my travel adventures.
-          </ProjectCard>
-          <ProjectCard
-            title="Visual Voyager"
-            link="https://visualvoyager.net"
-            bg="linear-gradient(to right, #27272a 0%, #a49e9e 100%)"
-            image="visualvoyager.jpg"
-          >
-            Explore the world we live in, as seen through our unique perspectives and experiences.
-          </ProjectCard>
+          <ProjectsMDX />
         </div>
       </Inner>
     </Content>

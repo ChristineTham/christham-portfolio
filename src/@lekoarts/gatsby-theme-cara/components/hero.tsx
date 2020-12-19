@@ -15,7 +15,7 @@ import { hidden, iconpos } from '../styles/utils'
 import MonitorIcon from '../assets/icons/monitor.svg'
 import HeadphoneIcon from '../assets/icons/headphones.svg'
 import HeartIcon from '../assets/icons/heart.svg'
-import EaselIcon from '../assets/icons/easel.svg'
+// import EaselIcon from '../assets/icons/easel.svg'
 import MusicIcon from '../assets/icons/musicnote.svg'
 import CameraIcon from '../assets/icons/photo-camera.svg'
 import TurntableIcon from '../assets/icons/turntable.svg'
@@ -31,7 +31,7 @@ import SydneyIcon from '../assets/icons/opera-house.svg'
 import KoalaIcon from '../assets/icons/koala.svg'
 import SpeakerIcon from '../assets/icons/speaker.svg'
 import PianoIcon from '../assets/icons/piano2.svg'
-import MountainIcon from '../assets/icons/mountain.svg'
+import FloralIcon from '../assets/icons/floral-spring.svg'
 import GuitarIcon from '../assets/icons/guitar.svg'
 
 import Background from '../assets/backgrounds/garden-tree.svg'
@@ -99,21 +99,21 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           <PaletteIcon sx={iconpos(16, '35%', '5%')} />
           <NotebookIcon sx={iconpos(16, '45%', '10%', hidden)} />
           <BicycleIcon sx={iconpos(20, '75%', '8%')} />
-          <PortfolioIcon sx={iconpos(16, '80%', '20%')} />
+          <PortfolioIcon sx={iconpos(16, '85%', '20%')} />
           <CameraIcon sx={iconpos(16, '30%', '65%')} />
           <MusicIcon sx={iconpos(16, '19%', '58%')} />
           <TravelIcon sx={iconpos(20, '90%', '50%')} />
           <TurntableIcon sx={iconpos(48, '70%', '90%')} />
         </UpDownWide>
         <MonitorIcon sx={iconpos(24, '5%', '70%', hidden)} />
-        <HeadphoneIcon sx={iconpos(16, '50%', '65%')} />
-        <EaselIcon sx={iconpos(12, '30%', '30%', hidden)} />
+        <HeadphoneIcon sx={iconpos(16, '50%', '65%', hidden)} />
+        {/* <EaselIcon sx={iconpos(12, '30%', '30%', hidden)} /> */}
         <SydneyIcon sx={iconpos(12, '4%', '20%')} />
         <AustraliaIcon sx={iconpos(12, '20%', '5%')} />
         <KoalaIcon sx={iconpos(12, '8%', '8%')} />
         <SpeakerIcon sx={iconpos(12, '95%', '90%', hidden)} />
         <PianoIcon sx={iconpos(20, '80%', '70%', hidden)} />
-        <MountainIcon sx={iconpos(64, '5%', '90%')} />
+        <FloralIcon sx={iconpos(64, '5%', '99%')} />
         <GuitarIcon sx={iconpos(24, '40%', '80%', hidden)} />
         {/* <SVG icon="hexa" width={16} stroke color="icon_darker" left="10%" top="50%" /> */}
       </Divider>
@@ -146,7 +146,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
               textShadow: 'rgba(255, 255, 255, 0.15) 0px 5px 35px',
               letterSpacing: 'wide',
               color: 'heading',
-              bg: '#00000020',
+              bg: isDark ? '#000000a0' : '#00000020',
               p: 2,
               borderRadius: 5
             }}

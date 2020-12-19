@@ -10,7 +10,7 @@ module.exports = {
     siteTitleAlt: `Chris Tham - Portfolio`,
     siteHeadline: `Chris Tham - Portfolio`,
     siteUrl: `https://christham.gtsb.io`,
-    siteDescription: `Chris Tham portfolio website written in Gatsby`,
+    siteDescription: `Chris Tham Portfolio is a single page website showcasing my other websites`,
     siteLanguage: `en`,
     siteImage: `/portfolio.jpg`,
     author: `@chris1tham`

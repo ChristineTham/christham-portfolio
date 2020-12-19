@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "gatsby-blog",
-  "description": "Test Gatsby Portfolio Blog based on gatsby-starter-portfolio-cara.",
+  "name": "christham-portfolio",
+  "description": "Chris Tham Portfolio is a Gatsby Cloud site built using gatsbyjs, based on gatsby-starter-portfolio-cara. Rosely design theme, with Kawaii Flat Icons.",
   "version": "0.0.1",
-  "author": "Chris Tham <chris.tham@>",
+  "author": "Chris Tham <chris.tham@hellotham.com>",
   "license": "0BSD",
   "starter-name": "gatsby-starter-portfolio-cara",
   "scripts": {

@@ -11,14 +11,14 @@ const Footer: React.FC = () => {
           justifyContent: `center`,
           alignItems: `center`,
           mt: 3,
-          color: `text`,
+          color: `rosely0`,
           fontWeight: `semibold`,
-          a: { color: `text` }
+          a: { color: `rosely1` }
         }}
       >
         <img width="30" height="30" src="/logo.svg" alt="Hello Tham Logo" />
         {` `}
-        <Link aria-label="Link to the theme's GitHub repository" sx={{ ml: 2 }} href="https://github.com/ChristineTham/gatsby-blog">
+        <Link aria-label="Link to the theme's GitHub repository" sx={{ ml: 2 }} href="https://github.com/ChristineTham/christham-portfolio">
           Website
         </Link>
         <div sx={{ mx: 1 }}>by</div>

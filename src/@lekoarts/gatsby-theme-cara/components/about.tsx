@@ -12,14 +12,14 @@ import AboutMDX from '../sections/about.mdx'
 
 import Background from '../assets/backgrounds/floral-spring.svg'
 
-import CocktailIcon from '../assets/icons/cocktail.svg'
+// import CocktailIcon from '../assets/icons/cocktail.svg'
 import CoffeeIcon from '../assets/icons/coffee.svg'
 import ReadingIcon from '../assets/icons/reading.svg'
 import SunglassesIcon from '../assets/icons/sunglasses.svg'
 import WebsiteIcon from '../assets/icons/website.svg'
 import WineIcon from '../assets/icons/wine.svg'
 import PhotoIcon from '../assets/icons/photo.svg'
-import IceCreamIcon from '../assets/icons/ice-cream.svg'
+// import IceCreamIcon from '../assets/icons/ice-cream.svg'
 import BooksIcon from '../assets/icons/books.svg'
 import PawIcon from '../assets/icons/paw-print.svg'
 import DogIcon from '../assets/icons/dog.svg'
@@ -54,9 +54,9 @@ const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor =
         <BooksIcon sx={iconpos(16, '45%', '10%', hidden)} />
       </UpDownWide>
       <FlowerIcon sx={iconpos(16, '4%', '20%', hidden)} />
-      <CocktailIcon sx={iconpos(16, '70%', '60%')} />
+      {/* <CocktailIcon sx={iconpos(16, '70%', '60%')} /> */}
       <DogIcon sx={iconpos(16, '10%', '10%')} />
-      <IceCreamIcon sx={iconpos(16, '20%', '30%', hidden)} />
+      {/* <IceCreamIcon sx={iconpos(16, '20%', '30%', hidden)} /> */}
       <WebsiteIcon sx={iconpos(16, '80%', '70%')} />
     </Divider>
     <Content speed={0.4} offset={offset} factor={factor}>
