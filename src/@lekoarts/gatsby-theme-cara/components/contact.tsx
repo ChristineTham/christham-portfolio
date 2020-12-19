@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import Divider from '@lekoarts/gatsby-theme-cara/src/elements/divider'
 import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
 import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
-import SVG from '@lekoarts/gatsby-theme-cara/src/components/svg'
 import { UpDown, UpDownWide, waveAnimation } from '@lekoarts/gatsby-theme-cara/src/styles/animations'
 
 import Footer from './footer'
@@ -39,7 +38,9 @@ const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor
             <path>
               <animate
                 attributeName="d"
-                values="M 0 100 Q 250 50 400 200 Q 550 350 800 300 L 800 0 L 0 0 L 0 100 Z;M 0 100 Q 200 150 400 200 Q 600 250 800 300 L 800 0 L 0 0 L 0 100 Z;M 0 100 Q 150 350 400 200 Q 650 50 800 300 L 800 0 L 0 0 L 0 100 Z"
+                values={`M 0 100 Q 250 50 400 200 Q 550 350 800 300 L 800 0 L 0 0 L 0 100 Z;
+                M 0 100 Q 200 150 400 200 Q 600 250 800 300 L 800 0 L 0 0 L 0 100 Z;
+                M 0 100 Q 150 350 400 200 Q 650 50 800 300 L 800 0 L 0 0 L 0 100 Z`}
                 repeatCount="indefinite"
                 dur="30s"
               />
@@ -57,7 +58,7 @@ const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor
     <Divider speed={0.1} offset={offset} factor={factor}>
       <img
         src={Background}
-        alt="background"
+        alt="contact background"
         sx={{
           position: 'fixed',
           left: 0,

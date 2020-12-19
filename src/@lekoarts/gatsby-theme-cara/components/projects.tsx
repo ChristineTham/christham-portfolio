@@ -103,7 +103,7 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
     <Divider speed={0.1} offset={offset} factor={factor}>
       <img
         src={Background}
-        alt="background"
+        alt="projects background"
         sx={{
           position: 'fixed',
           left: 0,

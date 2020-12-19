@@ -62,7 +62,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
       /> */}
       <img
         src={Background}
-        alt="background"
+        alt="hero background"
         sx={{
           position: 'fixed',
           top: 0,
@@ -83,7 +83,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           }}
         >
           <em>Kawaii Flat</em> Icons made by{' '}
-          <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+          <a href="https://www.flaticon.com/authors/freepik" title="Author">
             Freepik
           </a>{' '}
           from{' '}
@@ -93,13 +93,13 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           </a>
         </p>
         <UpDown>
-          <WebsiteIcon sx={iconpos(48, '60%', '62%')} />
-          <HomeIcon sx={iconpos(48, '10%', '15%', hidden)} />
-          <HeartIcon sx={iconpos(24, '60%', '15%')} />
+          <WebsiteIcon sx={iconpos(48, '60%', '62%', hidden)} />
+          <HomeIcon sx={iconpos(48, '10%', '12%')} />
+          <HeartIcon sx={iconpos(24, '60%', '15%', hidden)} />
         </UpDown>
         <UpDownWide>
-          <PaletteIcon sx={iconpos(16, '28%', '5%')} />
-          <NotebookIcon sx={iconpos(16, '45%', '10%')} />
+          <PaletteIcon sx={iconpos(16, '35%', '5%')} />
+          <NotebookIcon sx={iconpos(16, '45%', '10%', hidden)} />
           <BicycleIcon sx={iconpos(20, '75%', '8%')} />
           <PortfolioIcon sx={iconpos(16, '80%', '20%')} />
           <CameraIcon sx={iconpos(16, '30%', '65%')} />
@@ -107,16 +107,16 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           <TravelIcon sx={iconpos(20, '90%', '50%')} />
           <TurntableIcon sx={iconpos(48, '70%', '90%')} />
         </UpDownWide>
-        <MonitorIcon sx={iconpos(24, '5%', '70%')} />
+        <MonitorIcon sx={iconpos(24, '5%', '70%', hidden)} />
         <HeadphoneIcon sx={iconpos(16, '50%', '65%')} />
-        <EaselIcon sx={iconpos(12, '38%', '30%')} />
+        <EaselIcon sx={iconpos(12, '30%', '30%', hidden)} />
         <SydneyIcon sx={iconpos(12, '4%', '20%')} />
         <AustraliaIcon sx={iconpos(12, '20%', '5%')} />
         <KoalaIcon sx={iconpos(12, '8%', '8%')} />
         <SpeakerIcon sx={iconpos(12, '95%', '90%', hidden)} />
         <PianoIcon sx={iconpos(20, '80%', '70%', hidden)} />
         <MountainIcon sx={iconpos(64, '5%', '90%')} />
-        <GuitarIcon sx={iconpos(24, '40%', '80%')} />
+        <GuitarIcon sx={iconpos(24, '40%', '80%', hidden)} />
         {/* <SVG icon="hexa" width={16} stroke color="icon_darker" left="10%" top="50%" /> */}
       </Divider>
       <Content sx={{ variant: 'texts.bigger' }} speed={0.4} offset={offset} factor={factor}>

@@ -32,7 +32,7 @@ const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor =
     <Divider speed={0.1} offset={offset} factor={factor}>
       <img
         src={Background}
-        alt="background"
+        alt="about background"
         sx={{
           position: 'fixed',
           left: 0,
@@ -56,7 +56,7 @@ const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor =
       <FlowerIcon sx={iconpos(16, '4%', '20%', hidden)} />
       <CocktailIcon sx={iconpos(16, '70%', '60%')} />
       <DogIcon sx={iconpos(16, '10%', '10%')} />
-      <IceCreamIcon sx={iconpos(16, '20%', '30%')} />
+      <IceCreamIcon sx={iconpos(16, '20%', '30%', hidden)} />
       <WebsiteIcon sx={iconpos(16, '80%', '70%')} />
     </Divider>
     <Content speed={0.4} offset={offset} factor={factor}>
