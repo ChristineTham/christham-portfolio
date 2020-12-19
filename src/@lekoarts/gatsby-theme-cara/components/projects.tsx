@@ -13,7 +13,7 @@ import Background from '../assets/backgrounds/river.svg'
 // import ProjectsMDX from '../sections/projects.mdx'
 
 import WrenchIcon from '../assets/icons/adjustable-wrench.svg'
-import RubikIcon from '../assets/icons/rubik.svg'
+import RubikIcon from '../assets/icons/Rubik.svg'
 import BlueprintIcon from '../assets/icons/blueprint.svg'
 import AtomIcon from '../assets/icons/atom.svg'
 import PuzzleIcon from '../assets/icons/puzzle.svg'

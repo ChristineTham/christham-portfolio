@@ -1,6 +1,9 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from 'theme-ui'
 
+import Typed from 'react-typed'
+import 'react-typed/dist/animatedCursor.css'
+
 import Divider from '@lekoarts/gatsby-theme-cara/src/elements/divider'
 import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
 import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
@@ -137,6 +140,19 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
             {isDark ? `Light Theme` : `Dark Theme`}
           </button>
           <Intro />
+          <Typed
+            sx={{
+              fontSize: 7,
+              color: 'rosely10',
+              fontFamily: 'mono',
+              mt: -2
+            }}
+            strings={['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller']}
+            typeSpeed={100}
+            backSpeed={50}
+            backDelay={2500}
+            loop
+          />
         </Inner>
       </Content>
     </div>

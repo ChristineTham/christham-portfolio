@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+
 import Divider from '@lekoarts/gatsby-theme-cara/src/elements/divider'
 import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
 import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
@@ -23,7 +24,7 @@ import BooksIcon from '../assets/icons/books.svg'
 import PawIcon from '../assets/icons/paw-print.svg'
 import DogIcon from '../assets/icons/dog.svg'
 import FlowerIcon from '../assets/icons/flower.svg'
-import RubikIcon from '../assets/icons/rubik.svg'
+import RubikIcon from '../assets/icons/Rubik.svg'
 
 const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>
