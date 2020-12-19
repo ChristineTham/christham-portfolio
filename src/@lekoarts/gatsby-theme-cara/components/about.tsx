@@ -3,12 +3,27 @@ import { jsx } from 'theme-ui'
 import Divider from '@lekoarts/gatsby-theme-cara/src/elements/divider'
 import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
 import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
-import SVG from '@lekoarts/gatsby-theme-cara/src/components/svg'
 import { UpDown, UpDownWide } from '@lekoarts/gatsby-theme-cara/src/styles/animations'
+
+import { hidden, iconpos } from '../styles/utils'
 
 import AboutMDX from '../sections/about.mdx'
 
 import Background from '../assets/backgrounds/floral-spring.svg'
+
+import CocktailIcon from '../assets/icons/cocktail.svg'
+import CoffeeIcon from '../assets/icons/coffee.svg'
+import ReadingIcon from '../assets/icons/reading.svg'
+import SunglassesIcon from '../assets/icons/sunglasses.svg'
+import WebsiteIcon from '../assets/icons/website.svg'
+import WineIcon from '../assets/icons/wine.svg'
+import PhotoIcon from '../assets/icons/photo.svg'
+import IceCreamIcon from '../assets/icons/ice-cream.svg'
+import BooksIcon from '../assets/icons/books.svg'
+import PawIcon from '../assets/icons/paw-print.svg'
+import DogIcon from '../assets/icons/dog.svg'
+import FlowerIcon from '../assets/icons/flower.svg'
+import RubikIcon from '../assets/icons/rubik.svg'
 
 const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>
@@ -20,28 +35,28 @@ const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor =
         sx={{
           position: 'fixed',
           left: 0,
-          top: '-25%',
+          top: 0,
           width: '100%',
           opacity: 0.3
         }}
       />
       <UpDown>
-        <SVG icon="box" hiddenMobile width={6} color="icon_blue" left="50%" top="75%" />
-        <SVG icon="upDown" hiddenMobile width={8} color="icon_darkest" left="70%" top="20%" />
-        <SVG icon="triangle" width={8} stroke color="icon_darkest" left="25%" top="5%" />
-        <SVG icon="upDown" hiddenMobile width={24} color="icon_orange" left="80%" top="80%" />
+        <PawIcon sx={iconpos(64, '50%', '75%', hidden)} />
+        <CoffeeIcon sx={iconpos(32, '60%', '20%', hidden)} />
+        <ReadingIcon sx={iconpos(16, '25%', '5%')} />
+        <SunglassesIcon sx={iconpos(16, '80%', '80%', hidden)} />
       </UpDown>
       <UpDownWide>
-        <SVG icon="arrowUp" hiddenMobile width={16} color="icon_purple" left="5%" top="80%" />
-        <SVG icon="triangle" width={12} stroke color="icon_brightest" left="95%" top="50%" />
-        <SVG icon="circle" hiddenMobile width={6} color="icon_brightest" left="85%" top="15%" />
-        <SVG icon="upDown" hiddenMobile width={8} color="icon_darkest" left="45%" top="10%" />
+        <RubikIcon sx={iconpos(48, '5%', '80%', hidden)} />
+        <WineIcon sx={iconpos(16, '95%', '50%')} />
+        <PhotoIcon sx={iconpos(16, '85%', '15%', hidden)} />
+        <BooksIcon sx={iconpos(16, '45%', '10%', hidden)} />
       </UpDownWide>
-      <SVG icon="circle" hiddenMobile width={6} color="icon_brightest" left="4%" top="20%" />
-      <SVG icon="circle" width={12} color="icon_darkest" left="70%" top="60%" />
-      <SVG icon="box" width={6} color="icon_orange" left="10%" top="10%" />
-      <SVG icon="box" width={12} color="icon_darkest" left="20%" top="30%" />
-      <SVG icon="hexa" width={8} stroke color="icon_darkest" left="80%" top="70%" />
+      <FlowerIcon sx={iconpos(16, '4%', '20%', hidden)} />
+      <CocktailIcon sx={iconpos(16, '70%', '60%')} />
+      <DogIcon sx={iconpos(16, '10%', '10%')} />
+      <IceCreamIcon sx={iconpos(16, '20%', '30%')} />
+      <WebsiteIcon sx={iconpos(16, '80%', '70%')} />
     </Divider>
     <Content speed={0.4} offset={offset} factor={factor}>
       <Inner>

@@ -18,7 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
         edges {
           node {
             childImageSharp {
-              fluid(maxWidth: 1024) {
+              fluid(maxWidth: 800) {
                 ...GatsbyImageSharpFluid
                 originalName
               }
@@ -46,7 +46,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
         position: `relative`,
         textDecoration: `none`,
         borderRadius: `lg`,
-        px: 3,
+        px: 4,
         py: [3, 3],
         color: `white`,
         background: bg || `none`,

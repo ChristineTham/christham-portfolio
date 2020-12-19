@@ -5,22 +5,28 @@ import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
 import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
 import { UpDown, UpDownWide } from '@lekoarts/gatsby-theme-cara/src/styles/animations'
 
-import Background from '../assets/backgrounds/river.svg'
 import ProjectCard from './project-card'
+import { iconpos } from '../styles/utils'
+
+import Background from '../assets/backgrounds/river.svg'
 
 // import ProjectsMDX from '../sections/projects.mdx'
 
 import WrenchIcon from '../assets/icons/adjustable-wrench.svg'
-import AgendaIcon from '../assets/icons/agenda.svg'
+import RubikIcon from '../assets/icons/rubik.svg'
 import BlueprintIcon from '../assets/icons/blueprint.svg'
-import CheckListIcon from '../assets/icons/check-list.svg'
-import CoffeeIcon from '../assets/icons/coffee.svg'
+import AtomIcon from '../assets/icons/atom.svg'
+import PuzzleIcon from '../assets/icons/puzzle.svg'
 import CloudIcon from '../assets/icons/computing-cloud.svg'
 import FolderIcon from '../assets/icons/folders.svg'
 import GearsIcon from '../assets/icons/gears.svg'
 import GraphicsIcon from '../assets/icons/graphics.svg'
 import NotebookIcon from '../assets/icons/notebook2.svg'
 import WorkflowIcon from '../assets/icons/workflow.svg'
+import CalculatorIcon from '../assets/icons/calculator.svg'
+import ChipIcon from '../assets/icons/chip.svg'
+import CompassIcon from '../assets/icons/compass.svg'
+import ProgrammingIcon from '../assets/icons/programming.svg'
 
 const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 2 }) => (
   <div>
@@ -107,137 +113,25 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
         }}
       />
       <UpDown>
-        <WrenchIcon
-          sx={{
-            position: 'absolute',
-            width: 16,
-            left: '85%',
-            top: '75%'
-          }}
-        />
-        <AgendaIcon
-          sx={{
-            position: 'absolute',
-            width: 16,
-            left: '70%',
-            top: '20%'
-          }}
-        />
-        <BlueprintIcon
-          sx={{
-            position: 'absolute',
-            width: 48,
-            left: '25%',
-            top: '5%'
-          }}
-        />
-        <CheckListIcon
-          sx={{
-            position: 'absolute',
-            width: 16,
-            left: '17%',
-            top: '60%'
-          }}
-        />
+        <WrenchIcon sx={iconpos(16, '85%', '75%')} />
+        <RubikIcon sx={iconpos(16, '70%', '20%')} />
+        <BlueprintIcon sx={iconpos(48, '25%', '5%')} />
+        <PuzzleIcon sx={iconpos(16, '17%', '60%')} />
       </UpDown>
       <UpDownWide>
-        <CoffeeIcon
-          sx={{
-            position: 'absolute',
-            width: 16,
-            left: '20%',
-            top: '90%'
-          }}
-        />
-        <CloudIcon
-          sx={{
-            position: 'absolute',
-            width: 16,
-            left: '90%',
-            top: '30%'
-          }}
-        />
-        <FolderIcon
-          sx={{
-            position: 'absolute',
-            width: 16,
-            left: '70%',
-            top: '90%'
-          }}
-        />
-        <GearsIcon
-          sx={{
-            position: 'absolute',
-            width: 16,
-            left: '18%',
-            top: '75%'
-          }}
-        />
-        <GraphicsIcon
-          sx={{
-            position: 'absolute',
-            width: 16,
-            left: '75%',
-            top: '10%'
-          }}
-        />
-        <NotebookIcon
-          sx={{
-            position: 'absolute',
-            width: 48,
-            left: '45%',
-            top: '10%'
-          }}
-        />
+        <AtomIcon sx={iconpos(64, '20%', '90%')} />
+        <CloudIcon sx={iconpos(16, '90%', '30%')} />
+        <FolderIcon sx={iconpos(48, '70%', '90%')} />
+        <GearsIcon sx={iconpos(48, '18%', '75%')} />
+        <GraphicsIcon sx={iconpos(16, '75%', '10%')} />
+        <NotebookIcon sx={iconpos(48, '45%', '10%')} />
       </UpDownWide>
-      <WorkflowIcon
-        sx={{
-          position: 'absolute',
-          width: 16,
-          left: '4%',
-          top: '20%'
-        }}
-      />
-      <WrenchIcon
-        sx={{
-          position: 'absolute',
-          width: 16,
-          left: '80%',
-          top: '60%'
-        }}
-      />
-      <AgendaIcon
-        sx={{
-          position: 'absolute',
-          width: 16,
-          left: '10%',
-          top: '10%'
-        }}
-      />
-      <BlueprintIcon
-        sx={{
-          position: 'absolute',
-          width: 16,
-          left: '29%',
-          top: '26%'
-        }}
-      />
-      <CheckListIcon
-        sx={{
-          position: 'absolute',
-          width: 16,
-          left: '75%',
-          top: '30%'
-        }}
-      />
-      <CoffeeIcon
-        sx={{
-          position: 'absolute',
-          width: 16,
-          left: '80%',
-          top: '70%'
-        }}
-      />
+      <WorkflowIcon sx={iconpos(16, '4%', '20%')} />
+      <CompassIcon sx={iconpos(16, '80%', '60%')} />
+      <ProgrammingIcon sx={iconpos(16, '10%', '10%')} />
+      <BlueprintIcon sx={iconpos(16, '29%', '26%')} />
+      <CalculatorIcon sx={iconpos(16, '75%', '30%')} />
+      <ChipIcon sx={iconpos(16, '80%', '70%')} />
     </Divider>
   </div>
 )

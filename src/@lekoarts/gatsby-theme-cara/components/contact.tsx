@@ -6,11 +6,23 @@ import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
 import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
 import SVG from '@lekoarts/gatsby-theme-cara/src/components/svg'
 import { UpDown, UpDownWide, waveAnimation } from '@lekoarts/gatsby-theme-cara/src/styles/animations'
+
 import Footer from './footer'
+import { hidden, iconpos } from '../styles/utils'
 
 import ContactMDX from '../sections/contact.mdx'
 
 import Background from '../assets/backgrounds/lake.svg'
+
+import AgendaIcon from '../assets/icons/agenda.svg'
+import CheckListIcon from '../assets/icons/check-list.svg'
+import EmailIcon from '../assets/icons/email.svg'
+import PhoneIcon from '../assets/icons/smartphone.svg'
+import IDCardIcon from '../assets/icons/id-card.svg'
+import MapIcon from '../assets/icons/map.svg'
+import MessageIcon from '../assets/icons/message.svg'
+import SendIcon from '../assets/icons/send.svg'
+import PostItIcon from '../assets/icons/post-it.svg'
 
 const InnerWave = styled.div`
   path {
@@ -55,18 +67,18 @@ const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor
         }}
       />
       <UpDown>
-        <SVG icon="upDown" hiddenMobile width={8} color="icon_darkest" left="70%" top="20%" />
-        <SVG icon="triangle" width={8} stroke color="icon_darkest" left="25%" top="5%" />
+        <AgendaIcon sx={iconpos(16, '70%', '20%', hidden)} />
+        <CheckListIcon sx={iconpos(16, '25%', '5%')} />
       </UpDown>
       <UpDownWide>
-        <SVG icon="triangle" width={12} stroke color="icon_brightest" left="95%" top="50%" />
-        <SVG icon="circle" width={6} color="icon_brightest" left="85%" top="15%" />
-        <SVG icon="upDown" hiddenMobile width={8} color="icon_darkest" left="45%" top="10%" />
+        <EmailIcon sx={iconpos(16, '95%', '50%')} />
+        <PhoneIcon sx={iconpos(16, '85%', '15%')} />
+        <IDCardIcon sx={iconpos(16, '45%', '10%', hidden)} />
       </UpDownWide>
-      <SVG icon="circle" width={6} color="icon_brightest" left="4%" top="20%" />
-      <SVG icon="circle" width={12} color="icon_darkest" left="70%" top="60%" />
-      <SVG icon="box" width={12} color="icon_darkest" left="20%" top="30%" />
-      <SVG icon="hexa" width={8} stroke color="icon_darkest" left="80%" top="70%" />
+      <MapIcon sx={iconpos(16, '4%', '20%')} />
+      <MessageIcon sx={iconpos(16, '70%', '60%')} />
+      <SendIcon sx={iconpos(16, '20%', '30%')} />
+      <PostItIcon sx={iconpos(16, '80%', '70%')} />
     </Divider>
   </div>
 )

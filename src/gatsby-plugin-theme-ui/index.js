@@ -45,7 +45,6 @@ const theme = merge(tailwind, {
         heading: '#be9cc1',
         background: '#27272a',
         divider: '#85677b',
-        textMuted: '#a49e9e',
         icon_brightest: '#f7caca',
         icon_darker: '#b0879b',
         icon_darkest: '#85677b'
