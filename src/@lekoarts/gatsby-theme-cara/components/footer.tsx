@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
         <Link aria-label="Link to the theme's GitHub repository" sx={{ ml: 2 }} href="https://github.com/ChristineTham/gatsby-blog">
           Website
         </Link>
-        <div sx={{ mx: 1, color: 'rosely2' }}>by</div>
+        <div sx={{ mx: 1 }}>by</div>
         {` `}
         <Link aria-label="Link to the theme author's website" href="https://hellotham.com">
           Hello Tham Pty Ltd

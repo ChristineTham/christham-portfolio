@@ -142,7 +142,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           <Intro />
           <Typed
             sx={{
-              fontSize: 7,
+              fontSize: [4, 6],
               color: 'rosely10',
               fontFamily: 'mono',
               mt: -2
@@ -150,7 +150,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
             strings={['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller']}
             typeSpeed={100}
             backSpeed={50}
-            backDelay={2500}
+            backDelay={2000}
             loop
           />
         </Inner>
