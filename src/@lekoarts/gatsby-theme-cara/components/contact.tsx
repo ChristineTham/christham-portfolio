@@ -74,11 +74,11 @@ const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor
       <UpDownWide>
         <EmailIcon sx={iconpos(16, '95%', '50%')} />
         <PhoneIcon sx={iconpos(16, '85%', '15%')} />
-        <IDCardIcon sx={iconpos(16, '45%', '10%', hidden)} />
+        <IDCardIcon sx={iconpos(48, '45%', '10%', hidden)} />
       </UpDownWide>
       <MapIcon sx={iconpos(16, '4%', '20%')} />
       <MessageIcon sx={iconpos(16, '70%', '60%')} />
-      <SendIcon sx={iconpos(16, '20%', '30%')} />
+      <SendIcon sx={iconpos(16, '20%', '25%')} />
       <PostItIcon sx={iconpos(16, '80%', '70%')} />
     </Divider>
   </div>

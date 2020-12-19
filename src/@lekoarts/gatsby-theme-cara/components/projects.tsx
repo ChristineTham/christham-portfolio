@@ -42,7 +42,7 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
         <div
           sx={{
             display: `grid`,
-            gridGap: [4, 4, 4, 5],
+            gridGap: [2, 4, 4, 5],
             gridTemplateColumns: [`1fr`, `1fr`, `repeat(2, 1fr)`],
             h2: { gridColumn: `-1/1`, color: `rosely4 !important` }
           }}
