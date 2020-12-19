@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, useColorMode } from 'theme-ui'
+import { jsx, useColorMode, Text } from 'theme-ui'
 
 import Typed from 'react-typed'
 import 'react-typed/dist/animatedCursor.css'
@@ -12,7 +12,7 @@ import { hidden, iconpos } from '../styles/utils'
 
 // import HeroBG from './herobg'
 
-import Intro from '../sections/intro.mdx'
+// import Intro from '../sections/intro.mdx'
 
 import MonitorIcon from '../assets/icons/monitor.svg'
 import HeadphoneIcon from '../assets/icons/headphones.svg'
@@ -139,13 +139,27 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           >
             {isDark ? `Light Theme` : `Dark Theme`}
           </button>
-          <Intro />
+          {/* <Intro /> */}
+          <h1
+            sx={{
+              fontSize: [6, 7, 8],
+              mt: 2,
+              mb: -2,
+              textShadow: 'rgba(255, 255, 255, 0.15) 0px 5px 35px',
+              letterSpacing: 'wide',
+              color: 'heading',
+              bg: '#00000020',
+              p: 2,
+              borderRadius: 5
+            }}
+          >
+            Hi, I am Chris Tham
+          </h1>
           <Typed
             sx={{
               fontSize: [4, 6],
               color: 'rosely10',
-              fontFamily: 'mono',
-              mt: -2
+              fontFamily: 'mono'
             }}
             strings={['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller']}
             typeSpeed={100}
