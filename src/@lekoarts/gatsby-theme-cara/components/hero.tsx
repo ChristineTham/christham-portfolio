@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, useColorMode, Text } from 'theme-ui'
+import { jsx, useColorMode } from 'theme-ui'
 
 import Typed from 'react-typed'
 import 'react-typed/dist/animatedCursor.css'
@@ -9,8 +9,6 @@ import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
 import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
 import { UpDown, UpDownWide } from '@lekoarts/gatsby-theme-cara/src/styles/animations'
 import { hidden, iconpos } from '../styles/utils'
-
-// import HeroBG from './herobg'
 
 // import Intro from '../sections/intro.mdx'
 
