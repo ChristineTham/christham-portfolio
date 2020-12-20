@@ -38,7 +38,7 @@ const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor =
           left: 0,
           top: 0,
           width: '100%',
-          opacity: 0.3
+          opacity: 0.1
         }}
       />
       <UpDown>

@@ -11,9 +11,9 @@ const Footer: React.FC = () => {
           justifyContent: `center`,
           alignItems: `center`,
           mt: 3,
-          color: `rosely0`,
+          color: `text`,
           fontWeight: `semibold`,
-          a: { color: `rosely1` }
+          a: { color: `text` }
         }}
       >
         <img width="30" height="30" src="/logo.svg" alt="Hello Tham Logo" />

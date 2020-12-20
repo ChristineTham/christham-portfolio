@@ -64,7 +64,7 @@ const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor
           left: 0,
           top: '10%',
           width: '100%',
-          opacity: 0.3
+          opacity: 0.2
         }}
       />
       <UpDown>
