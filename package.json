@@ -23,9 +23,9 @@
     "@lekoarts/gatsby-theme-cara": "^1.2.18",
     "@theme-ui/presets": "^0.3.4",
     "dotenv": "^8.2.0",
-    "gatsby": "^3.0.1",
-    "gatsby-image": "^3.0.0",
+    "gatsby": "^3.0.3",
     "gatsby-plugin-gatsby-cloud": "^2.0.0",
+    "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
     "gatsby-plugin-netlify": "^3.0.0",
     "gatsby-plugin-offline": "^4.0.0",
@@ -42,8 +42,8 @@
     "theme-ui": "^0.3.4"
   },
   "devDependencies": {
-    "@types/node": "^14.14.13",
-    "@types/react": "^17.0.0",
+    "@types/node": "^14.14.32",
+    "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.0",
     "@types/react-helmet": "^6.1.0",
     "@types/theme-ui": "^0.3.7",

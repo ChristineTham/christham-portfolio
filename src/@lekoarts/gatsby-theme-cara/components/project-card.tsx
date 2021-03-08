@@ -2,7 +2,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { jsx } from 'theme-ui'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 type ProjectCardProps = {
   link: string
@@ -17,11 +17,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
       allFile(filter: { extension: { eq: "jpg" }, sourceInstanceName: { eq: "assets" } }) {
         edges {
           node {
+            base
             childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid
-                originalName
-              }
+              gatsbyImageData(width: 800)
             }
           }
         }
@@ -30,9 +28,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
   `)
 
   type EdgeType = {
-    node: { childImageSharp: { fluid: { originalName: string } } }
+    node: { base: string }
   }
-  const images = data.allFile.edges.map((item: EdgeType) => item.node.childImageSharp.fluid.originalName)
+  const images = data.allFile.edges.map((item: EdgeType) => item.node.base)
   const index = images.indexOf(image)
 
   return (
@@ -58,7 +56,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
         }
       }}
     >
-      <Img fluid={data.allFile.edges[index].node.childImageSharp.fluid} alt={image.replace(/.jpg$/, '')} loading="eager" />
+      <GatsbyImage image={data.allFile.edges[index].node.childImageSharp.gatsbyImageData} alt={image.replace(/.jpg$/, '')} loading="eager" />
       <div
         sx={{
           letterSpacing: `wide`,
