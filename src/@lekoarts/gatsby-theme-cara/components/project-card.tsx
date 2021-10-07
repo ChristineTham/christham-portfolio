@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { jsx } from 'theme-ui'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
@@ -56,7 +57,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
         }
       }}
     >
-      <GatsbyImage image={data.allFile.edges[index].node.childImageSharp.gatsbyImageData} alt={image.replace(/.jpg$/, '')} loading="eager" />
+      <GatsbyImage
+        image={data.allFile.edges[index].node.childImageSharp.gatsbyImageData}
+        alt={image.replace(/.jpg$/, '')}
+        loading="eager"
+      />
       <div
         sx={{
           letterSpacing: `wide`,

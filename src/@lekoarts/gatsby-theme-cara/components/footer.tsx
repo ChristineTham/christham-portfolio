@@ -1,4 +1,5 @@
 /** @jsx jsx */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Box, Flex, Link, jsx } from 'theme-ui'
 
 const Footer: React.FC = () => {

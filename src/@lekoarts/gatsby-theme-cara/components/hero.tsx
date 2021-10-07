@@ -1,4 +1,5 @@
 /** @jsx jsx */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { jsx, useColorMode } from 'theme-ui'
 
 import Typed from 'react-typed'
@@ -39,7 +40,7 @@ import Background from '../assets/backgrounds/garden-tree.svg'
 const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => {
   const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
-  const toggleColorMode = (_: unknown) => {
+  const toggleColorMode = () => {
     setColorMode(isDark ? `light` : `dark`)
   }
 

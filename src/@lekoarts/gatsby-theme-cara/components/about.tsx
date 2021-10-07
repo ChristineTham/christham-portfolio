@@ -1,6 +1,6 @@
 /** @jsx jsx */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { jsx } from 'theme-ui'
-
 import Divider from '@lekoarts/gatsby-theme-cara/src/elements/divider'
 import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
 import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
