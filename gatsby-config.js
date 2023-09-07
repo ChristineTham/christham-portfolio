@@ -59,6 +59,7 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
-    'gatsby-plugin-gatsby-cloud'
+    'gatsby-plugin-gatsby-cloud',
+    'gatsby-plugin-netlify'
   ].filter(Boolean)
 }
