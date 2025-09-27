@@ -2,10 +2,10 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { jsx } from 'theme-ui'
 import styled from '@emotion/styled'
-import Divider from '@lekoarts/gatsby-theme-cara/src/elements/divider'
-import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
-import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
-import { UpDown, UpDownWide, waveAnimation } from '@lekoarts/gatsby-theme-cara/src/styles/animations'
+import Divider from '../elements/divider'
+import Inner from '../elements/inner'
+import Content from '../elements/content'
+import { UpDown, UpDownWide, waveAnimation } from '../styles/animations'
 
 import Footer from './footer'
 import { hidden, iconpos } from '../styles/utils'

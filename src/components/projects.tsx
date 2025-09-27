@@ -1,10 +1,10 @@
 /** @jsx jsx */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { jsx } from 'theme-ui'
-import Divider from '@lekoarts/gatsby-theme-cara/src/elements/divider'
-import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
-import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
-import { UpDown, UpDownWide } from '@lekoarts/gatsby-theme-cara/src/styles/animations'
+import Divider from '../elements/divider'
+import Inner from '../elements/inner'
+import Content from '../elements/content'
+import { UpDown, UpDownWide } from '../styles/animations'
 
 import { iconpos } from '../styles/utils'
 

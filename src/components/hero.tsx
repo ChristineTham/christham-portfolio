@@ -2,13 +2,13 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { jsx, useColorMode } from 'theme-ui'
 
-import Typed from 'react-typed'
-import 'react-typed/dist/animatedCursor.css'
+import { ReactTyped } from "react-typed"
+// import 'react-typed/dist/animatedCursor.css'
 
-import Divider from '@lekoarts/gatsby-theme-cara/src/elements/divider'
-import Inner from '@lekoarts/gatsby-theme-cara/src/elements/inner'
-import Content from '@lekoarts/gatsby-theme-cara/src/elements/content'
-import { UpDown, UpDownWide } from '@lekoarts/gatsby-theme-cara/src/styles/animations'
+import Divider from '../elements/divider'
+import Inner from '../elements/inner'
+import Content from '../elements/content'
+import { UpDown, UpDownWide } from '../styles/animations'
 import { hidden, iconpos } from '../styles/utils'
 
 // import Intro from '../sections/intro.mdx'
@@ -38,11 +38,8 @@ import GuitarIcon from '../assets/icons/guitar.svg'
 import Background from '../assets/backgrounds/garden-tree.svg'
 
 const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => {
-  const [colorMode, setColorMode] = useColorMode()
+  const [colorMode, setColorMode] = useColorMode<"light" | "dark">()
   const isDark = colorMode === `dark`
-  const toggleColorMode = () => {
-    setColorMode(isDark ? `light` : `dark`)
-  }
 
   return (
     <div>
@@ -132,7 +129,11 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
               top: '1%',
               left: '1%'
             }}
-            onClick={toggleColorMode}
+            onClick={() => {
+              const next = isDark ? `light` : `dark`
+              setColorMode(next)
+              document.documentElement.classList.value = `theme-ui-${next}`
+            }}
             type="button"
             aria-label="Toggle dark mode"
           >
@@ -154,7 +155,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           >
             Hi, I am Chris Tham
           </h1>
-          <Typed
+          <ReactTyped
             sx={{
               fontSize: [4, 6],
               color: 'rosely10',

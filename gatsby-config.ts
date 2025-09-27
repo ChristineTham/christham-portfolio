@@ -1,19 +1,25 @@
-module.exports = {
+import type { GatsbyConfig, PluginRef } from "gatsby";
+import "dotenv/config";
+
+const config: GatsbyConfig = {
   siteMetadata: {
-    siteTitle: `christham.gtsb.io`,
+    siteTitle: `portfolio.christham.com`,
     siteTitleAlt: `Chris Tham - Portfolio`,
     siteHeadline: `Chris Tham - Portfolio`,
-    siteUrl: `https://christham.gtsb.io`,
+    siteUrl: `https://portfolio.christham.com`,
     siteDescription: `Chris Tham Portfolio is a single page website showcasing my other websites`,
     siteLanguage: `en`,
     siteImage: `/portfolio.jpg`,
     author: `@chris1tham`
   },
+  trailingSlash: `always`,
   plugins: [
     {
-      resolve: '@lekoarts/gatsby-theme-cara',
-      // See the theme's README for all available options
-      options: {}
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `sections`,
+        path: `src/sections`,
+      },
     },
     {
       resolve: 'gatsby-plugin-react-svg',
@@ -27,7 +33,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'assets',
-        path: `${__dirname}/src/@lekoarts/gatsby-theme-cara/assets/`
+        path: `src/assets/`
       }
     },
     `gatsby-plugin-image`,
@@ -37,7 +43,7 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Chris Tham - Portfolio',
-        short_name: 'christham.gtsb.io',
+        short_name: 'portfolio.christham.com',
         description: 'Chris Tham portfolio website written in Gatsby',
         start_url: '/',
         background_color: '#27272a',
@@ -57,9 +63,13 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-offline',
-    'gatsby-plugin-netlify',
-    'gatsby-plugin-gatsby-cloud',
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {},
+    },
+    `gatsby-plugin-theme-ui`,
     'gatsby-plugin-netlify'
-  ].filter(Boolean)
-}
+  ].filter(Boolean) as Array<PluginRef>,
+};
+
+export default config;
