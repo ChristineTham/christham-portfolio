@@ -3,10 +3,10 @@ import "dotenv/config";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    siteTitle: `portfolio.christham.com`,
+    siteTitle: `portfolio.christham.net`,
     siteTitleAlt: `Chris Tham - Portfolio`,
     siteHeadline: `Chris Tham - Portfolio`,
-    siteUrl: `https://portfolio.christham.com`,
+    siteUrl: `https://portfolio.christham.net`,
     siteDescription: `Chris Tham Portfolio is a single page website showcasing my other websites`,
     siteLanguage: `en`,
     siteImage: `/portfolio.jpg`,
@@ -43,7 +43,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Chris Tham - Portfolio',
-        short_name: 'portfolio.christham.com',
+        short_name: 'portfolio.christham.net',
         description: 'Chris Tham portfolio website written in Gatsby',
         start_url: '/',
         background_color: '#27272a',
