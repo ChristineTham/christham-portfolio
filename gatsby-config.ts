@@ -67,7 +67,8 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-mdx`,
       options: {},
     },
-    `gatsby-plugin-theme-ui`
+    `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-netlify`
   ].filter(Boolean) as Array<PluginRef>,
 };
 
