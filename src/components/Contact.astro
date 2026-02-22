@@ -1,0 +1,54 @@
+---
+import Content from '../sections/contact.mdx';
+import FloatingIcon from './FloatingIcon.astro';
+
+// Background Icons
+import AgendaIcon from '../assets/icons/agenda.svg';
+import CheckListIcon from '../assets/icons/check-list.svg';
+import EmailIcon from '../assets/icons/email.svg';
+import PhoneIcon from '../assets/icons/smartphone.svg';
+import MapIcon from '../assets/icons/map.svg';
+import MessageIcon from '../assets/icons/message.svg';
+import SendIcon from '../assets/icons/send.svg';
+import PostItIcon from '../assets/icons/post-it.svg';
+---
+
+<section class="relative py-24 min-h-[50vh] flex flex-col justify-center items-center overflow-hidden bg-rosely8 text-white">
+    <!-- Wave Animation -->
+    <div class="absolute bottom-0 w-full transform rotate-180 z-0 h-64 pointer-events-none">
+          <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" id="contact-wave" viewBox="0 0 800 338.05" preserveAspectRatio="none">
+            <path class="fill-current text-rosely6">
+              <animate
+                attributeName="d"
+                values={`M 0 100 Q 250 50 400 200 Q 550 350 800 300 L 800 0 L 0 0 L 0 100 Z;
+                M 0 100 Q 200 150 400 200 Q 600 250 800 300 L 800 0 L 0 0 L 0 100 Z;
+                M 0 100 Q 150 350 400 200 Q 650 50 800 300 L 800 0 L 0 0 L 0 100 Z`}
+                repeatCount="indefinite"
+                dur="30s"
+              />
+            </path>
+          </svg>
+    </div>
+
+    <!-- Background Icons -->
+    <FloatingIcon src={AgendaIcon} top="20%" left="70%" width="16px" class="opacity-20 z-0 hidden sm:block" />
+    <FloatingIcon src={CheckListIcon} top="5%" left="25%" width="16px" class="opacity-20 z-0" />
+    <FloatingIcon src={EmailIcon} top="50%" left="95%" width="16px" class="opacity-20 z-0" />
+    <FloatingIcon src={PhoneIcon} top="15%" left="85%" width="16px" class="opacity-20 z-0" />
+    <FloatingIcon src={MapIcon} top="20%" left="4%" width="16px" class="opacity-20 z-0" />
+    <FloatingIcon src={MessageIcon} top="60%" left="70%" width="16px" class="opacity-20 z-0" />
+    <FloatingIcon src={SendIcon} top="25%" left="20%" width="16px" class="opacity-20 z-0" />
+    <FloatingIcon src={PostItIcon} top="70%" left="80%" width="16px" class="opacity-20 z-0" />
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-xl md:text-2xl font-medium">
+        <Content />
+    </div>
+
+    <footer class="relative z-50 mt-16 text-center text-sm sm:text-base text-white opacity-80">
+        Copyright &copy; {new Date().getFullYear()}. All rights reserved.
+        <br />
+        <a href="https://github.com/chris1tham/christham-portfolio-cara" class="hover:text-white underline">Chris Tham Portfolio</a> is based on{' '}
+        <a href="https://www.gatsbyjs.com/starters/LekoArts/gatsby-starter-portfolio-cara/" class="hover:text-white underline">gatsby-starter-portfolio-cara</a>{' '}
+        by <a href="https://www.lekoarts.de?utm_source=cara&utm_medium=Starter" class="hover:text-white underline">LekoArts</a>.
+    </footer>
+</section>

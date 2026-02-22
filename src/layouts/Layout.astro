@@ -1,0 +1,25 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+    description?: string;
+}
+
+const { title = "Chris Tham - Portfolio", description = "Chris Tham Portfolio is a single page website showcasing my other websites" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-background text-text antialiased font-sans transition-colors duration-300">
+		<slot />
+	</body>
+</html>

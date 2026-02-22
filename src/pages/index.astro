@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero';
+import Projects from '../components/Projects.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+
+import FloatingIcon from '../components/FloatingIcon.astro';
+
+// Import key icons for Hero
+import MonitorIcon from '../assets/icons/monitor.svg';
+import HeadphoneIcon from '../assets/icons/headphones.svg';
+import MusicIcon from '../assets/icons/musicnote.svg';
+import CameraIcon from '../assets/icons/photo-camera.svg';
+import TravelIcon from '../assets/icons/travelling.svg';
+import PaletteIcon from '../assets/icons/paint-palette.svg';
+import NotebookIcon from '../assets/icons/notebook.svg';
+import BicycleIcon from '../assets/icons/bicycle.svg';
+import PortfolioIcon from '../assets/icons/portfolio.svg';
+import TurntableIcon from '../assets/icons/turntable.svg';
+import Background from '../assets/backgrounds/garden-tree.svg';
+---
+
+<Layout>
+    <main class="w-full relative overflow-x-hidden">
+        <!-- Hero Section -->
+        <section class="relative min-h-screen">
+             <!-- Background Image -->
+             <img src={Background.src} alt="" class="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none z-0" />
+
+             <!-- Background Icons (Static Placement) -->
+            <FloatingIcon src={MonitorIcon} top="70%" left="5%" width="24px" class="hidden sm:block opacity-20 z-0" />
+            <FloatingIcon src={HeadphoneIcon} top="65%" left="50%" width="16px" class="hidden sm:block opacity-20 z-0" />
+            <FloatingIcon src={MusicIcon} top="58%" left="19%" width="16px" class="opacity-20 z-0" />
+            <FloatingIcon src={CameraIcon} top="65%" left="30%" width="16px" class="opacity-20 z-0" />
+            <FloatingIcon src={TravelIcon} top="50%" left="90%" width="20px" class="opacity-20 z-0" />
+            <FloatingIcon src={PaletteIcon} top="5%" left="35%" width="16px" class="opacity-20 z-0" />
+            <FloatingIcon src={NotebookIcon} top="10%" left="45%" width="16px" class="hidden sm:block opacity-20 z-0" />
+            <FloatingIcon src={BicycleIcon} top="8%" left="75%" width="20px" class="opacity-20 z-0" />
+            <FloatingIcon src={PortfolioIcon} top="20%" left="85%" width="16px" class="opacity-20 z-0" />
+            <FloatingIcon src={TurntableIcon} top="90%" left="70%" width="48px" class="opacity-20 z-0" />
+
+            <!-- Content -->
+            <div class="relative z-10">
+                <Hero client:load />
+            </div>
+        </section>
+
+        <Projects />
+
+        <About />
+
+        <Contact />
+    </main>
+</Layout>

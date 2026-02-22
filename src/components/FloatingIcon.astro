@@ -1,0 +1,11 @@
+---
+interface Props {
+  src: ImageMetadata;
+  width?: string;
+  top: string;
+  left: string;
+  class?: string;
+}
+const { src, width = '24px', top, left, class: className = '' } = Astro.props;
+---
+<img src={src.src} class={`absolute opacity-20 pointer-events-none ${className}`} style={{ width, top, left }} alt="" aria-hidden="true" />

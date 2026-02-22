@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  link: string;
+  title: string;
+  image?: string;
+  bg: string;
+}
+
+const { link, title, image, bg } = Astro.props;
+
+// Dynamically import images
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/portfolio/*.{jpeg,jpg,png,gif}');
+
+// Construct the path. The existing MDX passes just the filename "learning-jamstack.jpg"
+// We need to match the glob pattern.
+const imagePath = `../assets/portfolio/${image}`;
+
+let imageSrc = null;
+if (images[imagePath]) {
+    imageSrc = await images[imagePath]();
+} else {
+    console.error(`Image not found: ${imagePath} for project ${title}`);
+}
+---
+
+<a
+  href={link}
+  target="_blank"
+  rel="noreferrer noopener"
+  class="block w-full shadow-lg relative rounded-lg px-4 py-3 sm:px-6 sm:py-4 text-white transition-all duration-400 ease-in-out hover:text-white hover:-translate-y-1 hover:shadow-xl no-underline !text-white"
+  style={{ background: bg }}
+>
+  {imageSrc && (
+    <Image
+      src={imageSrc.default}
+      alt={title}
+      class="w-full h-auto rounded-md mb-2"
+      width={800}
+    />
+  )}
+  <div class="tracking-wide pt-2 text-xl sm:text-2xl font-medium leading-none text-white">
+    {title}
+  </div>
+  <div class="opacity-85 text-sm sm:text-base mt-2 shadow-text text-white">
+    <slot />
+  </div>
+</a>
+
+<style>
+    .shadow-text {
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+</style>

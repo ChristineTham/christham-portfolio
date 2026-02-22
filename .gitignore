@@ -60,9 +60,9 @@ typings/
 .env.*
 !.env.example
 
-.cache
-**/.cache
-public
+# Astro
+.astro/
+dist/
 
 .idea
 .vscode

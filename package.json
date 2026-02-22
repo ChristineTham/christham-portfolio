@@ -1,50 +1,27 @@
 {
-  "private": true,
-  "name": "christham-portfolio",
-  "description": "Chris Tham Portfolio is a Gatsby Cloud site built using gatsbyjs, based on gatsby-starter-portfolio-cara. Rosely design theme, with Kawaii Flat Icons.",
-  "version": "0.1.0",
-  "author": "Chris Tham <chris.tham@hellotham.com>",
-  "license": "0BSD",
-  "starter-name": "gatsby-starter-portfolio-cara",
+  "name": "christham-portfolio-astro",
+  "version": "1.0.0",
+  "description": "Chris Tham Portfolio migrated to Astro",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
-    "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mdx-js/react": "^3.1.1",
-    "@react-spring/parallax": "^10.0.3",
-    "@react-spring/web": "^10.0.3",
-    "@theme-ui/mdx": "^0.17.4",
-    "@theme-ui/preset-tailwind": "^0.17.4",
-    "gatsby": "^5.16.1",
-    "gatsby-adapter-netlify": "^1.4.0",
-    "gatsby-plugin-image": "^3.16.0",
-    "gatsby-plugin-manifest": "^5.16.0",
-    "gatsby-plugin-mdx": "^5.16.0",
-    "gatsby-plugin-react-svg": "^3.3.0",
-    "gatsby-plugin-sharp": "^5.16.0",
-    "gatsby-plugin-theme-ui": "^0.17.4",
-    "gatsby-source-filesystem": "^5.16.0",
-    "gatsby-transformer-sharp": "^5.16.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "@astrojs/mdx": "^4.0.8",
+    "@astrojs/react": "^4.2.0",
+    "@astrojs/tailwind": "^6.0.0",
+    "astro": "^5.2.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-typed": "^2.0.12",
-    "theme-ui": "^0.17.4"
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
-    "@types/node": "^25.3.0",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "ajv": "^8.18.0",
-    "baseline-browser-mapping": "^2.10.0",
-    "cross-env": "^10.1.0",
-    "typescript": "^5.9.3"
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "typescript": "^5.7.3"
   }
 }
