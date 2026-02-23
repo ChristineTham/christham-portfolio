@@ -10,7 +10,7 @@ const { title = "Chris Tham - Portfolio", description = "Chris Tham Portfolio is
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth h-full">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -19,7 +19,7 @@ const { title = "Chris Tham - Portfolio", description = "Chris Tham Portfolio is
         <meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-background text-text antialiased font-sans transition-colors duration-300">
+	<body class="bg-background text-text antialiased font-sans transition-colors duration-300 h-full overflow-hidden">
 		<slot />
 	</body>
 </html>

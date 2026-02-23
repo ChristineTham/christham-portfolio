@@ -16,7 +16,7 @@ const FloatingIcon: React.FC<FloatingIconProps> = ({ src, offset, speed, top, le
   const imageSrc = typeof src === 'string' ? src : src.src;
 
   return (
-    <ParallaxLayer offset={offset} speed={speed} style={{ pointerEvents: 'none', zIndex: 0, ...style }}>
+    <ParallaxLayer offset={offset} speed={speed} style={{ pointerEvents: 'none', zIndex: 1, ...style }}>
       <img
         src={imageSrc}
         alt=""
