@@ -3,49 +3,49 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import FloatingIcon from './FloatingIcon';
 
 // Hero Icons
-import MonitorIcon from '../assets/icons/monitor.svg';
-import HeadphoneIcon from '../assets/icons/headphones.svg';
-import MusicIcon from '../assets/icons/musicnote.svg';
-import CameraIcon from '../assets/icons/photo-camera.svg';
-import TravelIcon from '../assets/icons/travelling.svg';
-import PaletteIcon from '../assets/icons/paint-palette.svg';
-import NotebookIcon from '../assets/icons/notebook.svg';
-import BicycleIcon from '../assets/icons/bicycle.svg';
-import PortfolioIcon from '../assets/icons/portfolio.svg';
-import TurntableIcon from '../assets/icons/turntable.svg';
-import Background from '../assets/backgrounds/garden-tree.svg';
+import MonitorIcon from '../assets/icons/monitor.svg?url';
+import HeadphoneIcon from '../assets/icons/headphones.svg?url';
+import MusicIcon from '../assets/icons/musicnote.svg?url';
+import CameraIcon from '../assets/icons/photo-camera.svg?url';
+import TravelIcon from '../assets/icons/travelling.svg?url';
+import PaletteIcon from '../assets/icons/paint-palette.svg?url';
+import NotebookIcon from '../assets/icons/notebook.svg?url';
+import BicycleIcon from '../assets/icons/bicycle.svg?url';
+import PortfolioIcon from '../assets/icons/portfolio.svg?url';
+import TurntableIcon from '../assets/icons/turntable.svg?url';
+import Background from '../assets/backgrounds/garden-tree.svg?url';
 
 // Projects Icons
-import WrenchIcon from '../assets/icons/adjustable-wrench.svg';
-import RubikIcon from '../assets/icons/Rubik.svg';
-import BlueprintIcon from '../assets/icons/blueprint.svg';
-import CloudIcon from '../assets/icons/computing-cloud.svg';
-import FolderIcon from '../assets/icons/folders.svg';
-import GearsIcon from '../assets/icons/gears.svg';
-import GraphicsIcon from '../assets/icons/graphics.svg';
-import NotebookIcon2 from '../assets/icons/notebook2.svg';
+import WrenchIcon from '../assets/icons/adjustable-wrench.svg?url';
+import RubikIcon from '../assets/icons/Rubik.svg?url';
+import BlueprintIcon from '../assets/icons/blueprint.svg?url';
+import CloudIcon from '../assets/icons/computing-cloud.svg?url';
+import FolderIcon from '../assets/icons/folders.svg?url';
+import GearsIcon from '../assets/icons/gears.svg?url';
+import GraphicsIcon from '../assets/icons/graphics.svg?url';
+import NotebookIcon2 from '../assets/icons/notebook2.svg?url';
 
 // About Icons
-import CoffeeIcon from '../assets/icons/coffee.svg';
-import ReadingIcon from '../assets/icons/reading.svg';
-import SunglassesIcon from '../assets/icons/sunglasses.svg';
-import WebsiteIcon from '../assets/icons/website.svg';
-import WineIcon from '../assets/icons/wine.svg';
-import PhotoIcon from '../assets/icons/photo.svg';
-import BooksIcon from '../assets/icons/books.svg';
-import PawIcon from '../assets/icons/paw-print.svg';
-import DogIcon from '../assets/icons/dog.svg';
-import FlowerIcon from '../assets/icons/flower.svg';
+import CoffeeIcon from '../assets/icons/coffee.svg?url';
+import ReadingIcon from '../assets/icons/reading.svg?url';
+import SunglassesIcon from '../assets/icons/sunglasses.svg?url';
+import WebsiteIcon from '../assets/icons/website.svg?url';
+import WineIcon from '../assets/icons/wine.svg?url';
+import PhotoIcon from '../assets/icons/photo.svg?url';
+import BooksIcon from '../assets/icons/books.svg?url';
+import PawIcon from '../assets/icons/paw-print.svg?url';
+import DogIcon from '../assets/icons/dog.svg?url';
+import FlowerIcon from '../assets/icons/flower.svg?url';
 
 // Contact Icons
-import AgendaIcon from '../assets/icons/agenda.svg';
-import CheckListIcon from '../assets/icons/check-list.svg';
-import EmailIcon from '../assets/icons/email.svg';
-import PhoneIcon from '../assets/icons/smartphone.svg';
-import MapIcon from '../assets/icons/map.svg';
-import MessageIcon from '../assets/icons/message.svg';
-import SendIcon from '../assets/icons/send.svg';
-import PostItIcon from '../assets/icons/post-it.svg';
+import AgendaIcon from '../assets/icons/agenda.svg?url';
+import CheckListIcon from '../assets/icons/check-list.svg?url';
+import EmailIcon from '../assets/icons/email.svg?url';
+import PhoneIcon from '../assets/icons/smartphone.svg?url';
+import MapIcon from '../assets/icons/map.svg?url';
+import MessageIcon from '../assets/icons/message.svg?url';
+import SendIcon from '../assets/icons/send.svg?url';
+import PostItIcon from '../assets/icons/post-it.svg?url';
 
 interface ParallaxPortfolioProps {
   hero: React.ReactNode;
