@@ -1,39 +1,10 @@
 ---
 import Content from '../sections/projects.mdx';
 import ProjectCard from './ProjectCard.astro';
-import FloatingIcon from './FloatingIcon.astro';
-
-// Background Icons
-import WrenchIcon from '../assets/icons/adjustable-wrench.svg';
-import RubikIcon from '../assets/icons/Rubik.svg';
-import BlueprintIcon from '../assets/icons/blueprint.svg';
-import CloudIcon from '../assets/icons/computing-cloud.svg';
-import FolderIcon from '../assets/icons/folders.svg';
-import GearsIcon from '../assets/icons/gears.svg';
-import GraphicsIcon from '../assets/icons/graphics.svg';
-import NotebookIcon from '../assets/icons/notebook2.svg';
 ---
-
-<section class="relative py-20 bg-gradient-to-r from-rosely4 to-rosely7 text-white overflow-hidden">
-    <!-- Background Shape -->
-    <div class="absolute inset-0 w-full h-full bg-inherit" style="clip-path: polygon(0 15%, 100% 25%, 100% 85%, 0 75%); z-index: 0;"></div>
-
-    <!-- Background Icons -->
-    <FloatingIcon src={WrenchIcon} top="75%" left="85%" width="16px" class="opacity-20 z-0" />
-    <FloatingIcon src={RubikIcon} top="20%" left="70%" width="16px" class="opacity-20 z-0" />
-    <FloatingIcon src={BlueprintIcon} top="5%" left="25%" width="48px" class="opacity-20 z-0" />
-    <FloatingIcon src={CloudIcon} top="30%" left="90%" width="16px" class="opacity-20 z-0" />
-    <FloatingIcon src={FolderIcon} top="90%" left="70%" width="48px" class="opacity-20 z-0" />
-    <FloatingIcon src={GearsIcon} top="75%" left="18%" width="48px" class="opacity-20 z-0" />
-    <FloatingIcon src={GraphicsIcon} top="10%" left="75%" width="16px" class="opacity-20 z-0" />
-    <FloatingIcon src={NotebookIcon} top="10%" left="45%" width="48px" class="opacity-20 z-0" />
-
-    <div class="relative z-10 max-w-5xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Content components={{ ProjectCard }} />
-        </div>
-    </div>
-</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <Content components={{ ProjectCard }} />
+</div>
 
 <style>
     :global(h2) {

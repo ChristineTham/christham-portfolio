@@ -1,42 +1,10 @@
 ---
 import Content from '../sections/about.mdx';
-import FloatingIcon from './FloatingIcon.astro';
-
-// Background Icons
-import CoffeeIcon from '../assets/icons/coffee.svg';
-import ReadingIcon from '../assets/icons/reading.svg';
-import SunglassesIcon from '../assets/icons/sunglasses.svg';
-import WebsiteIcon from '../assets/icons/website.svg';
-import WineIcon from '../assets/icons/wine.svg';
-import PhotoIcon from '../assets/icons/photo.svg';
-import BooksIcon from '../assets/icons/books.svg';
-import PawIcon from '../assets/icons/paw-print.svg';
-import DogIcon from '../assets/icons/dog.svg';
-import FlowerIcon from '../assets/icons/flower.svg';
-import RubikIcon from '../assets/icons/Rubik.svg';
 ---
 
-<section class="relative py-24 bg-divider text-text overflow-hidden">
-    <!-- Background Shape -->
-    <div class="absolute inset-0 w-full h-full bg-inherit" style="clip-path: polygon(0 16%, 100% 4%, 100% 82%, 0 94%); z-index: 0;"></div>
-
-    <!-- Background Icons -->
-    <FloatingIcon src={CoffeeIcon} top="20%" left="60%" width="32px" class="opacity-10 z-0 hidden sm:block" />
-    <FloatingIcon src={ReadingIcon} top="5%" left="25%" width="16px" class="opacity-10 z-0" />
-    <FloatingIcon src={SunglassesIcon} top="80%" left="80%" width="16px" class="opacity-10 z-0 hidden sm:block" />
-    <FloatingIcon src={WebsiteIcon} top="70%" left="80%" width="16px" class="opacity-10 z-0" />
-    <FloatingIcon src={WineIcon} top="50%" left="95%" width="16px" class="opacity-10 z-0" />
-    <FloatingIcon src={PhotoIcon} top="15%" left="85%" width="16px" class="opacity-10 z-0 hidden sm:block" />
-    <FloatingIcon src={BooksIcon} top="10%" left="45%" width="16px" class="opacity-10 z-0 hidden sm:block" />
-    <FloatingIcon src={PawIcon} top="75%" left="50%" width="64px" class="opacity-10 z-0 hidden sm:block" />
-    <FloatingIcon src={DogIcon} top="10%" left="10%" width="16px" class="opacity-10 z-0" />
-    <FloatingIcon src={FlowerIcon} top="20%" left="4%" width="16px" class="opacity-10 z-0 hidden sm:block" />
-    <FloatingIcon src={RubikIcon} top="80%" left="5%" width="48px" class="opacity-10 z-0 hidden sm:block" />
-
-    <div class="about-content relative z-10 max-w-4xl mx-auto px-6 text-lg sm:text-xl md:text-2xl leading-relaxed">
-        <Content />
-    </div>
-</section>
+<div class="about-content relative z-10 max-w-4xl mx-auto px-6 text-lg sm:text-xl md:text-2xl leading-relaxed text-white">
+    <Content />
+</div>
 
 <style>
     .about-content :global(p) {
