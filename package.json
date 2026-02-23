@@ -2,6 +2,9 @@
   "name": "christham-portfolio-astro",
   "version": "1.0.0",
   "description": "Chris Tham Portfolio migrated to Astro",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

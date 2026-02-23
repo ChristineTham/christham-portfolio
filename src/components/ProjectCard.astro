@@ -15,13 +15,14 @@ const images = import.meta.glob<{ default: ImageMetadata }>('../assets/portfolio
 
 // Construct the path. The existing MDX passes just the filename "learning-jamstack.jpg"
 // We need to match the glob pattern.
-const imagePath = `../assets/portfolio/${image}`;
-
 let imageSrc = null;
-if (images[imagePath]) {
-    imageSrc = await images[imagePath]();
-} else {
-    console.error(`Image not found: ${imagePath} for project ${title}`);
+if (image) {
+    const imagePath = `../assets/portfolio/${image}`;
+    if (images[imagePath]) {
+        imageSrc = await images[imagePath]();
+    } else {
+        console.warn(`Image not found: ${imagePath} for project ${title}`);
+    }
 }
 ---
 
