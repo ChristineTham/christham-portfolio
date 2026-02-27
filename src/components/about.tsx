@@ -1,6 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { jsx } from 'theme-ui'
+import React from 'react'
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
 import Content from '../elements/content'
@@ -8,30 +9,30 @@ import { UpDown, UpDownWide } from '../styles/animations'
 
 import { hidden, iconpos } from '../styles/utils'
 
-import AboutMDX from '../sections/about.mdx'
+import AboutMDX from '../sections/About'
 
 import Background from '../assets/backgrounds/floral-spring.svg'
 
-// import CocktailIcon from '../assets/icons/cocktail.svg'
-import CoffeeIcon from '../assets/icons/coffee.svg'
-import ReadingIcon from '../assets/icons/reading.svg'
-import SunglassesIcon from '../assets/icons/sunglasses.svg'
-import WebsiteIcon from '../assets/icons/website.svg'
-import WineIcon from '../assets/icons/wine.svg'
-import PhotoIcon from '../assets/icons/photo.svg'
-// import IceCreamIcon from '../assets/icons/ice-cream.svg'
-import BooksIcon from '../assets/icons/books.svg'
-import PawIcon from '../assets/icons/paw-print.svg'
-import DogIcon from '../assets/icons/dog.svg'
-import FlowerIcon from '../assets/icons/flower.svg'
-import RubikIcon from '../assets/icons/Rubik.svg'
+// import CocktailIcon from '../assets/icons/cocktail.svg?react'
+import CoffeeIcon from '../assets/icons/coffee.svg?react'
+import ReadingIcon from '../assets/icons/reading.svg?react'
+import SunglassesIcon from '../assets/icons/sunglasses.svg?react'
+import WebsiteIcon from '../assets/icons/website.svg?react'
+import WineIcon from '../assets/icons/wine.svg?react'
+import PhotoIcon from '../assets/icons/photo.svg?react'
+// import IceCreamIcon from '../assets/icons/ice-cream.svg?react'
+import BooksIcon from '../assets/icons/books.svg?react'
+import PawIcon from '../assets/icons/paw-print.svg?react'
+import DogIcon from '../assets/icons/dog.svg?react'
+import FlowerIcon from '../assets/icons/flower.svg?react'
+import RubikIcon from '../assets/icons/Rubik.svg?react'
 
 const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>
     <Divider bg="divider" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={offset} factor={factor} />
     <Divider speed={0.1} offset={offset} factor={factor}>
       <img
-        src={Background}
+        src={Background.src}
         alt="about background"
         sx={{
           position: 'fixed',

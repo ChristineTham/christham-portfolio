@@ -1,9 +1,8 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { jsx, useColorMode } from 'theme-ui'
-
+import React from 'react'
 import { ReactTyped } from "react-typed"
-// import 'react-typed/dist/animatedCursor.css'
 
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
@@ -11,29 +10,27 @@ import Content from '../elements/content'
 import { UpDown, UpDownWide } from '../styles/animations'
 import { hidden, iconpos } from '../styles/utils'
 
-// import Intro from '../sections/intro.mdx'
-
-import MonitorIcon from '../assets/icons/monitor.svg'
-import HeadphoneIcon from '../assets/icons/headphones.svg'
-import HeartIcon from '../assets/icons/heart.svg'
-// import EaselIcon from '../assets/icons/easel.svg'
-import MusicIcon from '../assets/icons/musicnote.svg'
-import CameraIcon from '../assets/icons/photo-camera.svg'
-import TurntableIcon from '../assets/icons/turntable.svg'
-import PortfolioIcon from '../assets/icons/portfolio.svg'
-import WebsiteIcon from '../assets/icons/website.svg'
-import PaletteIcon from '../assets/icons/paint-palette.svg'
-import HomeIcon from '../assets/icons/home.svg'
-import TravelIcon from '../assets/icons/travelling.svg'
-import BicycleIcon from '../assets/icons/bicycle.svg'
-import NotebookIcon from '../assets/icons/notebook.svg'
-import AustraliaIcon from '../assets/icons/australia.svg'
-import SydneyIcon from '../assets/icons/opera-house.svg'
-import KoalaIcon from '../assets/icons/koala.svg'
-import SpeakerIcon from '../assets/icons/speaker.svg'
-import PianoIcon from '../assets/icons/piano2.svg'
-import FloralIcon from '../assets/icons/floral-spring.svg'
-import GuitarIcon from '../assets/icons/guitar.svg'
+import MonitorIcon from '../assets/icons/monitor.svg?react'
+import HeadphoneIcon from '../assets/icons/headphones.svg?react'
+import HeartIcon from '../assets/icons/heart.svg?react'
+// import EaselIcon from '../assets/icons/easel.svg?react'
+import MusicIcon from '../assets/icons/musicnote.svg?react'
+import CameraIcon from '../assets/icons/photo-camera.svg?react'
+import TurntableIcon from '../assets/icons/turntable.svg?react'
+import PortfolioIcon from '../assets/icons/portfolio.svg?react'
+import WebsiteIcon from '../assets/icons/website.svg?react'
+import PaletteIcon from '../assets/icons/paint-palette.svg?react'
+import HomeIcon from '../assets/icons/home.svg?react'
+import TravelIcon from '../assets/icons/travelling.svg?react'
+import BicycleIcon from '../assets/icons/bicycle.svg?react'
+import NotebookIcon from '../assets/icons/notebook.svg?react'
+import AustraliaIcon from '../assets/icons/australia.svg?react'
+import SydneyIcon from '../assets/icons/opera-house.svg?react'
+import KoalaIcon from '../assets/icons/koala.svg?react'
+import SpeakerIcon from '../assets/icons/speaker.svg?react'
+import PianoIcon from '../assets/icons/piano2.svg?react'
+import FloralIcon from '../assets/icons/floral-spring.svg?react'
+import GuitarIcon from '../assets/icons/guitar.svg?react'
 
 import Background from '../assets/backgrounds/garden-tree.svg'
 
@@ -43,21 +40,8 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
 
   return (
     <div>
-      {/* <div
-        sx={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          height: '100%',
-          width: '100%',
-          backgroundColor: '#f7caca',
-          backgroundRepeat: 'repeat',
-          backgroundAttachment: 'fixed',
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23be9cc1' fill-opacity='0.3'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E")`
-        }}
-      /> */}
       <img
-        src={Background}
+        src={Background.src}
         alt="hero background"
         sx={{
           position: 'fixed',
@@ -139,7 +123,6 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           >
             {isDark ? `Light Theme` : `Dark Theme`}
           </button>
-          {/* <Intro /> */}
           <h1
             sx={{
               fontSize: [6, 7, 8],

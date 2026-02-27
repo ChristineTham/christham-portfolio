@@ -1,6 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { jsx } from 'theme-ui'
+import React from 'react'
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
 import Content from '../elements/content'
@@ -10,23 +11,23 @@ import { iconpos } from '../styles/utils'
 
 import Background from '../assets/backgrounds/river.svg'
 
-import ProjectsMDX from '../sections/projects.mdx'
+import ProjectsMDX from '../sections/Projects'
 
-import WrenchIcon from '../assets/icons/adjustable-wrench.svg'
-import RubikIcon from '../assets/icons/Rubik.svg'
-import BlueprintIcon from '../assets/icons/blueprint.svg'
-import AtomIcon from '../assets/icons/atom.svg'
-import PuzzleIcon from '../assets/icons/puzzle.svg'
-import CloudIcon from '../assets/icons/computing-cloud.svg'
-import FolderIcon from '../assets/icons/folders.svg'
-import GearsIcon from '../assets/icons/gears.svg'
-import GraphicsIcon from '../assets/icons/graphics.svg'
-import NotebookIcon from '../assets/icons/notebook2.svg'
-import WorkflowIcon from '../assets/icons/workflow.svg'
-import CalculatorIcon from '../assets/icons/calculator.svg'
-import ChipIcon from '../assets/icons/chip.svg'
-import CompassIcon from '../assets/icons/compass.svg'
-import ProgrammingIcon from '../assets/icons/programming.svg'
+import WrenchIcon from '../assets/icons/adjustable-wrench.svg?react'
+import RubikIcon from '../assets/icons/Rubik.svg?react'
+import BlueprintIcon from '../assets/icons/blueprint.svg?react'
+import AtomIcon from '../assets/icons/atom.svg?react'
+import PuzzleIcon from '../assets/icons/puzzle.svg?react'
+import CloudIcon from '../assets/icons/computing-cloud.svg?react'
+import FolderIcon from '../assets/icons/folders.svg?react'
+import GearsIcon from '../assets/icons/gears.svg?react'
+import GraphicsIcon from '../assets/icons/graphics.svg?react'
+import NotebookIcon from '../assets/icons/notebook2.svg?react'
+import WorkflowIcon from '../assets/icons/workflow.svg?react'
+import CalculatorIcon from '../assets/icons/calculator.svg?react'
+import ChipIcon from '../assets/icons/chip.svg?react'
+import CompassIcon from '../assets/icons/compass.svg?react'
+import ProgrammingIcon from '../assets/icons/programming.svg?react'
 
 const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 2 }) => (
   <div>
@@ -53,7 +54,7 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
     </Content>
     <Divider speed={0.1} offset={offset} factor={factor}>
       <img
-        src={Background}
+        src={Background.src}
         alt="projects background"
         sx={{
           position: 'fixed',

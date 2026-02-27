@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import * as React from "react"
 import { keyframes, css, jsx } from "@emotion/react"
 
@@ -33,18 +33,18 @@ const upDownWide = keyframes`
 `
 
 const upDownAnimation = css`
-  ${upDown} 4s ease-in-out infinite alternate;
+  animation: ${upDown} 4s ease-in-out infinite alternate;
 `
 
 const upDownWideAnimation = css`
-  ${upDownWide} 18s ease-in-out infinite alternate;
+  animation: ${upDownWide} 18s ease-in-out infinite alternate;
 `
 
 export function UpDown({ children }: { children: React.ReactNode }) {
   return (
     <div
       css={css`
-        animation: ${upDownAnimation};
+        ${upDownAnimation};
         position: absolute;
         top: 0;
         left: 0;
@@ -61,7 +61,7 @@ export function UpDownWide({ children }: { children: React.ReactNode }) {
   return (
     <div
       css={css`
-        animation: ${upDownWideAnimation};
+        ${upDownWideAnimation};
         position: absolute;
         top: 0;
         left: 0;
@@ -74,4 +74,6 @@ export function UpDownWide({ children }: { children: React.ReactNode }) {
   )
 }
 
-export const waveAnimation = (length: string) => `${wave} ${length} linear infinite alternate`
+export const waveAnimation = (length: string) => css`
+    animation: ${wave} ${length} linear infinite alternate;
+`

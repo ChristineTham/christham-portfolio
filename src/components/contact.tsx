@@ -1,6 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { jsx } from 'theme-ui'
+import React from 'react'
 import styled from '@emotion/styled'
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
@@ -10,19 +11,19 @@ import { UpDown, UpDownWide, waveAnimation } from '../styles/animations'
 import Footer from './footer'
 import { hidden, iconpos } from '../styles/utils'
 
-import ContactMDX from '../sections/contact.mdx'
+import ContactMDX from '../sections/Contact'
 
 import Background from '../assets/backgrounds/lake.svg'
 
-import AgendaIcon from '../assets/icons/agenda.svg'
-import CheckListIcon from '../assets/icons/check-list.svg'
-import EmailIcon from '../assets/icons/email.svg'
-import PhoneIcon from '../assets/icons/smartphone.svg'
-import IDCardIcon from '../assets/icons/id-card.svg'
-import MapIcon from '../assets/icons/map.svg'
-import MessageIcon from '../assets/icons/message.svg'
-import SendIcon from '../assets/icons/send.svg'
-import PostItIcon from '../assets/icons/post-it.svg'
+import AgendaIcon from '../assets/icons/agenda.svg?react'
+import CheckListIcon from '../assets/icons/check-list.svg?react'
+import EmailIcon from '../assets/icons/email.svg?react'
+import PhoneIcon from '../assets/icons/smartphone.svg?react'
+import IDCardIcon from '../assets/icons/id-card.svg?react'
+import MapIcon from '../assets/icons/map.svg?react'
+import MessageIcon from '../assets/icons/message.svg?react'
+import SendIcon from '../assets/icons/send.svg?react'
+import PostItIcon from '../assets/icons/post-it.svg?react'
 
 const InnerWave = styled.div`
   path {
@@ -58,7 +59,7 @@ const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor
     </Content>
     <Divider speed={0.1} offset={offset} factor={factor}>
       <img
-        src={Background}
+        src={Background.src}
         alt="contact background"
         sx={{
           position: 'fixed',

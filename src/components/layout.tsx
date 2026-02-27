@@ -1,13 +1,14 @@
-import * as React from "react"
-import { get } from "theme-ui"
-import { MDXProvider } from "@mdx-js/react"
+/** @jsxImportSource theme-ui */
+import React from "react"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { get, ThemeProvider, jsx } from "theme-ui"
 import { Global } from "@emotion/react"
-import MdxComponents from "./mdx-components"
+import theme from "../theme"
 
 type LayoutProps = { children: React.ReactNode; className?: string }
 
 const Layout = ({ children, className = `` }: LayoutProps) => (
-  <React.Fragment>
+  <ThemeProvider theme={theme}>
     <Global
       styles={(t) => ({
         "*": {
@@ -28,10 +29,8 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
         },
       })}
     />
-    <MDXProvider components={MdxComponents}>
-      <main className={className}>{children}</main>
-    </MDXProvider>
-  </React.Fragment>
+    <main className={className}>{children}</main>
+  </ThemeProvider>
 )
 
 export default Layout

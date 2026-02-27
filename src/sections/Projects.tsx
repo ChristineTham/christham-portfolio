@@ -1,0 +1,74 @@
+/** @jsxImportSource theme-ui */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { jsx } from 'theme-ui'
+import ProjectCard from '../components/project-card'
+
+const Projects = () => (
+  <>
+    <h2>Portfolio</h2>
+    <ProjectCard
+      title="Learning Jamstack"
+      link="https://learning-jamstack.now.sh"
+      bg="linear-gradient(to right, #F0047F 0%, #ec809e 100%)"
+      image="learning-jamstack.jpg"
+    >
+      My adventures learning how to build websites and apps in 2020 using the Jamstack architecture, auto workflows and modern build
+      tools.
+    </ProjectCard>
+    <ProjectCard
+      title="ChrisTham.net"
+      link="https://christham.net"
+      bg="linear-gradient(to right, #b565a7 0%, #be9cc1 100%)"
+      image="christham.jpg"
+    >
+      My personal web site.
+    </ProjectCard>
+    <ProjectCard
+      title="Hello Tham"
+      link="https://hellotham.com"
+      bg="linear-gradient(to right, #660099 0%, #cc3366 100%)"
+      image="hellotham.jpg"
+    >
+      My company web site.
+    </ProjectCard>
+    <ProjectCard
+      title="Travels Through A Lens"
+      link="https://travel.christham.net"
+      bg="linear-gradient(to right, #64bfa4 0%, #919bc9 100%)"
+      image="travel.jpg"
+    >
+      This is a web site that documents my travel adventures.
+    </ProjectCard>
+    <ProjectCard
+      title="Visual Voyager"
+      link="https://visualvoyager.net"
+      bg="linear-gradient(to right, #27272a 0%, #a49e9e 100%)"
+      image="visualvoyager.jpg"
+    >
+      Explore the world we live in, as seen through our unique perspectives and experiences.
+    </ProjectCard>
+    <ProjectCard
+      title="My Record Collection"
+      link="https://christham-net.netlify.app/"
+      bg="linear-gradient(to right, #F0047F 0%, #ec809e 100%)"
+      image="my-record-collection.jpg"
+    >
+      Explore my LP collection.
+    </ProjectCard>
+    <ProjectCard
+      title="My Chakra Components"
+      link="https://my-chakra-components.vercel.app/"
+      bg="linear-gradient(to right, #b565a7 0%, #be9cc1 100%)"
+      image="my-chakra-components.jpg"
+    >
+      <span>
+        This site showcases example Chakra components (based on <a href="https://merakiui.com/">MerakiUI</a>
+        but rewritten in <a href="https://chakra-ui.com/">chakra-ui</a> using the
+        <a href="https://nextjs.org/">NextJS</a> framework and
+        <a href="https://reactjs.org">React</a>).
+      </span>
+    </ProjectCard>
+  </>
+)
+
+export default Projects
