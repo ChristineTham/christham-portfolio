@@ -11,7 +11,6 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "clean": "rm -rf .astro dist node_modules",
     "astro": "astro"
   },
   "dependencies": {
