@@ -62,8 +62,9 @@ typings/
 
 .cache
 **/.cache
-public
 
 .idea
 .vscode
 .DS_Store
+.astro
+dist
