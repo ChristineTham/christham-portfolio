@@ -93,6 +93,18 @@ const theme = merge(tailwind, {
     }
   },
   breakpoints: [`400px`, `600px`, `900px`, `1200px`, `1600px`],
+  fontSizes: [
+    `0.875rem`,
+    `1rem`,
+    `1.125rem`,
+    `1.25rem`,
+    `1.5rem`,
+    `1.875rem`,
+    `2.25rem`,
+    `3rem`,
+    `4rem`,
+    `4.5rem`,
+  ],
   styles: {
     root: {
       margin: 0,
