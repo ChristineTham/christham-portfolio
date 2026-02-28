@@ -1,12 +1,10 @@
-/** @jsxImportSource theme-ui */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx } from 'theme-ui'
+import React from 'react'
 
 const About = () => (
   <>
     <h2>About</h2>
     <blockquote>
-      Learning each day, and living with joy and happiness
+      <p>Learning each day, and living with joy and happiness</p>
     </blockquote>
     <h3>
       <em>artist, consultant, cyclist, designer, musician, photographer, world traveller</em>

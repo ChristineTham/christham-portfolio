@@ -1,7 +1,4 @@
-/** @jsxImportSource theme-ui */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx, useColorMode } from 'theme-ui'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { ReactTyped } from "react-typed"
 
 import Divider from '../elements/divider'
@@ -13,7 +10,6 @@ import { hidden, iconpos } from '../styles/utils'
 import MonitorIcon from '../assets/icons/monitor.svg?react'
 import HeadphoneIcon from '../assets/icons/headphones.svg?react'
 import HeartIcon from '../assets/icons/heart.svg?react'
-// import EaselIcon from '../assets/icons/easel.svg?react'
 import MusicIcon from '../assets/icons/musicnote.svg?react'
 import CameraIcon from '../assets/icons/photo-camera.svg?react'
 import TurntableIcon from '../assets/icons/turntable.svg?react'
@@ -35,32 +31,41 @@ import GuitarIcon from '../assets/icons/guitar.svg?react'
 import Background from '../assets/backgrounds/garden-tree.svg'
 
 const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => {
-  const [colorMode, setColorMode] = useColorMode<"light" | "dark">()
-  const isDark = colorMode === `dark`
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+    // Check initial color mode based on local storage or system preference
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      setIsDark(true);
+      document.documentElement.classList.add('dark');
+    } else {
+      setIsDark(false);
+      document.documentElement.classList.remove('dark');
+    }
+  }, [])
+
+  const toggleColorMode = () => {
+    if (isDark) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      setIsDark(false);
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      setIsDark(true);
+    }
+  }
 
   return (
     <div>
       <img
         src={Background.src}
         alt="hero background"
-        sx={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          opacity: 0.25
-        }}
+        className="fixed top-0 left-0 w-full opacity-25"
       />
       <Divider speed={0.2} offset={offset} factor={factor}>
         <p
-          sx={{
-            color: 'textMuted',
-            fontSize: '12px',
-            position: 'absolute',
-            top: '94%',
-            left: '1%',
-            zIndex: 10
-          }}
+          className="text-textMuted text-xs absolute top-[94%] left-[1%] z-10"
         >
           <em>Kawaii Flat</em> Icons made by{' '}
           <a href="https://www.flaticon.com/authors/freepik" title="Author">
@@ -73,77 +78,48 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           </a>
         </p>
         <UpDown>
-          <WebsiteIcon sx={iconpos(48, '60%', '62%', hidden)} />
-          <HomeIcon sx={iconpos(48, '10%', '12%')} />
-          <HeartIcon sx={iconpos(24, '60%', '15%', hidden)} />
+          <WebsiteIcon className={iconpos(48, '60%', '62%', hidden)} />
+          <HomeIcon className={iconpos(48, '10%', '12%')} />
+          <HeartIcon className={iconpos(24, '60%', '15%', hidden)} />
         </UpDown>
         <UpDownWide>
-          <PaletteIcon sx={iconpos(16, '35%', '5%')} />
-          <NotebookIcon sx={iconpos(16, '45%', '10%', hidden)} />
-          <BicycleIcon sx={iconpos(20, '75%', '8%')} />
-          <PortfolioIcon sx={iconpos(16, '85%', '20%')} />
-          <CameraIcon sx={iconpos(16, '30%', '65%')} />
-          <MusicIcon sx={iconpos(16, '19%', '58%')} />
-          <TravelIcon sx={iconpos(20, '90%', '50%')} />
-          <TurntableIcon sx={iconpos(48, '70%', '90%')} />
+          <PaletteIcon className={iconpos(16, '35%', '5%')} />
+          <NotebookIcon className={iconpos(16, '45%', '10%', hidden)} />
+          <BicycleIcon className={iconpos(20, '75%', '8%')} />
+          <PortfolioIcon className={iconpos(16, '85%', '20%')} />
+          <CameraIcon className={iconpos(16, '30%', '65%')} />
+          <MusicIcon className={iconpos(16, '19%', '58%')} />
+          <TravelIcon className={iconpos(20, '90%', '50%')} />
+          <TurntableIcon className={iconpos(48, '70%', '90%')} />
         </UpDownWide>
-        <MonitorIcon sx={iconpos(24, '5%', '70%', hidden)} />
-        <HeadphoneIcon sx={iconpos(16, '50%', '65%', hidden)} />
-        {/* <EaselIcon sx={iconpos(12, '30%', '30%', hidden)} /> */}
-        <SydneyIcon sx={iconpos(12, '4%', '20%')} />
-        <AustraliaIcon sx={iconpos(12, '20%', '5%')} />
-        <KoalaIcon sx={iconpos(12, '8%', '8%')} />
-        <SpeakerIcon sx={iconpos(12, '95%', '90%', hidden)} />
-        <PianoIcon sx={iconpos(20, '80%', '70%', hidden)} />
-        <FloralIcon sx={iconpos(64, '5%', '99%')} />
-        <GuitarIcon sx={iconpos(24, '40%', '80%', hidden)} />
-        {/* <SVG icon="hexa" width={16} stroke color="icon_darker" left="10%" top="50%" /> */}
+        <MonitorIcon className={iconpos(24, '5%', '70%', hidden)} />
+        <HeadphoneIcon className={iconpos(16, '50%', '65%', hidden)} />
+        <SydneyIcon className={iconpos(12, '4%', '20%')} />
+        <AustraliaIcon className={iconpos(12, '20%', '5%')} />
+        <KoalaIcon className={iconpos(12, '8%', '8%')} />
+        <SpeakerIcon className={iconpos(12, '95%', '90%', hidden)} />
+        <PianoIcon className={iconpos(20, '80%', '70%', hidden)} />
+        <FloralIcon className={iconpos(64, '5%', '99%')} />
+        <GuitarIcon className={iconpos(24, '40%', '80%', hidden)} />
       </Divider>
-      <Content sx={{ variant: 'texts.bigger' }} speed={0.4} offset={offset} factor={factor}>
+      <Content speed={0.4} offset={offset} factor={factor} className="text-lg md:text-xl lg:text-2xl">
         <Inner>
           <button
-            sx={{
-              variant: `buttons.toggle`,
-              fontWeight: `semibold`,
-              display: `block`,
-              mx: `auto`,
-              mb: 3,
-              borderRadius: 5,
-              position: 'absolute',
-              top: '1%',
-              left: '1%'
-            }}
-            onClick={() => {
-              const next = isDark ? `light` : `dark`
-              setColorMode(next)
-              document.documentElement.classList.value = `theme-ui-${next}`
-            }}
+            className="btn-toggle z-50"
+            onClick={toggleColorMode}
             type="button"
             aria-label="Toggle dark mode"
           >
             {isDark ? `Light Theme` : `Dark Theme`}
           </button>
           <h1
-            sx={{
-              fontSize: [6, 7, 8],
-              mt: 2,
-              mb: -2,
-              textShadow: 'rgba(255, 255, 255, 0.15) 0px 5px 35px',
-              letterSpacing: 'wide',
-              color: 'heading',
-              bg: isDark ? '#000000a0' : '#00000020',
-              p: 2,
-              borderRadius: 5
-            }}
+            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-8 mb-[-0.5rem] tracking-wide text-heading p-2 rounded-lg ${isDark ? 'bg-black/60' : 'bg-black/10'}`}
+            style={{ textShadow: 'rgba(255, 255, 255, 0.15) 0px 5px 35px' }}
           >
             Hi, I am Chris Tham
           </h1>
           <ReactTyped
-            sx={{
-              fontSize: [4, 6],
-              color: 'rosely10',
-              fontFamily: 'mono'
-            }}
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-rosely10 font-mono"
             strings={['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller']}
             typeSpeed={100}
             backSpeed={50}

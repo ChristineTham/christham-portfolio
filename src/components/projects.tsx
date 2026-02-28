@@ -1,6 +1,3 @@
-/** @jsxImportSource theme-ui */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx } from 'theme-ui'
 import React from 'react'
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
@@ -33,21 +30,14 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
   <div>
     <Divider
       bg="linear-gradient(to right, #f7caca 0%, #93a9d1 100%)"
-      sx={{ clipPath: `polygon(0 15%, 100% 25%, 100% 85%, 0 75%)` }}
+      clipPath="polygon(0 15%, 100% 25%, 100% 85%, 0 75%)"
       speed={-0.2}
       offset={1.1}
       factor={factor}
     />
     <Content speed={0.4} offset={offset + 0.2} factor={factor}>
       <Inner>
-        <div
-          sx={{
-            display: `grid`,
-            gridGap: [2, 4, 4, 5],
-            gridTemplateColumns: [`1fr`, `1fr`, `repeat(2, 1fr)`],
-            h2: { gridColumn: `-1/1`, color: `rosely4 !important` }
-          }}
-        >
+        <div className="grid gap-8 md:gap-12 lg:gap-16 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 [&>h2]:col-span-full [&>h2]:!text-rosely4">
           <ProjectsMDX />
         </div>
       </Inner>
@@ -56,34 +46,28 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
       <img
         src={Background.src}
         alt="projects background"
-        sx={{
-          position: 'fixed',
-          left: 0,
-          top: '25%',
-          width: '100%',
-          opacity: 0.3
-        }}
+        className="fixed left-0 top-1/4 w-full opacity-30"
       />
       <UpDown>
-        <WrenchIcon sx={iconpos(16, '85%', '75%')} />
-        <RubikIcon sx={iconpos(16, '70%', '20%')} />
-        <BlueprintIcon sx={iconpos(48, '25%', '5%')} />
-        <PuzzleIcon sx={iconpos(16, '17%', '60%')} />
+        <WrenchIcon {...iconpos(16, '85%', '75%')} />
+        <RubikIcon {...iconpos(16, '70%', '20%')} />
+        <BlueprintIcon {...iconpos(48, '25%', '5%')} />
+        <PuzzleIcon {...iconpos(16, '17%', '60%')} />
       </UpDown>
       <UpDownWide>
-        <AtomIcon sx={iconpos(64, '20%', '90%')} />
-        <CloudIcon sx={iconpos(16, '90%', '30%')} />
-        <FolderIcon sx={iconpos(48, '70%', '90%')} />
-        <GearsIcon sx={iconpos(48, '18%', '75%')} />
-        <GraphicsIcon sx={iconpos(16, '75%', '10%')} />
-        <NotebookIcon sx={iconpos(48, '45%', '10%')} />
+        <AtomIcon {...iconpos(64, '20%', '90%')} />
+        <CloudIcon {...iconpos(16, '90%', '30%')} />
+        <FolderIcon {...iconpos(48, '70%', '90%')} />
+        <GearsIcon {...iconpos(48, '18%', '75%')} />
+        <GraphicsIcon {...iconpos(16, '75%', '10%')} />
+        <NotebookIcon {...iconpos(48, '45%', '10%')} />
       </UpDownWide>
-      <WorkflowIcon sx={iconpos(16, '4%', '20%')} />
-      <CompassIcon sx={iconpos(16, '80%', '60%')} />
-      <ProgrammingIcon sx={iconpos(16, '10%', '10%')} />
-      <BlueprintIcon sx={iconpos(16, '29%', '26%')} />
-      <CalculatorIcon sx={iconpos(16, '75%', '30%')} />
-      <ChipIcon sx={iconpos(16, '80%', '70%')} />
+      <WorkflowIcon {...iconpos(16, '4%', '20%')} />
+      <CompassIcon {...iconpos(16, '80%', '60%')} />
+      <ProgrammingIcon {...iconpos(16, '10%', '10%')} />
+      <BlueprintIcon {...iconpos(16, '29%', '26%')} />
+      <CalculatorIcon {...iconpos(16, '75%', '30%')} />
+      <ChipIcon {...iconpos(16, '80%', '70%')} />
     </Divider>
   </div>
 )

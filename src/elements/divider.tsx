@@ -1,4 +1,4 @@
-/** @jsxImportSource theme-ui */
+import React from 'react'
 import { ParallaxLayer } from "@react-spring/parallax"
 
 type DividerProps = {
@@ -23,22 +23,16 @@ const Divider = ({
   className = ``,
 }: DividerProps) => (
   <ParallaxLayer
-    sx={{
-      position: `absolute`,
-      width: `full`,
-      height: `full`,
-      background: bg,
-      backgroundColor: bg,
-      "#contact-wave": {
-        color: fill,
-        fill: `currentColor`,
-      },
-      clipPath,
+    className={`absolute w-full h-full ${className}`}
+    style={{
+        background: bg.startsWith('linear-gradient') ? bg : (bg.startsWith('var') ? bg : (bg ? `var(--color-${bg})` : '')),
+        clipPath: clipPath,
+        color: fill ? (fill.startsWith('var') ? fill : `var(--color-${fill})`) : '',
+        fill: 'currentColor',
     }}
     speed={speed}
     offset={offset}
     factor={factor}
-    className={className}
   >
     {children}
   </ParallaxLayer>

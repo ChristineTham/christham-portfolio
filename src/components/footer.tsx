@@ -1,35 +1,23 @@
-/** @jsxImportSource theme-ui */
 import React from "react"
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Box, Flex, Link, jsx } from 'theme-ui'
 
 const Footer: React.FC = () => {
   return (
-    <Box as="footer" variant="footer">
+    <div className="text-center block absolute bottom-0 text-textMuted px-4 py-8 sm:px-6 sm:py-12 w-full left-0">
       Copyright &copy; {new Date().getFullYear()}. All rights reserved.
       <br />
-      <Flex
-        sx={{
-          justifyContent: `center`,
-          alignItems: `center`,
-          mt: 3,
-          color: `text`,
-          fontWeight: `semibold`,
-          a: { color: `text` }
-        }}
-      >
+      <div className="flex justify-center items-center mt-6 text-text font-semibold [&>a]:text-text">
         <img width="30" height="30" src="/logo.svg" alt="Hello Tham Logo" />
         {` `}
-        <Link aria-label="Link to the theme's GitHub repository" sx={{ ml: 2 }} href="https://github.com/ChristineTham/christham-portfolio">
+        <a aria-label="Link to the theme's GitHub repository" className="ml-2 hover:underline" href="https://github.com/ChristineTham/christham-portfolio">
           Website
-        </Link>
-        <div sx={{ mx: 1 }}>by</div>
+        </a>
+        <div className="mx-2">by</div>
         {` `}
-        <Link aria-label="Link to the theme author's website" href="https://hellotham.com">
+        <a aria-label="Link to the theme author's website" className="hover:underline" href="https://hellotham.com">
           Hello Tham Pty Ltd
-        </Link>
-      </Flex>
-    </Box>
+        </a>
+      </div>
+    </div>
   )
 }
 

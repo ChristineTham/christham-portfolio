@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #8c4e80;
+    --color-secondary: #93a9d1;
+    --color-text: #27272a;
+    --color-heading: #85677b;
+    --color-background: #f4dede;
+    --color-divider: #f4eee8;
+    --color-textMuted: #303030;
+    --color-icon_brightest: #be9cc1;
+    --color-icon_darker: #b0879b;
+    --color-icon_darkest: #85677b;
+    --color-icon_red: #d2386c;
+    --color-icon_blue: #919bc9;
+    --color-icon_orange: #ec809e;
+    --color-icon_yellow: #eada4f;
+    --color-icon_pink: #F0047F;
+    --color-icon_purple: #be9cc1;
+    --color-icon_green: #64bfa4;
+  }
+
+  .dark {
+    --color-primary: #93a9d1;
+    --color-text: #f4dede;
+    --color-heading: #f7caca;
+    --color-background: #27272a;
+    --color-textMuted: #909090;
+    --color-divider: #85677b;
+    --color-icon_brightest: #f7caca;
+    --color-icon_darker: #b0879b;
+    --color-icon_darkest: #85677b;
+  }
+
+  html {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-text;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    @apply text-primary transition-all duration-300 ease-in-out hover:no-underline;
+  }
+
+  p {
+    @apply text-text mb-4;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-heading;
+  }
+
+  h1 { @apply text-4xl sm:text-5xl md:text-6xl mt-8 mb-12 tracking-wide; }
+  h2 { @apply text-3xl sm:text-4xl md:text-5xl mt-8 mb-8; }
+  h3 { @apply text-2xl sm:text-3xl md:text-4xl mt-12; }
+  h4 { @apply text-xl sm:text-2xl md:text-3xl; }
+  h5 { @apply text-lg sm:text-xl md:text-2xl; }
+  h6 { @apply text-base mb-8; }
+
+  blockquote {
+    @apply ml-0;
+  }
+  blockquote p {
+    @apply text-xl sm:text-2xl font-medium text-heading;
+  }
+
+  /* Additional component classes */
+  .btn-toggle {
+    @apply bg-text text-background border-none cursor-pointer self-center px-4 py-2 ml-4 font-semibold block mx-auto mb-12 rounded-lg absolute top-[1%] left-[1%];
+  }
+}

@@ -1,6 +1,4 @@
-/** @jsxImportSource theme-ui */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx } from 'theme-ui'
+import React from 'react'
 
 const Intro = () => (
     <div>

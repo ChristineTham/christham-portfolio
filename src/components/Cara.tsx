@@ -1,6 +1,3 @@
-/** @jsxImportSource theme-ui */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx } from 'theme-ui'
 import React from "react"
 import { Parallax } from "@react-spring/parallax"
 import Layout from "./layout"
