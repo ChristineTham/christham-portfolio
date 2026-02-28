@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
-import { withPrefix } from "gatsby"
+/** @jsxImportSource theme-ui */
 import { hidden } from "../styles/utils"
 
 type IconType = "triangle" | "circle" | "arrowUp" | "upDown" | "box" | "hexa" | "cross"
@@ -39,7 +37,7 @@ const Svg = ({ stroke = false, color = ``, width, icon, left, top, hiddenMobile 
     }}
     viewBox={viewBox[icon]}
   >
-    <use href={withPrefix(`/icons.svg#${icon}`)} />
+    <use href={`/icons.svg#${icon}`} />
   </svg>
 )
 

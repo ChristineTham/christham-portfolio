@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
+/** @jsxImportSource theme-ui */
 import { ParallaxLayer } from "@react-spring/parallax"
 
 type ContentProps = {

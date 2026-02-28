@@ -1,16 +1,15 @@
+/** @jsxImportSource theme-ui */
 import * as React from "react";
-import { HeadFC, Link, PageProps } from "gatsby";
 import { Parallax } from "@react-spring/parallax";
 import { Themed } from "@theme-ui/mdx";
-import Layout from "../components/layout";
+import Layout from "./layout";
 import Divider from "../elements/divider";
 import { UpDown, UpDownWide } from "../styles/animations";
-import Svg from "../components/svg";
-import Seo from "../components/seo";
+import Svg from "./svg";
 import Content from "../elements/content";
 import Inner from "../elements/inner";
 
-const NotFound = (_props: PageProps) => (
+const NotFound = () => (
   <Layout>
     <Parallax pages={1}>
       <div>
@@ -191,7 +190,7 @@ const NotFound = (_props: PageProps) => (
           <Inner>
             <Themed.h1>404 - Page not found</Themed.h1>
             <Themed.p>
-              Go back to <Link to="/">homepage</Link>.
+              Go back to <a href="/">homepage</a>.
             </Themed.p>
           </Inner>
         </Content>
@@ -201,5 +200,3 @@ const NotFound = (_props: PageProps) => (
 );
 
 export default NotFound;
-
-export const Head: HeadFC = () => <Seo title="404 - Not Found" />;
