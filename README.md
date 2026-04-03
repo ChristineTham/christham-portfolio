@@ -1,5 +1,7 @@
 # Chris Tham Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ebf8fae8-4b81-4c53-ac38-3684ccbd6cf1/deploy-status)](https://app.netlify.com/projects/christham-portfolio/deploys)
+
 ![screenshot](rawassets/portfolio.png)
 
 Chris Tham Portfolio is a [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) site built using
@@ -8,6 +10,7 @@ Chris Tham Portfolio is a [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) site b
 with [Kawaii Flat Icons](https://www.flaticon.com/authors/kawaii/flat).
 
 [**Website**](https://portfolio.christham.net)
+
 
 ## ✨ Features
 
