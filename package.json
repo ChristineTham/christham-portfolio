@@ -17,10 +17,14 @@
     "test": "vitest run",
     "test:watch": "vitest"
   },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
+  },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@mdx-js/react": "^3.1.1",
+    "@mdx-js/react": "^2.3.0",
     "@react-spring/parallax": "^9.7.3",
     "@react-spring/web": "^9.7.3",
     "@theme-ui/mdx": "^0.17.4",
@@ -32,7 +36,6 @@
     "gatsby-plugin-mdx": "^5.16.0",
     "gatsby-plugin-react-svg": "^3.3.0",
     "gatsby-plugin-sharp": "^5.16.0",
-    "gatsby-plugin-theme-ui": "^0.17.4",
     "gatsby-source-filesystem": "^5.16.0",
     "gatsby-transformer-sharp": "^5.16.0",
     "react": "^19.2.4",

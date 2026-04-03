@@ -66,8 +66,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {},
-    },
-    `gatsby-plugin-theme-ui`
+    }
   ].filter(Boolean) as Array<PluginRef>,
 };
 
