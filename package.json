@@ -25,8 +25,8 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mdx-js/react": "^2.3.0",
-    "@react-spring/parallax": "^9.7.3",
-    "@react-spring/web": "^9.7.3",
+    "@react-spring/parallax": "^10.0.3",
+    "@react-spring/web": "^10.0.3",
     "@theme-ui/mdx": "^0.17.4",
     "@theme-ui/preset-tailwind": "^0.17.4",
     "gatsby": "^5.16.1",
@@ -55,7 +55,7 @@
     "baseline-browser-mapping": "^2.10.0",
     "cross-env": "^10.1.0",
     "jsdom": "^29.0.1",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.2",
     "vitest": "^4.1.2"
   }
 }
