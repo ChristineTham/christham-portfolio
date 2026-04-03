@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
+import React from "react"
 import { ParallaxLayer } from "@react-spring/parallax"
 
 type ContentProps = {
@@ -12,8 +11,10 @@ type ContentProps = {
 
 const Content = ({ speed, offset, children, className = ``, factor = 1 }: ContentProps) => (
   <ParallaxLayer
-    sx={{
-      padding: [3, 4, 4, 5],
+    css={{
+      padding: '0.75rem',
+      '@media (min-width: 400px)': { padding: '1rem' },
+      '@media (min-width: 900px)': { padding: '1.25rem' },
       display: `flex`,
       flexDirection: `column`,
       alignItems: `center`,

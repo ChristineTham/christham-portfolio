@@ -1,13 +1,11 @@
-/** @jsx jsx */
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx } from 'theme-ui'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 type ProjectCardProps = {
   link: string
   title: string
+  children?: React.ReactNode
   image?: string
   bg: string
 }
@@ -39,22 +37,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
       href={link}
       target="_blank"
       rel="noreferrer noopener"
-      sx={{
+      css={{
         width: `100%`,
-        boxShadow: `lg`,
+        boxShadow: `0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)`,
         position: `relative`,
         textDecoration: `none`,
-        borderRadius: `lg`,
-        px: [3, 4],
-        py: [2, 3],
+        borderRadius: `0.5rem`,
+        paddingLeft: '0.75rem',
+        paddingRight: '0.75rem',
+        paddingTop: '0.5rem',
+        paddingBottom: '0.5rem',
+        '@media (min-width: 400px)': {
+          paddingLeft: '1rem',
+          paddingRight: '1rem',
+          paddingTop: '0.75rem',
+          paddingBottom: '0.75rem',
+        },
         color: `white`,
         background: bg || `none`,
         transition: `all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important`,
+        display: 'block',
         '&:hover': {
           color: `white !important`,
           transform: `translateY(-5px)`,
-          boxShadow: `xl`
-        }
+          boxShadow: `0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04)`,
+        },
       }}
     >
       <GatsbyImage
@@ -63,17 +70,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
         loading="eager"
       />
       <div
-        sx={{
-          letterSpacing: `wide`,
-          pt: 2,
-          fontSize: [4, 5],
-          fontWeight: `medium`,
-          lineHeight: 1
+        css={{
+          letterSpacing: `0.025em`,
+          paddingTop: '0.5rem',
+          fontSize: '1.5rem',
+          '@media (min-width: 400px)': { fontSize: '1.875rem' },
+          fontWeight: 500,
+          lineHeight: 1,
         }}
       >
         {title}
       </div>
-      <div sx={{ opacity: 0.85, textShadow: `0 2px 10px rgba(0, 0, 0, 0.3)`, fontSize: [0, 1] }}>{children}</div>
+      <div
+        css={{
+          opacity: 0.85,
+          textShadow: `0 2px 10px rgba(0, 0, 0, 0.3)`,
+          fontSize: '0.875rem',
+          '@media (min-width: 400px)': { fontSize: '1rem' },
+        }}
+      >
+        {children}
+      </div>
     </a>
   )
 }

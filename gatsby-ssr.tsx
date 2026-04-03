@@ -1,10 +1,25 @@
 import * as React from 'react'
-import { InitializeColorMode } from 'theme-ui'
 import { wrapRootElement as wrap } from './src/wrap-root-element'
+
+// Inline script injected before page render to apply the stored color mode
+// class before React hydrates, preventing a flash of the wrong theme.
+const noFlashScript = `
+(function() {
+  try {
+    var mode = localStorage.getItem('color-mode');
+    if (mode === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  } catch (e) {}
+})();
+`
 
 export const onRenderBody = ({ setPreBodyComponents }: any) => {
   setPreBodyComponents([
-    <InitializeColorMode key="theme-ui-no-flash" />
+    <script
+      key="color-mode-no-flash"
+      dangerouslySetInnerHTML={{ __html: noFlashScript }}
+    />,
   ])
 }
 

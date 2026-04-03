@@ -1,6 +1,4 @@
-/** @jsx jsx */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx } from 'theme-ui'
+import React from 'react'
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
 import Content from '../elements/content'
@@ -28,36 +26,36 @@ import RubikIcon from '../assets/icons/Rubik.svg'
 
 const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>
-    <Divider bg="divider" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={offset} factor={factor} />
+    <Divider bg="var(--color-divider)" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={offset} factor={factor} />
     <Divider speed={0.1} offset={offset} factor={factor}>
       <img
         src={Background}
         alt="about background"
-        sx={{
+        css={{
           position: 'fixed',
           left: 0,
           top: 0,
           width: '100%',
-          opacity: 0.1
+          opacity: 0.1,
         }}
       />
       <UpDown>
-        <PawIcon sx={iconpos(64, '50%', '75%', hidden)} />
-        <CoffeeIcon sx={iconpos(32, '60%', '20%', hidden)} />
-        <ReadingIcon sx={iconpos(16, '25%', '5%')} />
-        <SunglassesIcon sx={iconpos(16, '80%', '80%', hidden)} />
+        <PawIcon css={iconpos(64, '50%', '75%', hidden)} />
+        <CoffeeIcon css={iconpos(32, '60%', '20%', hidden)} />
+        <ReadingIcon css={iconpos(16, '25%', '5%')} />
+        <SunglassesIcon css={iconpos(16, '80%', '80%', hidden)} />
       </UpDown>
       <UpDownWide>
-        <RubikIcon sx={iconpos(48, '5%', '80%', hidden)} />
-        <WineIcon sx={iconpos(16, '95%', '50%')} />
-        <PhotoIcon sx={iconpos(16, '85%', '15%', hidden)} />
-        <BooksIcon sx={iconpos(16, '45%', '10%', hidden)} />
+        <RubikIcon css={iconpos(48, '5%', '80%', hidden)} />
+        <WineIcon css={iconpos(16, '95%', '50%')} />
+        <PhotoIcon css={iconpos(16, '85%', '15%', hidden)} />
+        <BooksIcon css={iconpos(16, '45%', '10%', hidden)} />
       </UpDownWide>
-      <FlowerIcon sx={iconpos(16, '4%', '20%', hidden)} />
-      {/* <CocktailIcon sx={iconpos(16, '70%', '60%')} /> */}
-      <DogIcon sx={iconpos(16, '10%', '10%')} />
-      {/* <IceCreamIcon sx={iconpos(16, '20%', '30%', hidden)} /> */}
-      <WebsiteIcon sx={iconpos(16, '80%', '70%')} />
+      <FlowerIcon css={iconpos(16, '4%', '20%', hidden)} />
+      {/* <CocktailIcon css={iconpos(16, '70%', '60%')} /> */}
+      <DogIcon css={iconpos(16, '10%', '10%')} />
+      {/* <IceCreamIcon css={iconpos(16, '20%', '30%', hidden)} /> */}
+      <WebsiteIcon css={iconpos(16, '80%', '70%')} />
     </Divider>
     <Content speed={0.4} offset={offset} factor={factor}>
       <Inner>

@@ -1,34 +1,52 @@
-/** @jsx jsx */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Box, Flex, Link, jsx } from 'theme-ui'
+import React from 'react'
+import styled from '@emotion/styled'
+
+const FooterEl = styled.footer`
+  text-align: center;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  color: var(--color-textMuted);
+  padding: 0.75rem 0.5rem;
+  @media (min-width: 400px) {
+    padding: 1rem 0.75rem;
+  }
+`
+
+const FooterFlex = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.75rem;
+  color: var(--color-text);
+  font-weight: 600;
+  a {
+    color: var(--color-text);
+  }
+`
 
 const Footer: React.FC = () => {
   return (
-    <Box as="footer" variant="footer">
+    <FooterEl>
       Copyright &copy; {new Date().getFullYear()}. All rights reserved.
       <br />
-      <Flex
-        sx={{
-          justifyContent: `center`,
-          alignItems: `center`,
-          mt: 3,
-          color: `text`,
-          fontWeight: `semibold`,
-          a: { color: `text` }
-        }}
-      >
+      <FooterFlex>
         <img width="30" height="30" src="/logo.svg" alt="Hello Tham Logo" />
         {` `}
-        <Link aria-label="Link to the theme's GitHub repository" sx={{ ml: 2 }} href="https://github.com/ChristineTham/christham-portfolio">
+        <a
+          aria-label="Link to the theme's GitHub repository"
+          css={{ marginLeft: '0.5rem' }}
+          href="https://github.com/ChristineTham/christham-portfolio"
+        >
           Website
-        </Link>
-        <div sx={{ mx: 1 }}>by</div>
+        </a>
+        <div css={{ margin: '0 0.25rem' }}>by</div>
         {` `}
-        <Link aria-label="Link to the theme author's website" href="https://hellotham.com">
+        <a aria-label="Link to the theme author's website" href="https://hellotham.com">
           Hello Tham Pty Ltd
-        </Link>
-      </Flex>
-    </Box>
+        </a>
+      </FooterFlex>
+    </FooterEl>
   )
 }
 

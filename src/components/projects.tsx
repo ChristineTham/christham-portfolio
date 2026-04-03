@@ -1,6 +1,4 @@
-/** @jsx jsx */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx } from 'theme-ui'
+import React from 'react'
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
 import Content from '../elements/content'
@@ -32,7 +30,7 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
   <div>
     <Divider
       bg="linear-gradient(to right, #f7caca 0%, #93a9d1 100%)"
-      sx={{ clipPath: `polygon(0 15%, 100% 25%, 100% 85%, 0 75%)` }}
+      clipPath="polygon(0 15%, 100% 25%, 100% 85%, 0 75%)"
       speed={-0.2}
       offset={1.1}
       factor={factor}
@@ -40,11 +38,14 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
     <Content speed={0.4} offset={offset + 0.2} factor={factor}>
       <Inner>
         <div
-          sx={{
+          css={{
             display: `grid`,
-            gridGap: [2, 4, 4, 5],
-            gridTemplateColumns: [`1fr`, `1fr`, `repeat(2, 1fr)`],
-            h2: { gridColumn: `-1/1`, color: `rosely4 !important` }
+            gridTemplateColumns: `1fr`,
+            gridGap: '0.5rem',
+            '@media (min-width: 400px)': { gridGap: '1rem' },
+            '@media (min-width: 600px)': { gridTemplateColumns: `repeat(2, 1fr)` },
+            '@media (min-width: 900px)': { gridGap: '1.25rem' },
+            '& h2': { gridColumn: `-1/1`, color: `#f7caca !important` },
           }}
         >
           <ProjectsMDX />
@@ -55,34 +56,34 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
       <img
         src={Background}
         alt="projects background"
-        sx={{
+        css={{
           position: 'fixed',
           left: 0,
           top: '25%',
           width: '100%',
-          opacity: 0.3
+          opacity: 0.3,
         }}
       />
       <UpDown>
-        <WrenchIcon sx={iconpos(16, '85%', '75%')} />
-        <RubikIcon sx={iconpos(16, '70%', '20%')} />
-        <BlueprintIcon sx={iconpos(48, '25%', '5%')} />
-        <PuzzleIcon sx={iconpos(16, '17%', '60%')} />
+        <WrenchIcon css={iconpos(16, '85%', '75%')} />
+        <RubikIcon css={iconpos(16, '70%', '20%')} />
+        <BlueprintIcon css={iconpos(48, '25%', '5%')} />
+        <PuzzleIcon css={iconpos(16, '17%', '60%')} />
       </UpDown>
       <UpDownWide>
-        <AtomIcon sx={iconpos(64, '20%', '90%')} />
-        <CloudIcon sx={iconpos(16, '90%', '30%')} />
-        <FolderIcon sx={iconpos(48, '70%', '90%')} />
-        <GearsIcon sx={iconpos(48, '18%', '75%')} />
-        <GraphicsIcon sx={iconpos(16, '75%', '10%')} />
-        <NotebookIcon sx={iconpos(48, '45%', '10%')} />
+        <AtomIcon css={iconpos(64, '20%', '90%')} />
+        <CloudIcon css={iconpos(16, '90%', '30%')} />
+        <FolderIcon css={iconpos(48, '70%', '90%')} />
+        <GearsIcon css={iconpos(48, '18%', '75%')} />
+        <GraphicsIcon css={iconpos(16, '75%', '10%')} />
+        <NotebookIcon css={iconpos(48, '45%', '10%')} />
       </UpDownWide>
-      <WorkflowIcon sx={iconpos(16, '4%', '20%')} />
-      <CompassIcon sx={iconpos(16, '80%', '60%')} />
-      <ProgrammingIcon sx={iconpos(16, '10%', '10%')} />
-      <BlueprintIcon sx={iconpos(16, '29%', '26%')} />
-      <CalculatorIcon sx={iconpos(16, '75%', '30%')} />
-      <ChipIcon sx={iconpos(16, '80%', '70%')} />
+      <WorkflowIcon css={iconpos(16, '4%', '20%')} />
+      <CompassIcon css={iconpos(16, '80%', '60%')} />
+      <ProgrammingIcon css={iconpos(16, '10%', '10%')} />
+      <BlueprintIcon css={iconpos(16, '29%', '26%')} />
+      <CalculatorIcon css={iconpos(16, '75%', '30%')} />
+      <ChipIcon css={iconpos(16, '80%', '70%')} />
     </Divider>
   </div>
 )

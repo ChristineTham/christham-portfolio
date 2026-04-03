@@ -22,35 +22,39 @@ describe('iconpos', () => {
     expect(result.position).toBe('absolute')
   })
 
-  it('sets size, left and top from arguments', () => {
+  it('sets width, height, left and top from arguments', () => {
     const result = iconpos(24, 10, 20)
-    expect(result.size).toBe(24)
+    expect(result.width).toBe('6rem')  // 24 maps to 6rem in Tailwind size scale
+    expect(result.height).toBe('6rem')
     expect(result.left).toBe(10)
     expect(result.top).toBe(20)
   })
 
-  it('defaults display to ["block"]', () => {
+  it('defaults display to block (always visible)', () => {
     const result = iconpos(24, 10, 20)
-    expect(result.display).toEqual(['block'])
+    expect(result.display).toBe('block')
   })
 
   it('accepts string values for size, left and top', () => {
     const result = iconpos('2rem', '10px', '20px')
-    expect(result.size).toBe('2rem')
+    expect(result.width).toBe('2rem')
+    expect(result.height).toBe('2rem')
     expect(result.left).toBe('10px')
     expect(result.top).toBe('20px')
   })
 
-  it('accepts a custom display array', () => {
-    const result = iconpos(16, 5, 10, ['block', 'none', 'block'])
-    expect(result.display).toEqual(['block', 'none', 'block'])
+  it('applies hidden display when hidden array is passed', () => {
+    const result = iconpos(16, 5, 10, ['none', 'none', 'block'])
+    expect(result.display).toBe('none')
+    expect((result['@media (min-width: 600px)'] as any).display).toBe('block')
   })
 
   it('returns the full CSS object shape', () => {
     const result = iconpos(32, 0, 0)
     expect(result).toMatchObject({
       position: 'absolute',
-      size: 32,
+      width: '8rem',  // 32 maps to 8rem
+      height: '8rem',
       left: 0,
       top: 0,
     })
