@@ -7,7 +7,7 @@ Chris Tham Portfolio is a [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) site b
 [gatsby-starter-portfolio-cara](https://cara.lekoarts.de). Rosely design theme,
 with [Kawaii Flat Icons](https://www.flaticon.com/authors/kawaii/flat).
 
-[**Website**](https://christham.gtsb.io)
+[**Website**](https://portfolio.christham.net)
 
 ## ✨ Features
 
