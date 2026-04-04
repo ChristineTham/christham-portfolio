@@ -156,7 +156,6 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
               '@media (min-width: 400px)': { fontSize: '2.25rem' },
               color: '#b565a7',
               fontFamily: fonts.mono,
-              display: 'block',
             }}
             strings={['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller']}
             typeSpeed={100}
