@@ -54,7 +54,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
         {title}
       </div>
       <div
-        className="opacity-85 text-sm xs:text-base"
+        className="opacity-80 text-sm xs:text-base"
         style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)' }}
       >
         {children}

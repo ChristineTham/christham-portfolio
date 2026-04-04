@@ -129,7 +129,6 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           </button>
           <h1
             style={{
-              fontSize: '2.25rem',
               marginTop: '0.5rem',
               marginBottom: '-0.5rem',
               textShadow: 'rgba(255, 255, 255, 0.15) 0px 5px 35px',
@@ -139,17 +138,16 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
               padding: '0.5rem',
               borderRadius: '5px',
             }}
-            className="xs:text-5xl sm:text-6xl"
+            className="text-4xl xs:text-5xl sm:text-6xl"
           >
             Hi, I am Chris Tham
           </h1>
           <ReactTyped
             style={{
-              fontSize: '1.5rem',
               color: rosely.rosely10,
               fontFamily: fonts.mono,
             }}
-            className="xs:text-4xl"
+            className="text-2xl xs:text-4xl"
             strings={['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller']}
             typeSpeed={100}
             backSpeed={50}
