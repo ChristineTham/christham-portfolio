@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { ReactTyped } from "react-typed"
 import { useColorMode } from '../hooks/useColorMode'
@@ -9,7 +11,7 @@ import Content from '../elements/content'
 import { UpDown, UpDownWide } from '../styles/animations'
 import { HIDDEN_MOBILE_CLASS, iconpos } from '../styles/utils'
 
-import Background from '../assets/backgrounds/garden-tree.svg'
+const Background = '/backgrounds/garden-tree.svg'
 
 import {
   MonitorIcon,

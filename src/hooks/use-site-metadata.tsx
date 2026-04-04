@@ -1,40 +1,14 @@
-import { graphql, useStaticQuery } from "gatsby"
-
-type UseSiteMetadataProps = {
-  site: {
-    siteMetadata: {
-      siteTitle: string
-      siteTitleAlt: string
-      siteHeadline: string
-      siteUrl: string
-      siteDescription: string
-      siteImage: string
-      siteLanguage: string
-      author: string
-      [key: string]: unknown
-    }
-  }
+const siteMetadata = {
+  siteTitle: `portfolio.christham.net`,
+  siteTitleAlt: `Chris Tham - Portfolio`,
+  siteHeadline: `Chris Tham - Portfolio`,
+  siteUrl: `https://portfolio.christham.net`,
+  siteDescription: `Chris Tham Portfolio is a single page website showcasing my other websites`,
+  siteLanguage: `en`,
+  siteImage: `/portfolio.jpg`,
+  author: `@chris1tham`,
 }
 
-const useSiteMetadata = () => {
-  const data = useStaticQuery<UseSiteMetadataProps>(graphql`
-    query {
-      site {
-        siteMetadata {
-          siteTitle
-          siteTitleAlt
-          siteHeadline
-          siteUrl
-          siteDescription
-          siteImage
-          siteLanguage
-          author
-        }
-      }
-    }
-  `)
-
-  return data.site.siteMetadata
-}
+const useSiteMetadata = () => siteMetadata
 
 export default useSiteMetadata

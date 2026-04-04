@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
@@ -5,8 +7,6 @@ import Content from '../elements/content'
 import { UpDown, UpDownWide } from '../styles/animations'
 
 import { iconpos } from '../styles/utils'
-
-import Background from '../assets/backgrounds/river.svg'
 
 import ProjectsMDX from '../sections/projects.mdx'
 
@@ -27,6 +27,8 @@ import {
   CompassIcon,
   ProgrammingIcon,
 } from '../assets/icons'
+
+const Background = '/backgrounds/river.svg'
 
 const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 2 }) => (
   <div>

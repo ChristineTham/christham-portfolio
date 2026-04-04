@@ -1,9 +1,11 @@
+'use client'
+
 import React, { createContext, useContext, useRef } from "react"
 import { motion, useScroll, useTransform, useMotionValue } from "motion/react"
 
 interface ParallaxContextValue {
   scrollY: ReturnType<typeof useMotionValue<number>>
-  containerRef: React.RefObject<HTMLDivElement>
+  containerRef: React.RefObject<HTMLDivElement | null>
 }
 
 const ParallaxContext = createContext<ParallaxContextValue | null>(null)

@@ -1,5 +1,6 @@
+'use client'
+
 import React from "react"
-import { withPrefix } from "gatsby"
 import { HIDDEN_MOBILE_CLASS } from "../styles/utils"
 
 type IconType = "triangle" | "circle" | "arrowUp" | "upDown" | "box" | "hexa" | "cross"
@@ -62,7 +63,7 @@ const Svg = ({ stroke = false, color = ``, width, icon, left, top, hiddenMobile 
       className={hiddenMobile ? HIDDEN_MOBILE_CLASS : undefined}
       viewBox={viewBox[icon]}
     >
-      <use href={withPrefix(`/icons.svg#${icon}`)} />
+      <use href={`/icons.svg#${icon}`} />
     </svg>
   )
 }

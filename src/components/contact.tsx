@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
@@ -8,8 +10,6 @@ import Footer from './footer'
 import { HIDDEN_MOBILE_CLASS, iconpos } from '../styles/utils'
 
 import ContactMDX from '../sections/contact.mdx'
-
-import Background from '../assets/backgrounds/lake.svg'
 
 import {
   AgendaIcon,
@@ -22,6 +22,8 @@ import {
   SendIcon,
   PostItIcon,
 } from '../assets/icons'
+
+const Background = '/backgrounds/lake.svg'
 
 const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>

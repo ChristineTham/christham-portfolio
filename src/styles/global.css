@@ -1,3 +1,5 @@
+@import "@fontsource-variable/noto-sans";
+@import "@fontsource-variable/noto-sans-mono";
 @import "tailwindcss";
 
 /* ─── Dark mode: activate when an ancestor has the `.dark` class ───────── */
