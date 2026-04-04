@@ -1,6 +1,6 @@
 import type React from "react"
 
-// CSS class applied to icons that should be hidden on mobile (< 600px)
+// CSS class applied to icons that should be hidden below 600px and shown at or above 600px
 export const HIDDEN_MOBILE_CLASS = 'icon-hidden-mobile'
 
 // Kept for backward compatibility; the array values represent [xs, sm, md] display values

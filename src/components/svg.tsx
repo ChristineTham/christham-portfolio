@@ -55,6 +55,7 @@ const Svg = ({ stroke = false, color = ``, width, icon, left, top, hiddenMobile 
         fill: stroke ? `none` : `currentColor`,
         color: resolvedColor,
         width: resolvedWidth,
+        height: resolvedWidth,
         left,
         top,
       }}
