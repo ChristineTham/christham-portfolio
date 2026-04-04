@@ -26,7 +26,7 @@ const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor
     <Divider fill="#be9cc1" speed={0.2} offset={offset} factor={factor}>
       <div style={{ position: `absolute`, bottom: 0, width: `100%`, transform: `matrix(1, 0, 0, -1, 0, 0)` }}>
         {/* InnerWave: color is inherited from Divider's fill via currentColor */}
-        <div style={{ position: `relative`, height: `100%` }} className="[&_svg]:w-full [&_svg]:h-[40vh] [&_#contact-wave]:fill-current">
+        <div style={{ position: `relative`, height: `100%` }} className="contact-wave-wrapper">
           <svg xmlns="http://www.w3.org/2000/svg" id="contact-wave" viewBox="0 0 800 338.05" preserveAspectRatio="none">
             <path>
               <animate

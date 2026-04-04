@@ -22,7 +22,7 @@ export function iconpos(
     position: 'absolute',
     width: resolvedSize,
     height: resolvedSize,
-    left: left as string,
-    top: top as string,
+    left: left as React.CSSProperties['left'],
+    top: top as React.CSSProperties['top'],
   }
 }
