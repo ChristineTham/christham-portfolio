@@ -24,6 +24,8 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@fontsource-variable/noto-sans": "^5.2.10",
+    "@fontsource-variable/noto-sans-mono": "^5.2.10",
     "@mdx-js/react": "^2.3.0",
     "@react-spring/parallax": "^10.0.3",
     "gatsby": "^5.16.1",

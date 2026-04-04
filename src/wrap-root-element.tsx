@@ -1,6 +1,7 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { Global } from '@emotion/react'
+import { fonts } from './theme/tokens'
 
 const Root = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -44,7 +45,7 @@ const Root = ({ children }: { children: React.ReactNode }) => {
             textRendering: 'optimizeLegibility',
             WebkitFontSmoothing: 'antialiased',
             MozOsxFontSmoothing: 'grayscale',
-            fontFamily: 'ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+            fontFamily: fonts.body,
             lineHeight: 1.625,
             fontWeight: 400,
             color: 'var(--color-text)',
@@ -61,7 +62,7 @@ const Root = ({ children }: { children: React.ReactNode }) => {
             },
           },
           img: { borderStyle: 'none' },
-          pre: { fontFamily: 'monospace', fontSize: '1em' },
+          pre: { fontFamily: fonts.mono, fontSize: '1em' },
           p: {
             fontSize: '1rem',
             '@media (min-width: 400px)': { fontSize: '1.125rem' },

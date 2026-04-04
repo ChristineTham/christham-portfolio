@@ -94,7 +94,8 @@ export const rosely = {
 
 // Font stacks
 export const fonts = {
-  mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  body: '"Noto Sans Variable", "Noto Sans", sans-serif',
+  mono: '"Noto Sans Mono Variable", "Noto Sans Mono", monospace',
 }
 
 export const lightColors = {
