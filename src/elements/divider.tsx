@@ -21,28 +21,25 @@ const Divider = ({
   clipPath = ``,
   children = null,
   className = ``,
-}: DividerProps) => (
-  <ParallaxLayer
-    css={{
-      position: `absolute`,
-      width: `100%`,
-      height: `100%`,
-      ...(bg && { background: bg }),
-      ...(fill && {
-        '#contact-wave': {
-          color: fill,
-          fill: `currentColor`,
-        },
-      }),
-      ...(clipPath && { clipPath }),
-    }}
-    speed={speed}
-    offset={offset}
-    factor={factor}
-    className={className}
-  >
-    {children}
-  </ParallaxLayer>
-)
+}: DividerProps) => {
+  const style: React.CSSProperties = {}
+  if (bg) style.background = bg
+  if (clipPath) style.clipPath = clipPath
+  // `fill` controls the fill color of the #contact-wave SVG child.
+  // We set it as `color` so the SVG can use `fill: currentColor`.
+  if (fill) style.color = fill
+
+  return (
+    <ParallaxLayer
+      className={`absolute w-full h-full${className ? ` ${className}` : ``}`}
+      style={style}
+      speed={speed}
+      offset={offset}
+      factor={factor}
+    >
+      {children}
+    </ParallaxLayer>
+  )
+}
 
 export default Divider

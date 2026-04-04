@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { hidden, iconpos } from '../utils'
+import { hidden, iconpos, HIDDEN_MOBILE_CLASS } from '../utils'
 
 describe('hidden', () => {
   it('is an array with three responsive display values', () => {
@@ -13,6 +13,13 @@ describe('hidden', () => {
 
   it('shows on the third breakpoint', () => {
     expect(hidden[2]).toBe('block')
+  })
+})
+
+describe('HIDDEN_MOBILE_CLASS', () => {
+  it('is a non-empty string', () => {
+    expect(typeof HIDDEN_MOBILE_CLASS).toBe('string')
+    expect(HIDDEN_MOBILE_CLASS.length).toBeGreaterThan(0)
   })
 })
 
@@ -30,11 +37,6 @@ describe('iconpos', () => {
     expect(result.top).toBe(20)
   })
 
-  it('defaults display to block (always visible)', () => {
-    const result = iconpos(24, 10, 20)
-    expect(result.display).toBe('block')
-  })
-
   it('accepts string values for size, left and top', () => {
     const result = iconpos('2rem', '10px', '20px')
     expect(result.width).toBe('2rem')
@@ -43,13 +45,7 @@ describe('iconpos', () => {
     expect(result.top).toBe('20px')
   })
 
-  it('applies hidden display when hidden array is passed', () => {
-    const result = iconpos(16, 5, 10, ['none', 'none', 'block'])
-    expect(result.display).toBe('none')
-    expect((result['@media (min-width: 600px)'] as any).display).toBe('block')
-  })
-
-  it('returns the full CSS object shape', () => {
+  it('returns the full inline style object shape', () => {
     const result = iconpos(32, 0, 0)
     expect(result).toMatchObject({
       position: 'absolute',
@@ -58,5 +54,11 @@ describe('iconpos', () => {
       left: 0,
       top: 0,
     })
+  })
+
+  it('does not include media query keys (inline style only)', () => {
+    const result = iconpos(16, 5, 10)
+    const keys = Object.keys(result)
+    expect(keys.every(k => !k.startsWith('@media'))).toBe(true)
   })
 })

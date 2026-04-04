@@ -1,32 +1,28 @@
+import type React from "react"
+
+// CSS class applied to icons that should be hidden on mobile (< 600px)
+export const HIDDEN_MOBILE_CLASS = 'icon-hidden-mobile'
+
+// Kept for backward compatibility; the array values represent [xs, sm, md] display values
 export const hidden = [`none`, `none`, `block`]
 
-// CSS object type compatible with Emotion's css prop
-type CSSStyles = Record<string, string | number | Record<string, string | number>>
-
+/**
+ * Returns an inline style object that positions an icon absolutely.
+ * For responsive hide/show behaviour, pass the returned className to the icon.
+ * Use `HIDDEN_MOBILE_CLASS` as className for icons hidden on mobile.
+ */
 export function iconpos(
   size: number | string,
   left: number | string,
   top: number | string,
-  display: string[] = ['block']
-): CSSStyles {
-  // Resolve Tailwind size indices to rem values
+): React.CSSProperties {
   const resolvedSize = typeof size === 'number' ? `${size * 0.25}rem` : size
-
-  // Convert responsive display array to Emotion media-query object
-  const displayStyles: CSSStyles = { display: display[0] }
-  if (display[1] !== undefined && display[1] !== display[0]) {
-    displayStyles['@media (min-width: 400px)'] = { display: display[1] }
-  }
-  if (display[2] !== undefined) {
-    displayStyles['@media (min-width: 600px)'] = { display: display[2] }
-  }
 
   return {
     position: 'absolute',
     width: resolvedSize,
     height: resolvedSize,
-    left,
-    top,
-    ...displayStyles,
+    left: left as string,
+    top: top as string,
   }
 }

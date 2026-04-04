@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS custom properties (design tokens) ───────────────────────────── */
+
+:root {
+  --color-primary: #8c4e80;
+  --color-secondary: #93a9d1;
+  --color-text: #27272a;
+  --color-heading: #85677b;
+  --color-background: #f4dede;
+  --color-divider: #f4eee8;
+  --color-textMuted: #303030;
+  --color-icon_brightest: #be9cc1;
+  --color-icon_darker: #b0879b;
+  --color-icon_darkest: #85677b;
+  --color-icon_red: #d2386c;
+  --color-icon_blue: #919bc9;
+  --color-icon_orange: #ec809e;
+  --color-icon_yellow: #eada4f;
+  --color-icon_pink: #f0047f;
+  --color-icon_purple: #be9cc1;
+  --color-icon_green: #64bfa4;
+}
+
+.dark {
+  --color-primary: #93a9d1;
+  --color-text: #f4dede;
+  --color-heading: #f7caca;
+  --color-background: #27272a;
+  --color-textMuted: #909090;
+  --color-divider: #85677b;
+  --color-icon_brightest: #f7caca;
+  --color-icon_darker: #b0879b;
+  --color-icon_darkest: #85677b;
+}
+
+/* ─── Global base styles ──────────────────────────────────────────────── */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  [hidden] {
+    display: none;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Noto Sans Variable", "Noto Sans", sans-serif;
+    line-height: 1.625;
+    font-weight: 400;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  a:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  img {
+    border-style: none;
+  }
+
+  pre {
+    font-family: "Noto Sans Mono Variable", "Noto Sans Mono", monospace;
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 1rem;
+    letter-spacing: -0.003em;
+    line-height: 1.625;
+    color: var(--color-text);
+  }
+
+  @media (min-width: 400px) {
+    p {
+      font-size: 1.125rem;
+    }
+  }
+
+  blockquote {
+    margin-left: 0;
+  }
+
+  blockquote p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-heading);
+  }
+
+  @media (min-width: 400px) {
+    blockquote p {
+      font-size: 1.25rem;
+    }
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    text-shadow: rgba(255, 255, 255, 0.15) 0px 5px 35px;
+    letter-spacing: 0.025em;
+    color: var(--color-heading);
+  }
+
+  @media (min-width: 400px) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 600px) {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-heading);
+  }
+
+  @media (min-width: 400px) {
+    h2 {
+      font-size: 1.875rem;
+    }
+  }
+
+  @media (min-width: 600px) {
+    h2 {
+      font-size: 2.25rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    color: var(--color-heading);
+  }
+
+  @media (min-width: 400px) {
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 600px) {
+    h3 {
+      font-size: 1.875rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.125rem;
+    color: var(--color-heading);
+  }
+
+  @media (min-width: 400px) {
+    h4 {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (min-width: 600px) {
+    h4 {
+      font-size: 1.5rem;
+    }
+  }
+
+  h5 {
+    font-size: 1rem;
+    color: var(--color-heading);
+  }
+
+  @media (min-width: 400px) {
+    h5 {
+      font-size: 1.125rem;
+    }
+  }
+
+  @media (min-width: 600px) {
+    h5 {
+      font-size: 1.25rem;
+    }
+  }
+
+  h6 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-heading);
+  }
+}
+
+/* ─── Keyframe animations ─────────────────────────────────────────────── */
+
+@keyframes wave {
+  0% {
+    d: path("M 0 100 Q 250 50 400 200 Q 550 350 800 300 L 800 0 L 0 0 L 0 100 Z");
+  }
+  50% {
+    d: path("M 0 100 Q 200 150 400 200 Q 600 250 800 300 L 800 0 L 0 0 L 0 100 Z");
+  }
+  100% {
+    d: path("M 0 100 Q 150 350 400 200 Q 650 50 800 300 L 800 0 L 0 0 L 0 100 Z");
+  }
+}
+
+@keyframes up-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(30px);
+  }
+}
+
+@keyframes up-down-wide {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(200px);
+  }
+}
+
+/* ─── Animation utility classes ───────────────────────────────────────── */
+
+.animate-up-down {
+  animation: up-down 4s ease-in-out infinite alternate;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.animate-up-down-wide {
+  animation: up-down-wide 18s ease-in-out infinite alternate;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* wave animation on the contact SVG path */
+#contact-wave path {
+  animation: wave 20s linear infinite alternate;
+}
+
+/* ─── Icon visibility helper ──────────────────────────────────────────── */
+
+.icon-hidden-mobile {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .icon-hidden-mobile {
+    display: block;
+  }
+}
+
+/* ─── Projects grid h2 override ───────────────────────────────────────── */
+
+.projects-grid h2 {
+  grid-column: -1 / 1;
+  color: #f7caca !important;
+}

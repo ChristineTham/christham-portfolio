@@ -21,8 +21,6 @@
     "react-dom": "$react-dom"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
     "@fontsource-variable/noto-sans": "^5.2.10",
     "@fontsource-variable/noto-sans-mono": "^5.2.10",
     "@mdx-js/react": "^2.3.0",
@@ -47,8 +45,11 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.4.27",
     "cross-env": "^10.1.0",
+    "gatsby-plugin-postcss": "^6.16.0",
     "jsdom": "^29.0.1",
+    "tailwindcss": "^3.4.19",
     "typescript": "^6.0.2",
     "vitest": "^4.1.2"
   }

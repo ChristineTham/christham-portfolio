@@ -37,17 +37,7 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
     />
     <Content speed={0.4} offset={offset + 0.2} factor={factor}>
       <Inner>
-        <div
-          css={{
-            display: `grid`,
-            gridTemplateColumns: `1fr`,
-            gridGap: '0.5rem',
-            '@media (min-width: 400px)': { gridGap: '2rem' },
-            '@media (min-width: 600px)': { gridTemplateColumns: `repeat(2, 1fr)` },
-            '@media (min-width: 900px)': { gridGap: '4rem' },
-            '& h2': { gridColumn: `-1/1`, color: `#f7caca !important` },
-          }}
-        >
+        <div className="grid grid-cols-1 gap-2 xs:gap-8 sm:grid-cols-2 md:gap-16 projects-grid">
           <ProjectsMDX />
         </div>
       </Inner>
@@ -56,7 +46,7 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
       <img
         src={Background}
         alt="projects background"
-        css={{
+        style={{
           position: 'fixed',
           left: 0,
           top: '25%',
@@ -65,25 +55,25 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
         }}
       />
       <UpDown>
-        <WrenchIcon css={iconpos(16, '85%', '75%')} />
-        <RubikIcon css={iconpos(16, '70%', '20%')} />
-        <BlueprintIcon css={iconpos(48, '25%', '5%')} />
-        <PuzzleIcon css={iconpos(16, '17%', '60%')} />
+        <WrenchIcon style={iconpos(16, '85%', '75%')} />
+        <RubikIcon style={iconpos(16, '70%', '20%')} />
+        <BlueprintIcon style={iconpos(48, '25%', '5%')} />
+        <PuzzleIcon style={iconpos(16, '17%', '60%')} />
       </UpDown>
       <UpDownWide>
-        <AtomIcon css={iconpos(64, '20%', '90%')} />
-        <CloudIcon css={iconpos(16, '90%', '30%')} />
-        <FolderIcon css={iconpos(48, '70%', '90%')} />
-        <GearsIcon css={iconpos(48, '18%', '75%')} />
-        <GraphicsIcon css={iconpos(16, '75%', '10%')} />
-        <NotebookIcon css={iconpos(48, '45%', '10%')} />
+        <AtomIcon style={iconpos(64, '20%', '90%')} />
+        <CloudIcon style={iconpos(16, '90%', '30%')} />
+        <FolderIcon style={iconpos(48, '70%', '90%')} />
+        <GearsIcon style={iconpos(48, '18%', '75%')} />
+        <GraphicsIcon style={iconpos(16, '75%', '10%')} />
+        <NotebookIcon style={iconpos(48, '45%', '10%')} />
       </UpDownWide>
-      <WorkflowIcon css={iconpos(16, '4%', '20%')} />
-      <CompassIcon css={iconpos(16, '80%', '60%')} />
-      <ProgrammingIcon css={iconpos(16, '10%', '10%')} />
-      <BlueprintIcon css={iconpos(16, '29%', '26%')} />
-      <CalculatorIcon css={iconpos(16, '75%', '30%')} />
-      <ChipIcon css={iconpos(16, '80%', '70%')} />
+      <WorkflowIcon style={iconpos(16, '4%', '20%')} />
+      <CompassIcon style={iconpos(16, '80%', '60%')} />
+      <ProgrammingIcon style={iconpos(16, '10%', '10%')} />
+      <BlueprintIcon style={iconpos(16, '29%', '26%')} />
+      <CalculatorIcon style={iconpos(16, '75%', '30%')} />
+      <ChipIcon style={iconpos(16, '80%', '70%')} />
     </Divider>
   </div>
 )

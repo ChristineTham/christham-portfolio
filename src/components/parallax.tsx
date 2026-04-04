@@ -42,6 +42,7 @@ interface ParallaxLayerProps {
   factor?: number
   children?: React.ReactNode
   className?: string
+  style?: React.CSSProperties
 }
 
 export function ParallaxLayer({
@@ -50,6 +51,7 @@ export function ParallaxLayer({
   factor = 1,
   children,
   className,
+  style,
 }: ParallaxLayerProps) {
   const ctx = useContext(ParallaxContext)
   // useMotionValue is called unconditionally (rules of hooks) and used as a
@@ -82,6 +84,7 @@ export function ParallaxLayer({
         height: `${factor * 100}vh`,
         width: "100%",
         y,
+        ...style,
       }}
       className={className}
     >

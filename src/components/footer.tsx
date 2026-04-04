@@ -1,41 +1,16 @@
 import React from 'react'
-import styled from '@emotion/styled'
-
-const FooterEl = styled.footer`
-  text-align: center;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  color: var(--color-textMuted);
-  padding: 1rem 0.5rem;
-  @media (min-width: 400px) {
-    padding: 2rem 1rem;
-  }
-`
-
-const FooterFlex = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-  color: var(--color-text);
-  font-weight: 600;
-  a {
-    color: var(--color-text);
-  }
-`
 
 const Footer: React.FC = () => {
   return (
-    <FooterEl>
+    <footer className="text-center block absolute bottom-0 text-[var(--color-textMuted)] p-2 xs:p-4 w-full">
       Copyright &copy; {new Date().getFullYear()}. All rights reserved.
       <br />
-      <FooterFlex>
+      <div className="flex justify-center items-center mt-4 text-[var(--color-text)] font-semibold [&_a]:text-[var(--color-text)]">
         <img width="30" height="30" src="/logo.svg" alt="Hello Tham Logo" />
         {` `}
         <a
           aria-label="Link to the theme's GitHub repository"
-          css={{ marginLeft: '0.5rem' }}
+          className="ml-2"
           href="https://github.com/ChristineTham/christham-portfolio"
         >
           Website
@@ -44,8 +19,8 @@ const Footer: React.FC = () => {
         <a aria-label="Link to the theme author's website" href="https://hellotham.com">
           Hello Tham Pty Ltd
         </a>
-      </FooterFlex>
-    </FooterEl>
+      </div>
+    </footer>
   )
 }
 

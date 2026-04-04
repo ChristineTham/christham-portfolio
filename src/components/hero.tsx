@@ -7,7 +7,7 @@ import Divider from '../elements/divider'
 import Inner from '../elements/inner'
 import Content from '../elements/content'
 import { UpDown, UpDownWide } from '../styles/animations'
-import { hidden, iconpos } from '../styles/utils'
+import { HIDDEN_MOBILE_CLASS, iconpos } from '../styles/utils'
 
 import MonitorIcon from '../assets/icons/monitor.svg'
 import HeadphoneIcon from '../assets/icons/headphones.svg'
@@ -41,7 +41,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
       <img
         src={Background}
         alt="hero background"
-        css={{
+        style={{
           position: 'fixed',
           top: 0,
           left: 0,
@@ -51,7 +51,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
       />
       <Divider speed={0.2} offset={offset} factor={factor}>
         <p
-          css={{
+          style={{
             color: 'var(--color-textMuted)',
             fontSize: '12px',
             position: 'absolute',
@@ -71,34 +71,34 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           </a>
         </p>
         <UpDown>
-          <WebsiteIcon css={iconpos(48, '60%', '62%', hidden)} />
-          <HomeIcon css={iconpos(48, '10%', '12%')} />
-          <HeartIcon css={iconpos(24, '60%', '15%', hidden)} />
+          <WebsiteIcon style={iconpos(48, '60%', '62%')} className={HIDDEN_MOBILE_CLASS} />
+          <HomeIcon style={iconpos(48, '10%', '12%')} />
+          <HeartIcon style={iconpos(24, '60%', '15%')} className={HIDDEN_MOBILE_CLASS} />
         </UpDown>
         <UpDownWide>
-          <PaletteIcon css={iconpos(16, '35%', '5%')} />
-          <NotebookIcon css={iconpos(16, '45%', '10%', hidden)} />
-          <BicycleIcon css={iconpos(20, '75%', '8%')} />
-          <PortfolioIcon css={iconpos(16, '85%', '20%')} />
-          <CameraIcon css={iconpos(16, '30%', '65%')} />
-          <MusicIcon css={iconpos(16, '19%', '58%')} />
-          <TravelIcon css={iconpos(20, '90%', '50%')} />
-          <TurntableIcon css={iconpos(48, '70%', '90%')} />
+          <PaletteIcon style={iconpos(16, '35%', '5%')} />
+          <NotebookIcon style={iconpos(16, '45%', '10%')} className={HIDDEN_MOBILE_CLASS} />
+          <BicycleIcon style={iconpos(20, '75%', '8%')} />
+          <PortfolioIcon style={iconpos(16, '85%', '20%')} />
+          <CameraIcon style={iconpos(16, '30%', '65%')} />
+          <MusicIcon style={iconpos(16, '19%', '58%')} />
+          <TravelIcon style={iconpos(20, '90%', '50%')} />
+          <TurntableIcon style={iconpos(48, '70%', '90%')} />
         </UpDownWide>
-        <MonitorIcon css={iconpos(24, '5%', '70%', hidden)} />
-        <HeadphoneIcon css={iconpos(16, '50%', '65%', hidden)} />
-        <SydneyIcon css={iconpos(12, '4%', '20%')} />
-        <AustraliaIcon css={iconpos(12, '20%', '5%')} />
-        <KoalaIcon css={iconpos(12, '8%', '8%')} />
-        <SpeakerIcon css={iconpos(12, '95%', '90%', hidden)} />
-        <PianoIcon css={iconpos(20, '80%', '70%', hidden)} />
-        <FloralIcon css={iconpos(64, '5%', '99%')} />
-        <GuitarIcon css={iconpos(24, '40%', '80%', hidden)} />
+        <MonitorIcon style={iconpos(24, '5%', '70%')} className={HIDDEN_MOBILE_CLASS} />
+        <HeadphoneIcon style={iconpos(16, '50%', '65%')} className={HIDDEN_MOBILE_CLASS} />
+        <SydneyIcon style={iconpos(12, '4%', '20%')} />
+        <AustraliaIcon style={iconpos(12, '20%', '5%')} />
+        <KoalaIcon style={iconpos(12, '8%', '8%')} />
+        <SpeakerIcon style={iconpos(12, '95%', '90%')} className={HIDDEN_MOBILE_CLASS} />
+        <PianoIcon style={iconpos(20, '80%', '70%')} className={HIDDEN_MOBILE_CLASS} />
+        <FloralIcon style={iconpos(64, '5%', '99%')} />
+        <GuitarIcon style={iconpos(24, '40%', '80%')} className={HIDDEN_MOBILE_CLASS} />
       </Divider>
       <Content speed={0.4} offset={offset} factor={factor}>
         <Inner>
           <button
-            css={{
+            style={{
               color: 'var(--color-background)',
               border: 'none',
               backgroundColor: 'var(--color-text)',
@@ -128,10 +128,8 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
             {isDark ? `Light Theme` : `Dark Theme`}
           </button>
           <h1
-            css={{
+            style={{
               fontSize: '2.25rem',
-              '@media (min-width: 400px)': { fontSize: '3rem' },
-              '@media (min-width: 600px)': { fontSize: '4rem' },
               marginTop: '0.5rem',
               marginBottom: '-0.5rem',
               textShadow: 'rgba(255, 255, 255, 0.15) 0px 5px 35px',
@@ -141,16 +139,17 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
               padding: '0.5rem',
               borderRadius: '5px',
             }}
+            className="xs:text-5xl sm:text-6xl"
           >
             Hi, I am Chris Tham
           </h1>
           <ReactTyped
-            css={{
+            style={{
               fontSize: '1.5rem',
-              '@media (min-width: 400px)': { fontSize: '2.25rem' },
               color: rosely.rosely10,
               fontFamily: fonts.mono,
             }}
+            className="xs:text-4xl"
             strings={['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller']}
             typeSpeed={100}
             backSpeed={50}
