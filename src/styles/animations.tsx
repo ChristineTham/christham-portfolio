@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import * as React from "react"
-import { keyframes, css, jsx } from "@emotion/react"
+import { keyframes, css } from "@emotion/react"
 
 export const wave = keyframes`
   0% {

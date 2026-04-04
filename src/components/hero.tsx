@@ -1,6 +1,3 @@
-/** @jsx jsx */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx } from '@emotion/react'
 import React from 'react'
 import { ReactTyped } from "react-typed"
 import { useColorMode } from '../hooks/useColorMode'
@@ -12,12 +9,9 @@ import Content from '../elements/content'
 import { UpDown, UpDownWide } from '../styles/animations'
 import { hidden, iconpos } from '../styles/utils'
 
-// import Intro from '../sections/intro.mdx'
-
 import MonitorIcon from '../assets/icons/monitor.svg'
 import HeadphoneIcon from '../assets/icons/headphones.svg'
 import HeartIcon from '../assets/icons/heart.svg'
-// import EaselIcon from '../assets/icons/easel.svg'
 import MusicIcon from '../assets/icons/musicnote.svg'
 import CameraIcon from '../assets/icons/photo-camera.svg'
 import TurntableIcon from '../assets/icons/turntable.svg'
@@ -93,7 +87,6 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
         </UpDownWide>
         <MonitorIcon css={iconpos(24, '5%', '70%', hidden)} />
         <HeadphoneIcon css={iconpos(16, '50%', '65%', hidden)} />
-        {/* <EaselIcon css={iconpos(12, '30%', '30%', hidden)} /> */}
         <SydneyIcon css={iconpos(12, '4%', '20%')} />
         <AustraliaIcon css={iconpos(12, '20%', '5%')} />
         <KoalaIcon css={iconpos(12, '8%', '8%')} />
@@ -101,7 +94,6 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
         <PianoIcon css={iconpos(20, '80%', '70%', hidden)} />
         <FloralIcon css={iconpos(64, '5%', '99%')} />
         <GuitarIcon css={iconpos(24, '40%', '80%', hidden)} />
-        {/* <SVG icon="hexa" width={16} stroke color="icon_darker" left="10%" top="50%" /> */}
       </Divider>
       <Content speed={0.4} offset={offset} factor={factor}>
         <Inner>
@@ -135,7 +127,6 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           >
             {isDark ? `Light Theme` : `Dark Theme`}
           </button>
-          {/* <Intro /> */}
           <h1
             css={{
               fontSize: '2.25rem',

@@ -1,6 +1,3 @@
-/** @jsx jsx */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx } from "@emotion/react"
 import React from "react"
 import { withPrefix } from "gatsby"
 import { hidden } from "../styles/utils"
@@ -10,7 +7,7 @@ type IconType = "triangle" | "circle" | "arrowUp" | "upDown" | "box" | "hexa" | 
 
 type SVGProps = {
   stroke?: boolean
-  color?: string | number | any
+  color?: string | number
   width: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 8 | 10 | 12 | 16 | 20 | 24 | 32 | 40 | 48 | 56 | 64 | string
   icon: IconType
   left: string
