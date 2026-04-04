@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactTyped } from "react-typed"
 import { useColorMode } from '../hooks/useColorMode'
-import { fonts } from '../theme/tokens'
+import { fonts, rosely } from '../theme/tokens'
 
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
@@ -154,7 +154,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
             css={{
               fontSize: '1.5rem',
               '@media (min-width: 400px)': { fontSize: '2.25rem' },
-              color: '#b565a7',
+              color: rosely.rosely10,
               fontFamily: fonts.mono,
             }}
             strings={['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller']}
