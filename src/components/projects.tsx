@@ -44,7 +44,7 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
         </div>
       </Inner>
     </Content>
-    <Divider speed={0.1} offset={offset} factor={factor}>
+    <Divider speed={0.1} offset={offset} factor={factor} className="z-10">
       <img
         src={Background}
         alt="projects background"
