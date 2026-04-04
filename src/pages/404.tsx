@@ -1,6 +1,3 @@
-/** @jsx jsx */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx } from '@emotion/react'
 import * as React from "react";
 import { HeadFC, Link, PageProps } from "gatsby";
 import { Parallax } from "@react-spring/parallax";

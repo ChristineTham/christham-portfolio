@@ -1,6 +1,3 @@
-/** @jsx jsx */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx } from '@emotion/react'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'

@@ -1,5 +1,4 @@
 import React from 'react'
-import { MDXProvider } from '@mdx-js/react'
 import { Global } from '@emotion/react'
 import { fonts } from './theme/tokens'
 
@@ -121,9 +120,7 @@ const Root = ({ children }: { children: React.ReactNode }) => {
           },
         }}
       />
-      <MDXProvider components={{}}>
-        {children}
-      </MDXProvider>
+      {children}
     </>
   )
 }
