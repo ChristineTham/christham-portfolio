@@ -40,8 +40,7 @@ const Footer: React.FC = () => {
         >
           Website
         </a>
-        <div css={{ margin: '0 0.25rem' }}>by</div>
-        {` `}
+        &nbsp;by&nbsp;
         <a aria-label="Link to the theme author's website" href="https://hellotham.com">
           Hello Tham Pty Ltd
         </a>
