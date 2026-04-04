@@ -62,7 +62,9 @@ typings/
 
 .cache
 **/.cache
-public
+
+# Next.js build output
+.next/
 
 .idea
 .vscode
