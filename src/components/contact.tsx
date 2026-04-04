@@ -6,7 +6,7 @@ import styled from '@emotion/styled'
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
 import Content from '../elements/content'
-import { UpDown, UpDownWide, waveAnimation } from '../styles/animations'
+import { UpDown, UpDownWide, wave } from '../styles/animations'
 
 import Footer from './footer'
 import { hidden, iconpos } from '../styles/utils'
@@ -27,7 +27,7 @@ import PostItIcon from '../assets/icons/post-it.svg'
 
 const InnerWave = styled.div`
   path {
-    ${waveAnimation(`20s`)};
+    animation: ${wave} 20s linear infinite alternate;
   }
 `
 
