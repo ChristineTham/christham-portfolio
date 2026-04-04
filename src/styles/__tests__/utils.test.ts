@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest'
-import { hidden, iconpos, HIDDEN_MOBILE_CLASS } from '../utils'
+import { render } from '@testing-library/react'
+import * as React from 'react'
+import { hidden, iconpos, makeIcon, HIDDEN_MOBILE_CLASS } from '../utils'
 
 describe('hidden', () => {
   it('is an array with three responsive display values', () => {
@@ -60,5 +62,42 @@ describe('iconpos', () => {
     const result = iconpos(16, 5, 10)
     const keys = Object.keys(result)
     expect(keys.every(k => !k.startsWith('@media'))).toBe(true)
+  })
+})
+
+describe('makeIcon', () => {
+  it('returns a React function component', () => {
+    const MockSvg: React.FC<React.SVGProps<SVGSVGElement>> & { defaultProps?: { viewBox?: string } } =
+      (props) => React.createElement('svg', props)
+    MockSvg.defaultProps = { viewBox: '0 0 100 100' }
+    const Icon = makeIcon(MockSvg)
+    expect(typeof Icon).toBe('function')
+  })
+
+  it('passes the viewBox from the wrapped component defaultProps', () => {
+    const MockSvg: React.FC<React.SVGProps<SVGSVGElement>> & { defaultProps?: { viewBox?: string } } =
+      (props) => React.createElement('svg', props)
+    MockSvg.defaultProps = { viewBox: '0 0 50 50' }
+    const Icon = makeIcon(MockSvg)
+    const { container } = render(React.createElement(Icon))
+    expect(container.querySelector('svg')?.getAttribute('viewBox')).toBe('0 0 50 50')
+  })
+
+  it('forwards additional props to the wrapped component', () => {
+    const MockSvg: React.FC<React.SVGProps<SVGSVGElement>> & { defaultProps?: { viewBox?: string } } =
+      (props) => React.createElement('svg', props)
+    MockSvg.defaultProps = { viewBox: '0 0 100 100' }
+    const Icon = makeIcon(MockSvg)
+    const { container } = render(React.createElement(Icon, { className: 'my-icon', width: 32 }))
+    const svg = container.querySelector('svg')
+    expect(svg).toHaveClass('my-icon')
+    expect(svg?.getAttribute('width')).toBe('32')
+  })
+
+  it('works when the component has no defaultProps', () => {
+    const MockSvg: React.FC<React.SVGProps<SVGSVGElement>> & { defaultProps?: { viewBox?: string } } =
+      (props) => React.createElement('svg', props)
+    const Icon = makeIcon(MockSvg)
+    expect(() => render(React.createElement(Icon))).not.toThrow()
   })
 })
