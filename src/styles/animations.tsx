@@ -32,19 +32,11 @@ const upDownWide = keyframes`
   }
 `
 
-const upDownAnimation = css`
-  ${upDown} 4s ease-in-out infinite alternate;
-`
-
-const upDownWideAnimation = css`
-  ${upDownWide} 18s ease-in-out infinite alternate;
-`
-
 export function UpDown({ children }: { children: React.ReactNode }) {
   return (
     <div
       css={css`
-        animation: ${upDownAnimation};
+        animation: ${upDown} 4s ease-in-out infinite alternate;
         position: absolute;
         top: 0;
         left: 0;
@@ -61,7 +53,7 @@ export function UpDownWide({ children }: { children: React.ReactNode }) {
   return (
     <div
       css={css`
-        animation: ${upDownWideAnimation};
+        animation: ${upDownWide} 18s ease-in-out infinite alternate;
         position: absolute;
         top: 0;
         left: 0;
