@@ -1,5 +1,5 @@
 import React from "react"
-import { ParallaxLayer } from "@react-spring/parallax"
+import { ParallaxLayer } from "../components/parallax"
 
 type DividerProps = {
   speed: number
