@@ -1,5 +1,6 @@
 declare module '*.svg' {
-  const content: JSX
+  import type React from 'react'
+  const content: React.FC<React.SVGProps<SVGSVGElement>> & { defaultProps?: { viewBox?: string } }
   export default content
 }
 declare module '*.mdx' {

@@ -4,23 +4,25 @@ import Inner from '../elements/inner'
 import Content from '../elements/content'
 import { UpDown, UpDownWide } from '../styles/animations'
 
-import { hidden, iconpos } from '../styles/utils'
+import { HIDDEN_MOBILE_CLASS, iconpos } from '../styles/utils'
 
 import AboutMDX from '../sections/about.mdx'
 
 import Background from '../assets/backgrounds/floral-spring.svg'
 
-import CoffeeIcon from '../assets/icons/coffee.svg'
-import ReadingIcon from '../assets/icons/reading.svg'
-import SunglassesIcon from '../assets/icons/sunglasses.svg'
-import WebsiteIcon from '../assets/icons/website.svg'
-import WineIcon from '../assets/icons/wine.svg'
-import PhotoIcon from '../assets/icons/photo.svg'
-import BooksIcon from '../assets/icons/books.svg'
-import PawIcon from '../assets/icons/paw-print.svg'
-import DogIcon from '../assets/icons/dog.svg'
-import FlowerIcon from '../assets/icons/flower.svg'
-import RubikIcon from '../assets/icons/Rubik.svg'
+import {
+  CoffeeIcon,
+  ReadingIcon,
+  SunglassesIcon,
+  WebsiteIcon,
+  WineIcon,
+  PhotoIcon,
+  BooksIcon,
+  PawIcon,
+  DogIcon,
+  FlowerIcon,
+  RubikIcon,
+} from '../assets/icons'
 
 const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>
@@ -29,7 +31,7 @@ const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor =
       <img
         src={Background}
         alt="about background"
-        css={{
+        style={{
           position: 'fixed',
           left: 0,
           top: 0,
@@ -38,20 +40,20 @@ const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor =
         }}
       />
       <UpDown>
-        <PawIcon css={iconpos(64, '50%', '75%', hidden)} />
-        <CoffeeIcon css={iconpos(32, '60%', '20%', hidden)} />
-        <ReadingIcon css={iconpos(16, '25%', '5%')} />
-        <SunglassesIcon css={iconpos(16, '80%', '80%', hidden)} />
+        <PawIcon style={iconpos(64, '50%', '75%')} className={HIDDEN_MOBILE_CLASS} />
+        <CoffeeIcon style={iconpos(32, '60%', '20%')} className={HIDDEN_MOBILE_CLASS} />
+        <ReadingIcon style={iconpos(16, '25%', '5%')} />
+        <SunglassesIcon style={iconpos(16, '80%', '80%')} className={HIDDEN_MOBILE_CLASS} />
       </UpDown>
       <UpDownWide>
-        <RubikIcon css={iconpos(48, '5%', '80%', hidden)} />
-        <WineIcon css={iconpos(16, '95%', '50%')} />
-        <PhotoIcon css={iconpos(16, '85%', '15%', hidden)} />
-        <BooksIcon css={iconpos(16, '45%', '10%', hidden)} />
+        <RubikIcon style={iconpos(48, '5%', '80%')} className={HIDDEN_MOBILE_CLASS} />
+        <WineIcon style={iconpos(16, '95%', '50%')} />
+        <PhotoIcon style={iconpos(16, '85%', '15%')} className={HIDDEN_MOBILE_CLASS} />
+        <BooksIcon style={iconpos(16, '45%', '10%')} className={HIDDEN_MOBILE_CLASS} />
       </UpDownWide>
-      <FlowerIcon css={iconpos(16, '4%', '20%', hidden)} />
-      <DogIcon css={iconpos(16, '10%', '10%')} />
-      <WebsiteIcon css={iconpos(16, '80%', '70%')} />
+      <FlowerIcon style={iconpos(16, '4%', '20%')} className={HIDDEN_MOBILE_CLASS} />
+      <DogIcon style={iconpos(16, '10%', '10%')} />
+      <WebsiteIcon style={iconpos(16, '80%', '70%')} />
     </Divider>
     <Content speed={0.4} offset={offset} factor={factor}>
       <Inner>

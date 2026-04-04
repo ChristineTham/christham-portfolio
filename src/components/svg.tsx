@@ -1,6 +1,6 @@
 import React from "react"
 import { withPrefix } from "gatsby"
-import { hidden } from "../styles/utils"
+import { HIDDEN_MOBILE_CLASS } from "../styles/utils"
 
 type IconType = "triangle" | "circle" | "arrowUp" | "upDown" | "box" | "hexa" | "cross"
 
@@ -46,22 +46,20 @@ const colorVarMap: Record<string, string> = {
 const Svg = ({ stroke = false, color = ``, width, icon, left, top, hiddenMobile = false }: SVGProps) => {
   const resolvedColor = colorVarMap[color as string] ?? (color as string)
   const resolvedWidth = typeof width === 'number' ? `${width * 0.25}rem` : width
-  const displayCss = hiddenMobile
-    ? { display: hidden[0], '@media (min-width: 600px)': { display: hidden[2] } }
-    : { display: `block` }
 
   return (
     <svg
-      css={{
+      style={{
         position: `absolute`,
         stroke: stroke ? `currentColor` : `none`,
         fill: stroke ? `none` : `currentColor`,
         color: resolvedColor,
         width: resolvedWidth,
+        height: resolvedWidth,
         left,
         top,
-        ...displayCss,
       }}
+      className={hiddenMobile ? HIDDEN_MOBILE_CLASS : undefined}
       viewBox={viewBox[icon]}
     >
       <use href={withPrefix(`/icons.svg#${icon}`)} />

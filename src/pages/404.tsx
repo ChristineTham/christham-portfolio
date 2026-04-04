@@ -183,7 +183,7 @@ const NotFound = (_props: PageProps) => (
         </Divider>
         <Content speed={0.4} offset={0} factor={1}>
           <Inner>
-            <h1 css={{ color: 'var(--color-heading)' }}>404 - Page not found</h1>
+            <h1 className="text-[var(--color-heading)]">404 - Page not found</h1>
             <p>
               Go back to <Link to="/">homepage</Link>.
             </p>

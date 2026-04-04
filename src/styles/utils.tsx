@@ -1,32 +1,43 @@
+import React from "react"
+
+// CSS class applied to icons that should be hidden below 600px and shown at or above 600px
+export const HIDDEN_MOBILE_CLASS = 'icon-hidden-mobile'
+
+// Kept for backward compatibility; the array values represent [xs, sm, md] display values
 export const hidden = [`none`, `none`, `block`]
 
-// CSS object type compatible with Emotion's css prop
-type CSSStyles = Record<string, string | number | Record<string, string | number>>
-
+/**
+ * Returns an inline style object that positions an icon absolutely.
+ * For responsive hide/show behaviour, pass the returned className to the icon.
+ * Use `HIDDEN_MOBILE_CLASS` as className for icons hidden on mobile.
+ */
 export function iconpos(
   size: number | string,
   left: number | string,
   top: number | string,
-  display: string[] = ['block']
-): CSSStyles {
-  // Resolve Tailwind size indices to rem values
+): React.CSSProperties {
   const resolvedSize = typeof size === 'number' ? `${size * 0.25}rem` : size
-
-  // Convert responsive display array to Emotion media-query object
-  const displayStyles: CSSStyles = { display: display[0] }
-  if (display[1] !== undefined && display[1] !== display[0]) {
-    displayStyles['@media (min-width: 400px)'] = { display: display[1] }
-  }
-  if (display[2] !== undefined) {
-    displayStyles['@media (min-width: 600px)'] = { display: display[2] }
-  }
 
   return {
     position: 'absolute',
     width: resolvedSize,
     height: resolvedSize,
-    left,
-    top,
-    ...displayStyles,
+    left: left as React.CSSProperties['left'],
+    top: top as React.CSSProperties['top'],
   }
+}
+
+/**
+ * Wraps an svg-react-loader SVG component to explicitly pass its viewBox as a prop.
+ * This is necessary because svg-react-loader puts viewBox in `defaultProps`, but the
+ * React 19 automatic JSX runtime does not apply `defaultProps` for function components
+ * (only `React.createElement` does). Using React.createElement here ensures viewBox
+ * is always passed, regardless of which JSX transform is in use.
+ */
+export function makeIcon(
+  Component: React.FC<React.SVGProps<SVGSVGElement>> & { defaultProps?: { viewBox?: string } }
+): React.FC<React.SVGProps<SVGSVGElement>> {
+  const viewBox = Component.defaultProps?.viewBox
+  return (props: React.SVGProps<SVGSVGElement>) =>
+    React.createElement(Component, { viewBox, ...props })
 }

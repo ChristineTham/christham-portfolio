@@ -7,12 +7,7 @@ type InnerProps = {
 
 const Inner = ({ className = ``, children }: InnerProps) => (
   <div
-    css={{
-      width: '100%',
-      '@media (min-width: 1600px)': { width: '66.666%' },
-      textAlign: `left`,
-    }}
-    className={className}
+    className={`w-full xl:w-2/3 text-left${className ? ` ${className}` : ``}`}
   >
     {children}
   </div>

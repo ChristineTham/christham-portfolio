@@ -11,20 +11,10 @@ type ContentProps = {
 
 const Content = ({ speed, offset, children, className = ``, factor = 1 }: ContentProps) => (
   <ParallaxLayer
-    css={{
-      padding: '1rem',
-      '@media (min-width: 400px)': { padding: '2rem' },
-      '@media (min-width: 900px)': { padding: '4rem' },
-      display: `flex`,
-      flexDirection: `column`,
-      alignItems: `center`,
-      justifyContent: `center`,
-      zIndex: 50,
-    }}
+    className={`p-4 xs:p-8 md:p-16 flex flex-col items-center justify-center z-50${className ? ` ${className}` : ``}`}
     speed={speed}
     offset={offset}
     factor={factor}
-    className={className}
   >
     {children}
   </ParallaxLayer>

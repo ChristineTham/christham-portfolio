@@ -14,6 +14,7 @@ const config: GatsbyConfig = {
   },
   trailingSlash: `always`,
   plugins: [
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
