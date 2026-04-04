@@ -1,19 +1,18 @@
 {
   "private": true,
   "name": "christham-portfolio",
-  "description": "Chris Tham Portfolio is a Gatsby Cloud site built using gatsbyjs, based on gatsby-starter-portfolio-cara. Rosely design theme, with Kawaii Flat Icons.",
-  "version": "0.1.0",
+  "description": "Chris Tham Portfolio is a personal portfolio site built using gatsbyjs, originally based on gatsby-starter-portfolio-cara. Rosely design theme, with Kawaii Flat Icons.",
+  "version": "0.2.0",
   "author": "Chris Tham <chris.tham@hellotham.com>",
   "license": "0BSD",
-  "starter-name": "gatsby-starter-portfolio-cara",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
-    "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
+    "develop:cypress": "cross-env CYPRESS_SUPPORT=y npm run develop",
+    "build:cypress": "cross-env CYPRESS_SUPPORT=y npm run build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "clean": "gatsby clean; rm -rf node_modules",
     "test": "vitest run",
     "test:watch": "vitest"
   },
@@ -24,10 +23,10 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@fontsource-variable/noto-sans": "^5.2.10",
+    "@fontsource-variable/noto-sans-mono": "^5.2.10",
     "@mdx-js/react": "^2.3.0",
     "@react-spring/parallax": "^10.0.3",
-    "@theme-ui/mdx": "^0.17.4",
-    "@theme-ui/preset-tailwind": "^0.17.4",
     "gatsby": "^5.16.1",
     "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-manifest": "^5.16.0",
@@ -38,8 +37,7 @@
     "gatsby-transformer-sharp": "^5.16.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-typed": "^2.0.12",
-    "theme-ui": "^0.17.4"
+    "react-typed": "^2.0.12"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.1",

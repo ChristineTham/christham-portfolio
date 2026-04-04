@@ -1,7 +1,10 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { jsx } from "@emotion/react"
+import React from "react"
 import { withPrefix } from "gatsby"
 import { hidden } from "../styles/utils"
+import { sizes } from "../theme/tokens"
 
 type IconType = "triangle" | "circle" | "arrowUp" | "upDown" | "box" | "hexa" | "cross"
 
@@ -25,22 +28,49 @@ const viewBox = {
   cross: `0 0 100 100`,
 }
 
-const Svg = ({ stroke = false, color = ``, width, icon, left, top, hiddenMobile = false }: SVGProps) => (
-  <svg
-    sx={{
-      position: `absolute`,
-      stroke: stroke ? `currentColor` : `none`,
-      fill: stroke ? `none` : `currentColor`,
-      display: hiddenMobile ? hidden : `block`,
-      color,
-      width,
-      left,
-      top,
-    }}
-    viewBox={viewBox[icon]}
-  >
-    <use href={withPrefix(`/icons.svg#${icon}`)} />
-  </svg>
-)
+// Map theme color names to CSS custom property references
+const colorVarMap: Record<string, string> = {
+  icon_brightest: 'var(--color-icon_brightest)',
+  icon_darker: 'var(--color-icon_darker)',
+  icon_darkest: 'var(--color-icon_darkest)',
+  icon_red: 'var(--color-icon_red)',
+  icon_blue: 'var(--color-icon_blue)',
+  icon_orange: 'var(--color-icon_orange)',
+  icon_yellow: 'var(--color-icon_yellow)',
+  icon_pink: 'var(--color-icon_pink)',
+  icon_purple: 'var(--color-icon_purple)',
+  icon_green: 'var(--color-icon_green)',
+  primary: 'var(--color-primary)',
+  text: 'var(--color-text)',
+  background: 'var(--color-background)',
+  heading: 'var(--color-heading)',
+  textMuted: 'var(--color-textMuted)',
+}
+
+const Svg = ({ stroke = false, color = ``, width, icon, left, top, hiddenMobile = false }: SVGProps) => {
+  const resolvedColor = colorVarMap[color as string] ?? (color as string)
+  const resolvedWidth = typeof width === 'number' ? (sizes[width] ?? `${width}px`) : width
+  const displayCss = hiddenMobile
+    ? { display: hidden[0], '@media (min-width: 600px)': { display: hidden[2] } }
+    : { display: `block` }
+
+  return (
+    <svg
+      css={{
+        position: `absolute`,
+        stroke: stroke ? `currentColor` : `none`,
+        fill: stroke ? `none` : `currentColor`,
+        color: resolvedColor,
+        width: resolvedWidth,
+        left,
+        top,
+        ...displayCss,
+      }}
+      viewBox={viewBox[icon]}
+    >
+      <use href={withPrefix(`/icons.svg#${icon}`)} />
+    </svg>
+  )
+}
 
 export default Svg

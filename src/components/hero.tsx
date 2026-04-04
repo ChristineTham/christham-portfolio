@@ -1,9 +1,10 @@
 /** @jsx jsx */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { jsx, useColorMode } from 'theme-ui'
-
+import { jsx } from '@emotion/react'
+import React from 'react'
 import { ReactTyped } from "react-typed"
-// import 'react-typed/dist/animatedCursor.css'
+import { useColorMode } from '../hooks/useColorMode'
+import { fonts, rosely } from '../theme/tokens'
 
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
@@ -38,44 +39,31 @@ import GuitarIcon from '../assets/icons/guitar.svg'
 import Background from '../assets/backgrounds/garden-tree.svg'
 
 const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => {
-  const [colorMode, setColorMode] = useColorMode<"light" | "dark">()
+  const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
 
   return (
     <div>
-      {/* <div
-        sx={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          height: '100%',
-          width: '100%',
-          backgroundColor: '#f7caca',
-          backgroundRepeat: 'repeat',
-          backgroundAttachment: 'fixed',
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23be9cc1' fill-opacity='0.3'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E")`
-        }}
-      /> */}
       <img
         src={Background}
         alt="hero background"
-        sx={{
+        css={{
           position: 'fixed',
           top: 0,
           left: 0,
           width: '100%',
-          opacity: 0.25
+          opacity: 0.25,
         }}
       />
       <Divider speed={0.2} offset={offset} factor={factor}>
         <p
-          sx={{
-            color: 'textMuted',
+          css={{
+            color: 'var(--color-textMuted)',
             fontSize: '12px',
             position: 'absolute',
             top: '94%',
             left: '1%',
-            zIndex: 10
+            zIndex: 10,
           }}
         >
           <em>Kawaii Flat</em> Icons made by{' '}
@@ -89,50 +77,58 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           </a>
         </p>
         <UpDown>
-          <WebsiteIcon sx={iconpos(48, '60%', '62%', hidden)} />
-          <HomeIcon sx={iconpos(48, '10%', '12%')} />
-          <HeartIcon sx={iconpos(24, '60%', '15%', hidden)} />
+          <WebsiteIcon css={iconpos(48, '60%', '62%', hidden)} />
+          <HomeIcon css={iconpos(48, '10%', '12%')} />
+          <HeartIcon css={iconpos(24, '60%', '15%', hidden)} />
         </UpDown>
         <UpDownWide>
-          <PaletteIcon sx={iconpos(16, '35%', '5%')} />
-          <NotebookIcon sx={iconpos(16, '45%', '10%', hidden)} />
-          <BicycleIcon sx={iconpos(20, '75%', '8%')} />
-          <PortfolioIcon sx={iconpos(16, '85%', '20%')} />
-          <CameraIcon sx={iconpos(16, '30%', '65%')} />
-          <MusicIcon sx={iconpos(16, '19%', '58%')} />
-          <TravelIcon sx={iconpos(20, '90%', '50%')} />
-          <TurntableIcon sx={iconpos(48, '70%', '90%')} />
+          <PaletteIcon css={iconpos(16, '35%', '5%')} />
+          <NotebookIcon css={iconpos(16, '45%', '10%', hidden)} />
+          <BicycleIcon css={iconpos(20, '75%', '8%')} />
+          <PortfolioIcon css={iconpos(16, '85%', '20%')} />
+          <CameraIcon css={iconpos(16, '30%', '65%')} />
+          <MusicIcon css={iconpos(16, '19%', '58%')} />
+          <TravelIcon css={iconpos(20, '90%', '50%')} />
+          <TurntableIcon css={iconpos(48, '70%', '90%')} />
         </UpDownWide>
-        <MonitorIcon sx={iconpos(24, '5%', '70%', hidden)} />
-        <HeadphoneIcon sx={iconpos(16, '50%', '65%', hidden)} />
-        {/* <EaselIcon sx={iconpos(12, '30%', '30%', hidden)} /> */}
-        <SydneyIcon sx={iconpos(12, '4%', '20%')} />
-        <AustraliaIcon sx={iconpos(12, '20%', '5%')} />
-        <KoalaIcon sx={iconpos(12, '8%', '8%')} />
-        <SpeakerIcon sx={iconpos(12, '95%', '90%', hidden)} />
-        <PianoIcon sx={iconpos(20, '80%', '70%', hidden)} />
-        <FloralIcon sx={iconpos(64, '5%', '99%')} />
-        <GuitarIcon sx={iconpos(24, '40%', '80%', hidden)} />
+        <MonitorIcon css={iconpos(24, '5%', '70%', hidden)} />
+        <HeadphoneIcon css={iconpos(16, '50%', '65%', hidden)} />
+        {/* <EaselIcon css={iconpos(12, '30%', '30%', hidden)} /> */}
+        <SydneyIcon css={iconpos(12, '4%', '20%')} />
+        <AustraliaIcon css={iconpos(12, '20%', '5%')} />
+        <KoalaIcon css={iconpos(12, '8%', '8%')} />
+        <SpeakerIcon css={iconpos(12, '95%', '90%', hidden)} />
+        <PianoIcon css={iconpos(20, '80%', '70%', hidden)} />
+        <FloralIcon css={iconpos(64, '5%', '99%')} />
+        <GuitarIcon css={iconpos(24, '40%', '80%', hidden)} />
         {/* <SVG icon="hexa" width={16} stroke color="icon_darker" left="10%" top="50%" /> */}
       </Divider>
-      <Content sx={{ variant: 'texts.bigger' }} speed={0.4} offset={offset} factor={factor}>
+      <Content speed={0.4} offset={offset} factor={factor}>
         <Inner>
           <button
-            sx={{
-              variant: `buttons.toggle`,
-              fontWeight: `semibold`,
-              display: `block`,
-              mx: `auto`,
-              mb: 3,
-              borderRadius: 5,
+            css={{
+              color: 'var(--color-background)',
+              border: 'none',
+              backgroundColor: 'var(--color-text)',
+              cursor: 'pointer',
+              alignSelf: 'center',
+              paddingLeft: '1rem',
+              paddingRight: '1rem',
+              paddingTop: '0.5rem',
+              paddingBottom: '0.5rem',
+              fontWeight: 600,
+              display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              marginBottom: '1rem',
+              borderRadius: '5px',
               position: 'absolute',
               top: '1%',
-              left: '1%'
+              left: '1%',
             }}
             onClick={() => {
               const next = isDark ? `light` : `dark`
               setColorMode(next)
-              document.documentElement.classList.value = `theme-ui-${next}`
             }}
             type="button"
             aria-label="Toggle dark mode"
@@ -141,25 +137,28 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           </button>
           {/* <Intro /> */}
           <h1
-            sx={{
-              fontSize: [6, 7, 8],
-              mt: 2,
-              mb: -2,
+            css={{
+              fontSize: '2.25rem',
+              '@media (min-width: 400px)': { fontSize: '3rem' },
+              '@media (min-width: 600px)': { fontSize: '4rem' },
+              marginTop: '0.5rem',
+              marginBottom: '-0.5rem',
               textShadow: 'rgba(255, 255, 255, 0.15) 0px 5px 35px',
-              letterSpacing: 'wide',
-              color: 'heading',
-              bg: isDark ? '#000000a0' : '#00000020',
-              p: 2,
-              borderRadius: 5
+              letterSpacing: '0.025em',
+              color: 'var(--color-heading)',
+              backgroundColor: isDark ? '#000000a0' : '#00000020',
+              padding: '0.5rem',
+              borderRadius: '5px',
             }}
           >
             Hi, I am Chris Tham
           </h1>
           <ReactTyped
-            sx={{
-              fontSize: [4, 6],
-              color: 'rosely10',
-              fontFamily: 'mono'
+            css={{
+              fontSize: '1.5rem',
+              '@media (min-width: 400px)': { fontSize: '2.25rem' },
+              color: rosely.rosely10,
+              fontFamily: fonts.mono,
             }}
             strings={['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller']}
             typeSpeed={100}

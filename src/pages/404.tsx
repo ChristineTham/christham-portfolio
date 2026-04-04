@@ -1,7 +1,9 @@
+/** @jsx jsx */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { jsx } from '@emotion/react'
 import * as React from "react";
 import { HeadFC, Link, PageProps } from "gatsby";
 import { Parallax } from "@react-spring/parallax";
-import { Themed } from "@theme-ui/mdx";
 import Layout from "../components/layout";
 import Divider from "../elements/divider";
 import { UpDown, UpDownWide } from "../styles/animations";
@@ -182,17 +184,12 @@ const NotFound = (_props: PageProps) => (
             top="70%"
           />
         </Divider>
-        <Content
-          sx={{ variant: `texts.bigger` }}
-          speed={0.4}
-          offset={0}
-          factor={1}
-        >
+        <Content speed={0.4} offset={0} factor={1}>
           <Inner>
-            <Themed.h1>404 - Page not found</Themed.h1>
-            <Themed.p>
+            <h1 css={{ color: 'var(--color-heading)' }}>404 - Page not found</h1>
+            <p>
               Go back to <Link to="/">homepage</Link>.
-            </Themed.p>
+            </p>
           </Inner>
         </Content>
       </div>

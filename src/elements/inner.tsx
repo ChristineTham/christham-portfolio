@@ -1,13 +1,22 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { jsx } from "@emotion/react"
+import React from "react"
 
 type InnerProps = {
   className?: string
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 const Inner = ({ className = ``, children }: InnerProps) => (
-  <div sx={{ width: [`full`, `full`, `full`, `full`, `full`, `2/3`], textAlign: `left` }} className={className}>
+  <div
+    css={{
+      width: '100%',
+      '@media (min-width: 1600px)': { width: '66.666%' },
+      textAlign: `left`,
+    }}
+    className={className}
+  >
     {children}
   </div>
 )

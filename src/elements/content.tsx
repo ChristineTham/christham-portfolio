@@ -1,5 +1,7 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { jsx } from "@emotion/react"
+import React from "react"
 import { ParallaxLayer } from "@react-spring/parallax"
 
 type ContentProps = {
@@ -12,8 +14,10 @@ type ContentProps = {
 
 const Content = ({ speed, offset, children, className = ``, factor = 1 }: ContentProps) => (
   <ParallaxLayer
-    sx={{
-      padding: [3, 4, 4, 5],
+    css={{
+      padding: '1rem',
+      '@media (min-width: 400px)': { padding: '2rem' },
+      '@media (min-width: 900px)': { padding: '4rem' },
       display: `flex`,
       flexDirection: `column`,
       alignItems: `center`,

@@ -1,5 +1,7 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { jsx } from "@emotion/react"
+import React from "react"
 import { ParallaxLayer } from "@react-spring/parallax"
 
 type DividerProps = {
@@ -24,17 +26,18 @@ const Divider = ({
   className = ``,
 }: DividerProps) => (
   <ParallaxLayer
-    sx={{
+    css={{
       position: `absolute`,
-      width: `full`,
-      height: `full`,
-      background: bg,
-      backgroundColor: bg,
-      "#contact-wave": {
-        color: fill,
-        fill: `currentColor`,
-      },
-      clipPath,
+      width: `100%`,
+      height: `100%`,
+      ...(bg && { background: bg }),
+      ...(fill && {
+        '#contact-wave': {
+          color: fill,
+          fill: `currentColor`,
+        },
+      }),
+      ...(clipPath && { clipPath }),
     }}
     speed={speed}
     offset={offset}
