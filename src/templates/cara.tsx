@@ -1,6 +1,6 @@
 import * as React from "react"
 import type { HeadFC } from "gatsby"
-import { Parallax } from "@react-spring/parallax"
+import { Parallax } from "../components/parallax"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Projects from "../components/projects"

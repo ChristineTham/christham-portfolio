@@ -1,6 +1,6 @@
 import * as React from "react";
 import { HeadFC, Link, PageProps } from "gatsby";
-import { Parallax } from "@react-spring/parallax";
+import { Parallax } from "../components/parallax";
 import Layout from "../components/layout";
 import Divider from "../elements/divider";
 import { UpDown, UpDownWide } from "../styles/animations";
