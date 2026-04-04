@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ebf8fae8-4b81-4c53-ac38-3684ccbd6cf1/deploy-status)](https://app.netlify.com/projects/christham-portfolio/deploys)
 
-![screenshot](rawassets/portfolio.png)
+![screenshot](rawassets/screenshot.png)
 
 Chris Tham Portfolio is a [Netlify](https://www.netlify.com) site built using
 [Gatsby](https://www.gatsbyjs.com), originally based on
