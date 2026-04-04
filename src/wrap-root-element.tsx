@@ -45,6 +45,8 @@ const Root = ({ children }: { children: React.ReactNode }) => {
             WebkitFontSmoothing: 'antialiased',
             MozOsxFontSmoothing: 'grayscale',
             fontFamily: 'ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+            lineHeight: 1.625,
+            fontWeight: 400,
             color: 'var(--color-text)',
             backgroundColor: 'var(--color-background)',
             WebkitTextSizeAdjust: '100%',
