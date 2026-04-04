@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactTyped } from "react-typed"
 import { useColorMode } from '../hooks/useColorMode'
-import { fonts, rosely } from '../theme/tokens'
+import { fonts, rosely } from '../theme'
 
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'

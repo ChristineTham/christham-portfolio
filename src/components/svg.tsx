@@ -1,7 +1,6 @@
 import React from "react"
 import { withPrefix } from "gatsby"
 import { hidden } from "../styles/utils"
-import { sizes } from "../theme/tokens"
 
 type IconType = "triangle" | "circle" | "arrowUp" | "upDown" | "box" | "hexa" | "cross"
 
@@ -46,7 +45,7 @@ const colorVarMap: Record<string, string> = {
 
 const Svg = ({ stroke = false, color = ``, width, icon, left, top, hiddenMobile = false }: SVGProps) => {
   const resolvedColor = colorVarMap[color as string] ?? (color as string)
-  const resolvedWidth = typeof width === 'number' ? (sizes[width] ?? `${width}px`) : width
+  const resolvedWidth = typeof width === 'number' ? `${width * 0.25}rem` : width
   const displayCss = hiddenMobile
     ? { display: hidden[0], '@media (min-width: 600px)': { display: hidden[2] } }
     : { display: `block` }

@@ -14,7 +14,7 @@ with [Kawaii Flat Icons](https://www.flaticon.com/authors/kawaii/flat).
 
 ## ✨ Features
 
-- Theme UI-based theming with light and dark modes
+- Light and dark modes
 - react-spring parallax effect
 - CSS Animations on Kawaii Flat Icons from freepik
 - React Typed

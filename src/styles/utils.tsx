@@ -1,5 +1,3 @@
-import { sizes } from '../theme/tokens'
-
 export const hidden = [`none`, `none`, `block`]
 
 // CSS object type compatible with Emotion's css prop
@@ -12,7 +10,7 @@ export function iconpos(
   display: string[] = ['block']
 ): CSSStyles {
   // Resolve Tailwind size indices to rem values
-  const resolvedSize = typeof size === 'number' ? (sizes[size] ?? `${size}px`) : size
+  const resolvedSize = typeof size === 'number' ? `${size * 0.25}rem` : size
 
   // Convert responsive display array to Emotion media-query object
   const displayStyles: CSSStyles = { display: display[0] }

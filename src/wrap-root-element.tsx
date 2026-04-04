@@ -1,6 +1,6 @@
 import React from 'react'
 import { Global } from '@emotion/react'
-import { fonts } from './theme/tokens'
+import { fonts } from './theme'
 
 const Root = ({ children }: { children: React.ReactNode }) => {
   return (
