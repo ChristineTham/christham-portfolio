@@ -90,11 +90,12 @@ describe('darkColors', () => {
   })
 
   it('uses a dark background (rosely0)', () => {
-    expect(darkColors.background).toBe('#27272a')
+    // darkColors.background should match the darkest rosely swatch
+    expect(darkColors.background).toBe(rosely.rosely0)
   })
 
   it('uses a light text color for dark mode', () => {
-    // text should be a lighter shade than the dark background
-    expect(darkColors.text).toBe('#f4dede')
+    // darkColors.text should match a pale rosely swatch so text is readable on dark backgrounds
+    expect(darkColors.text).toBe(rosely.rosely5)
   })
 })
