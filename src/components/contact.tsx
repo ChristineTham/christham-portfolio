@@ -11,15 +11,17 @@ import ContactMDX from '../sections/contact.mdx'
 
 import Background from '../assets/backgrounds/lake.svg'
 
-import AgendaIcon from '../assets/icons/agenda.svg'
-import CheckListIcon from '../assets/icons/check-list.svg'
-import EmailIcon from '../assets/icons/email.svg'
-import PhoneIcon from '../assets/icons/smartphone.svg'
-import IDCardIcon from '../assets/icons/id-card.svg'
-import MapIcon from '../assets/icons/map.svg'
-import MessageIcon from '../assets/icons/message.svg'
-import SendIcon from '../assets/icons/send.svg'
-import PostItIcon from '../assets/icons/post-it.svg'
+import {
+  AgendaIcon,
+  CheckListIcon,
+  EmailIcon,
+  PhoneIcon,
+  IDCardIcon,
+  MapIcon,
+  MessageIcon,
+  SendIcon,
+  PostItIcon,
+} from '../assets/icons'
 
 const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>

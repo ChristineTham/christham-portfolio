@@ -9,28 +9,30 @@ import Content from '../elements/content'
 import { UpDown, UpDownWide } from '../styles/animations'
 import { HIDDEN_MOBILE_CLASS, iconpos } from '../styles/utils'
 
-import MonitorIcon from '../assets/icons/monitor.svg'
-import HeadphoneIcon from '../assets/icons/headphones.svg'
-import HeartIcon from '../assets/icons/heart.svg'
-import MusicIcon from '../assets/icons/musicnote.svg'
-import CameraIcon from '../assets/icons/photo-camera.svg'
-import TurntableIcon from '../assets/icons/turntable.svg'
-import PortfolioIcon from '../assets/icons/portfolio.svg'
-import WebsiteIcon from '../assets/icons/website.svg'
-import PaletteIcon from '../assets/icons/paint-palette.svg'
-import HomeIcon from '../assets/icons/home.svg'
-import TravelIcon from '../assets/icons/travelling.svg'
-import BicycleIcon from '../assets/icons/bicycle.svg'
-import NotebookIcon from '../assets/icons/notebook.svg'
-import AustraliaIcon from '../assets/icons/australia.svg'
-import SydneyIcon from '../assets/icons/opera-house.svg'
-import KoalaIcon from '../assets/icons/koala.svg'
-import SpeakerIcon from '../assets/icons/speaker.svg'
-import PianoIcon from '../assets/icons/piano2.svg'
-import FloralIcon from '../assets/icons/floral-spring.svg'
-import GuitarIcon from '../assets/icons/guitar.svg'
-
 import Background from '../assets/backgrounds/garden-tree.svg'
+
+import {
+  MonitorIcon,
+  HeadphoneIcon,
+  HeartIcon,
+  MusicIcon,
+  CameraIcon,
+  TurntableIcon,
+  PortfolioIcon,
+  WebsiteIcon,
+  PaletteIcon,
+  HomeIcon,
+  TravelIcon,
+  BicycleIcon,
+  NotebookIcon,
+  AustraliaIcon,
+  SydneyIcon,
+  KoalaIcon,
+  SpeakerIcon,
+  PianoIcon,
+  FloralIcon,
+  GuitarIcon,
+} from '../assets/icons'
 
 const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => {
   const [colorMode, setColorMode] = useColorMode()

@@ -10,17 +10,19 @@ import AboutMDX from '../sections/about.mdx'
 
 import Background from '../assets/backgrounds/floral-spring.svg'
 
-import CoffeeIcon from '../assets/icons/coffee.svg'
-import ReadingIcon from '../assets/icons/reading.svg'
-import SunglassesIcon from '../assets/icons/sunglasses.svg'
-import WebsiteIcon from '../assets/icons/website.svg'
-import WineIcon from '../assets/icons/wine.svg'
-import PhotoIcon from '../assets/icons/photo.svg'
-import BooksIcon from '../assets/icons/books.svg'
-import PawIcon from '../assets/icons/paw-print.svg'
-import DogIcon from '../assets/icons/dog.svg'
-import FlowerIcon from '../assets/icons/flower.svg'
-import RubikIcon from '../assets/icons/Rubik.svg'
+import {
+  CoffeeIcon,
+  ReadingIcon,
+  SunglassesIcon,
+  WebsiteIcon,
+  WineIcon,
+  PhotoIcon,
+  BooksIcon,
+  PawIcon,
+  DogIcon,
+  FlowerIcon,
+  RubikIcon,
+} from '../assets/icons'
 
 const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>

@@ -10,21 +10,23 @@ import Background from '../assets/backgrounds/river.svg'
 
 import ProjectsMDX from '../sections/projects.mdx'
 
-import WrenchIcon from '../assets/icons/adjustable-wrench.svg'
-import RubikIcon from '../assets/icons/Rubik.svg'
-import BlueprintIcon from '../assets/icons/blueprint.svg'
-import AtomIcon from '../assets/icons/atom.svg'
-import PuzzleIcon from '../assets/icons/puzzle.svg'
-import CloudIcon from '../assets/icons/computing-cloud.svg'
-import FolderIcon from '../assets/icons/folders.svg'
-import GearsIcon from '../assets/icons/gears.svg'
-import GraphicsIcon from '../assets/icons/graphics.svg'
-import NotebookIcon from '../assets/icons/notebook2.svg'
-import WorkflowIcon from '../assets/icons/workflow.svg'
-import CalculatorIcon from '../assets/icons/calculator.svg'
-import ChipIcon from '../assets/icons/chip.svg'
-import CompassIcon from '../assets/icons/compass.svg'
-import ProgrammingIcon from '../assets/icons/programming.svg'
+import {
+  WrenchIcon,
+  RubikIcon,
+  BlueprintIcon,
+  AtomIcon,
+  PuzzleIcon,
+  CloudIcon,
+  FolderIcon,
+  GearsIcon,
+  GraphicsIcon,
+  Notebook2Icon as NotebookIcon,
+  WorkflowIcon,
+  CalculatorIcon,
+  ChipIcon,
+  CompassIcon,
+  ProgrammingIcon,
+} from '../assets/icons'
 
 const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 2 }) => (
   <div>
