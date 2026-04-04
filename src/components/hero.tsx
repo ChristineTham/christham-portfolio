@@ -1,3 +1,6 @@
+/** @jsx jsx */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { jsx } from '@emotion/react'
 import React from 'react'
 import { ReactTyped } from "react-typed"
 import { useColorMode } from '../hooks/useColorMode'
@@ -109,15 +112,15 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
               backgroundColor: 'var(--color-text)',
               cursor: 'pointer',
               alignSelf: 'center',
-              paddingLeft: '0.75rem',
-              paddingRight: '0.75rem',
+              paddingLeft: '1rem',
+              paddingRight: '1rem',
               paddingTop: '0.5rem',
               paddingBottom: '0.5rem',
               fontWeight: 600,
               display: 'block',
               marginLeft: 'auto',
               marginRight: 'auto',
-              marginBottom: '0.75rem',
+              marginBottom: '1rem',
               borderRadius: '5px',
               position: 'absolute',
               top: '1%',

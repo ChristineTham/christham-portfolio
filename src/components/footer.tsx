@@ -7,9 +7,9 @@ const FooterEl = styled.footer`
   position: absolute;
   bottom: 0;
   color: var(--color-textMuted);
-  padding: 0.75rem 0.5rem;
+  padding: 1rem 0.5rem;
   @media (min-width: 400px) {
-    padding: 1rem 0.75rem;
+    padding: 2rem 1rem;
   }
 `
 
@@ -17,7 +17,7 @@ const FooterFlex = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   color: var(--color-text);
   font-weight: 600;
   a {

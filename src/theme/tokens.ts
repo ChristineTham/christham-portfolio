@@ -15,21 +15,17 @@ export const fontSizes = [
   '4.5rem',   // 9
 ]
 
-// Tailwind spacing scale (index → rem value)
+// Tailwind spacing scale from @theme-ui/preset-tailwind (index → rem value)
 export const space = [
-  '0px',      // 0
-  '0.25rem',  // 1
-  '0.5rem',   // 2
-  '0.75rem',  // 3
-  '1rem',     // 4
-  '1.25rem',  // 5
-  '1.5rem',   // 6
-  '1.75rem',  // 7
-  '2rem',     // 8
-  '2.25rem',  // 9
-  '2.5rem',   // 10
-  '2.75rem',  // 11
-  '3rem',     // 12
+  '0',         // 0
+  '0.25rem',   // 1
+  '0.5rem',    // 2
+  '1rem',      // 3
+  '2rem',      // 4
+  '4rem',      // 5
+  '8rem',      // 6
+  '16rem',     // 7
+  '32rem',     // 8
 ]
 
 // Tailwind sizing scale (width/height) – numeric keys map to rem values

@@ -1,3 +1,6 @@
+/** @jsx jsx */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { jsx } from "@emotion/react"
 import React from "react"
 import { ParallaxLayer } from "@react-spring/parallax"
 
@@ -12,9 +15,9 @@ type ContentProps = {
 const Content = ({ speed, offset, children, className = ``, factor = 1 }: ContentProps) => (
   <ParallaxLayer
     css={{
-      padding: '0.75rem',
-      '@media (min-width: 400px)': { padding: '1rem' },
-      '@media (min-width: 900px)': { padding: '1.25rem' },
+      padding: '1rem',
+      '@media (min-width: 400px)': { padding: '2rem' },
+      '@media (min-width: 900px)': { padding: '4rem' },
       display: `flex`,
       flexDirection: `column`,
       alignItems: `center`,

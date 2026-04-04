@@ -1,3 +1,6 @@
+/** @jsx jsx */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { jsx } from "@emotion/react"
 import React from "react"
 import { withPrefix } from "gatsby"
 import { hidden } from "../styles/utils"

@@ -1,3 +1,6 @@
+/** @jsx jsx */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { jsx } from '@emotion/react'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
@@ -43,15 +46,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
         position: `relative`,
         textDecoration: `none`,
         borderRadius: `0.5rem`,
-        paddingLeft: '0.75rem',
-        paddingRight: '0.75rem',
+        paddingLeft: '1rem',
+        paddingRight: '1rem',
         paddingTop: '0.5rem',
         paddingBottom: '0.5rem',
         '@media (min-width: 400px)': {
-          paddingLeft: '1rem',
-          paddingRight: '1rem',
-          paddingTop: '0.75rem',
-          paddingBottom: '0.75rem',
+          paddingLeft: '2rem',
+          paddingRight: '2rem',
+          paddingTop: '1rem',
+          paddingBottom: '1rem',
         },
         color: `white`,
         background: bg || `none`,

@@ -1,3 +1,6 @@
+/** @jsx jsx */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { jsx } from '@emotion/react'
 import React from 'react'
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
@@ -42,9 +45,9 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
             display: `grid`,
             gridTemplateColumns: `1fr`,
             gridGap: '0.5rem',
-            '@media (min-width: 400px)': { gridGap: '1rem' },
+            '@media (min-width: 400px)': { gridGap: '2rem' },
             '@media (min-width: 600px)': { gridTemplateColumns: `repeat(2, 1fr)` },
-            '@media (min-width: 900px)': { gridGap: '1.25rem' },
+            '@media (min-width: 900px)': { gridGap: '4rem' },
             '& h2': { gridColumn: `-1/1`, color: `#f7caca !important` },
           }}
         >
