@@ -2,7 +2,7 @@
   "private": true,
   "name": "christham-portfolio",
   "description": "Chris Tham Portfolio is a personal portfolio site built using Next.js, originally based on gatsby-starter-portfolio-cara. Rosely design theme, with Kawaii Flat Icons.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "Chris Tham <chris.tham@hellotham.com>",
   "license": "0BSD",
   "scripts": {
@@ -17,9 +17,9 @@
     "@fontsource-variable/noto-sans-mono": "^5.2.10",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "^15.3.0",
+    "@next/mdx": "^16.2.2",
     "motion": "^12.38.0",
-    "next": "^15.3.0",
+    "next": "^16.2.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-typed": "^2.0.12"

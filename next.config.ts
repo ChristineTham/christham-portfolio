@@ -8,10 +8,40 @@ const withMDX = createMDX({
   },
 })
 
+const svgrOptions = {
+  svgoConfig: {
+    plugins: [
+      {
+        name: "preset-default",
+        params: {
+          overrides: {
+            removeViewBox: false,
+          },
+        },
+      },
+    ],
+  },
+}
+
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  // Turbopack config (used by default in Next.js 16 for both dev and production)
+  turbopack: {
+    rules: {
+      // Apply SVGR to all SVG files imported from the icons directory
+      "./src/assets/icons/*.svg": {
+        loaders: [
+          {
+            loader: "@svgr/webpack",
+            options: svgrOptions,
+          },
+        ],
+        as: "*.js",
+      },
+    },
+  },
+  // Webpack config kept for compatibility (used when --no-turbopack is passed)
   webpack(config) {
-    // Handle SVG imports from the icons directory as React components via SVGR
     config.module.rules.push({
       test: /\.svg$/,
       issuer: /\.[jt]sx?$/,
@@ -19,20 +49,7 @@ const nextConfig: NextConfig = {
       use: [
         {
           loader: "@svgr/webpack",
-          options: {
-            svgoConfig: {
-              plugins: [
-                {
-                  name: "preset-default",
-                  params: {
-                    overrides: {
-                      removeViewBox: false,
-                    },
-                  },
-                },
-              ],
-            },
-          },
+          options: svgrOptions,
         },
       ],
     })
