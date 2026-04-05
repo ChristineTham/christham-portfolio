@@ -31,7 +31,12 @@ const Divider = ({
 
   return (
     <ParallaxLayer
-      className={`absolute w-full h-full${className ? ` ${className}` : ``}`}
+      className={`
+        absolute size-full
+        ${className ? `
+          ${className}
+        ` : ``}
+      `}
       style={style}
       speed={speed}
       offset={offset}

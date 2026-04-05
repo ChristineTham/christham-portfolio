@@ -60,7 +60,9 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           opacity: 0.25,
         }}
       />
-      <Divider speed={0.2} offset={offset} factor={factor} className="pointer-events-none">
+      <Divider speed={0.2} offset={offset} factor={factor} className="
+        pointer-events-none
+      ">
         <p
           style={{
             color: 'var(--color-textMuted)',
@@ -149,7 +151,11 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
               padding: '0.5rem',
               borderRadius: '5px',
             }}
-            className="text-4xl xs:text-5xl sm:text-6xl"
+            className="
+              text-4xl
+              xs:text-5xl
+              sm:text-6xl
+            "
           >
             Hi, I am Chris Tham
           </h1>
@@ -158,7 +164,10 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
               color: rosely.rosely10,
               fontFamily: fonts.mono,
             }}
-            className="text-2xl xs:text-4xl"
+            className="
+              text-2xl
+              xs:text-4xl
+            "
             strings={['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller']}
             typeSpeed={100}
             backSpeed={50}

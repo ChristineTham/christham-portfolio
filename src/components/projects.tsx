@@ -39,7 +39,9 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
       offset={1.1}
       factor={factor}
     />
-    <Divider speed={0.1} offset={offset} factor={factor} className="pointer-events-none">
+    <Divider speed={0.1} offset={offset} factor={factor} className="
+      pointer-events-none
+    ">
       <img
         src={Background}
         alt="projects background"
@@ -74,7 +76,12 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
     </Divider>
     <Content speed={0.4} offset={offset + 0.2} factor={factor}>
       <Inner>
-        <div className="grid grid-cols-1 gap-2 xs:gap-8 sm:grid-cols-2 md:gap-16 projects-grid">
+        <div className="
+          projects-grid grid grid-cols-1 gap-2
+          xs:gap-8
+          sm:grid-cols-2
+          md:gap-16
+        ">
           <ProjectsMDX />
         </div>
       </Inner>

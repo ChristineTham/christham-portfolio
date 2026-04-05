@@ -7,7 +7,13 @@ type InnerProps = {
 
 const Inner = ({ className = ``, children }: InnerProps) => (
   <div
-    className={`w-full xl:w-2/3 text-left${className ? ` ${className}` : ``}`}
+    className={`
+      w-full
+      xl:w-2/3
+      text-left${className ? `
+        ${className}
+      ` : ``}
+    `}
   >
     {children}
   </div>
