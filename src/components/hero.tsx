@@ -143,7 +143,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           <h1
             style={{
               marginTop: '0.5rem',
-              marginBottom: '-0.5rem',
+              marginBottom: '0.75rem',
               textShadow: 'rgba(255, 255, 255, 0.15) 0px 5px 35px',
               letterSpacing: '0.025em',
               color: 'var(--color-heading)',
