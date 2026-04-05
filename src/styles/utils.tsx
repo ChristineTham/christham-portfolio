@@ -38,6 +38,8 @@ export function makeIcon(
   Component: React.FC<React.SVGProps<SVGSVGElement>> & { defaultProps?: { viewBox?: string } }
 ): React.FC<React.SVGProps<SVGSVGElement>> {
   const viewBox = Component.defaultProps?.viewBox
-  return (props: React.SVGProps<SVGSVGElement>) =>
+  const IconWrapper = (props: React.SVGProps<SVGSVGElement>) =>
     React.createElement(Component, { viewBox, ...props })
+  IconWrapper.displayName = `Icon(${Component.displayName ?? Component.name ?? 'Unknown'})`
+  return IconWrapper
 }
