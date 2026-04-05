@@ -46,13 +46,7 @@ const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor
         </div>
       </div>
     </Divider>
-    <Content speed={0.4} offset={offset} factor={factor}>
-      <Inner>
-        <ContactMDX />
-      </Inner>
-      <Footer />
-    </Content>
-    <Divider speed={0.1} offset={offset} factor={factor}>
+    <Divider speed={0.1} offset={offset} factor={factor} className="pointer-events-none">
       <img
         src={Background}
         alt="contact background"
@@ -78,6 +72,12 @@ const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor
       <SendIcon style={iconpos(16, '20%', '25%')} />
       <PostItIcon style={iconpos(16, '80%', '70%')} />
     </Divider>
+    <Content speed={0.4} offset={offset} factor={factor}>
+      <Inner>
+        <ContactMDX />
+      </Inner>
+      <Footer />
+    </Content>
   </div>
 )
 

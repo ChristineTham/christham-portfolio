@@ -60,7 +60,7 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
           opacity: 0.25,
         }}
       />
-      <Divider speed={0.2} offset={offset} factor={factor}>
+      <Divider speed={0.2} offset={offset} factor={factor} className="pointer-events-none">
         <p
           style={{
             color: 'var(--color-textMuted)',
