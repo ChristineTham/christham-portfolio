@@ -1,4 +1,5 @@
-import React from "react"
+import type { CSSProperties, FC, SVGProps } from "react"
+import { createElement } from "react"
 
 // CSS class applied to icons that should be hidden below 600px and shown at or above 600px
 export const HIDDEN_MOBILE_CLASS = 'icon-hidden-mobile'
@@ -15,15 +16,15 @@ export function iconpos(
   size: number | string,
   left: number | string,
   top: number | string,
-): React.CSSProperties {
+): CSSProperties {
   const resolvedSize = typeof size === 'number' ? `${size * 0.25}rem` : size
 
   return {
     position: 'absolute',
     width: resolvedSize,
     height: resolvedSize,
-    left: left as React.CSSProperties['left'],
-    top: top as React.CSSProperties['top'],
+    left: left as CSSProperties['left'],
+    top: top as CSSProperties['top'],
   }
 }
 
@@ -35,11 +36,11 @@ export function iconpos(
  * is always passed, regardless of which JSX transform is in use.
  */
 export function makeIcon(
-  Component: React.FC<React.SVGProps<SVGSVGElement>> & { defaultProps?: { viewBox?: string } }
-): React.FC<React.SVGProps<SVGSVGElement>> {
+  Component: FC<SVGProps<SVGSVGElement>> & { defaultProps?: { viewBox?: string } }
+): FC<SVGProps<SVGSVGElement>> {
   const viewBox = Component.defaultProps?.viewBox
-  const IconWrapper = (props: React.SVGProps<SVGSVGElement>) =>
-    React.createElement(Component, { viewBox, ...props })
+  const IconWrapper = (props: SVGProps<SVGSVGElement>) =>
+    createElement(Component, { viewBox, ...props })
   IconWrapper.displayName = `Icon(${Component.displayName ?? Component.name ?? 'Unknown'})`
   return IconWrapper
 }
