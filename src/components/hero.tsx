@@ -3,7 +3,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import { useColorMode } from '@/hooks/useColorMode'
-import { fonts, rosely } from '@/theme'
 
 import Divider from '@/components/divider'
 import Inner from '@/components/inner'
@@ -52,26 +51,16 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
       <img
         src={Background}
         alt="hero background"
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          opacity: 0.25,
-        }}
+        className="fixed top-0 left-0 w-full opacity-25"
       />
       <Divider speed={0.2} offset={offset} factor={factor} className="
         pointer-events-none
       ">
         <p
-          style={{
-            color: 'var(--color-textMuted)',
-            fontSize: '12px',
-            position: 'absolute',
-            top: '94%',
-            left: '1%',
-            zIndex: 10,
-          }}
+          className="
+            absolute top-[94%] left-[1%] z-10 text-[12px]
+            text-(--color-textMuted)
+          "
         >
           <em>Kawaii Flat</em> Icons made by{' '}
           <a href="https://www.flaticon.com/authors/freepik" title="Author">
@@ -111,26 +100,11 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
       <Content speed={0.4} offset={offset} factor={factor}>
         <Inner>
           <button
-            style={{
-              color: 'var(--color-background)',
-              border: 'none',
-              backgroundColor: 'var(--color-text)',
-              cursor: 'pointer',
-              alignSelf: 'center',
-              paddingLeft: '1rem',
-              paddingRight: '1rem',
-              paddingTop: '0.5rem',
-              paddingBottom: '0.5rem',
-              fontWeight: 600,
-              display: 'block',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              marginBottom: '1rem',
-              borderRadius: '5px',
-              position: 'absolute',
-              top: '1%',
-              left: '1%',
-            }}
+            className="
+              absolute top-[1%] left-[1%] mx-auto mb-4 block cursor-pointer
+              self-center rounded-[5px] border-0 bg-(--color-text) px-4 py-2
+              font-semibold text-(--color-background)
+            "
             onClick={() => {
               const next = isDark ? `light` : `dark`
               setColorMode(next)
@@ -141,31 +115,20 @@ const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 
             {isDark ? `Light Theme` : `Dark Theme`}
           </button>
           <h1
-            style={{
-              marginTop: '0.5rem',
-              marginBottom: '0.75rem',
-              textShadow: 'rgba(255, 255, 255, 0.15) 0px 5px 35px',
-              letterSpacing: '0.025em',
-              color: 'var(--color-heading)',
-              backgroundColor: isDark ? '#000000a0' : '#00000020',
-              padding: '0.5rem',
-              borderRadius: '5px',
-            }}
-            className="
-              text-4xl
+            className={`
+              mt-2 mb-3 rounded-[5px] p-2 text-4xl tracking-[0.025em]
+              text-(--color-heading)
+              [text-shadow:rgba(255,255,255,0.15)_0px_5px_35px]
               xs:text-5xl
               sm:text-6xl
-            "
+              ${isDark ? `bg-black/60` : `bg-black/10`}
+            `}
           >
             Hi, I am Chris Tham
           </h1>
           <ReactTyped
-            style={{
-              color: rosely.rosely10,
-              fontFamily: fonts.mono,
-            }}
             className="
-              text-2xl
+              font-mono text-2xl text-[#b565a7]
               xs:text-4xl
             "
             strings={['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller']}

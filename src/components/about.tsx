@@ -35,13 +35,7 @@ const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor =
       <img
         src={Background}
         alt="about background"
-        style={{
-          position: 'fixed',
-          left: 0,
-          top: 0,
-          width: '100%',
-          opacity: 0.1,
-        }}
+        className="fixed top-0 left-0 w-full opacity-10"
       />
       <UpDown>
         <PawIcon style={iconpos(64, '50%', '75%')} className={HIDDEN_MOBILE_CLASS} />

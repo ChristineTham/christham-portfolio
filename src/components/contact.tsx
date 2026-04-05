@@ -28,11 +28,9 @@ const Background = '/backgrounds/lake.svg'
 const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>
     <Divider fill="#be9cc1" speed={0.2} offset={offset} factor={factor}>
-      <div style={{ position: `absolute`, bottom: 0, width: `100%`, transform: `matrix(1, 0, 0, -1, 0, 0)` }}>
+      <div className="absolute bottom-0 w-full transform-[matrix(1,0,0,-1,0,0)]">
         {/* InnerWave: color is inherited from Divider's fill via currentColor */}
-        <div style={{ position: `relative`, height: `100%` }} className="
-          contact-wave-wrapper
-        ">
+        <div className="contact-wave-wrapper relative h-full">
           <svg xmlns="http://www.w3.org/2000/svg" id="contact-wave" viewBox="0 0 800 338.05" preserveAspectRatio="none">
             <path>
               <animate
@@ -54,13 +52,7 @@ const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor
       <img
         src={Background}
         alt="contact background"
-        style={{
-          position: 'fixed',
-          left: 0,
-          top: '10%',
-          width: '100%',
-          opacity: 0.2,
-        }}
+        className="fixed top-[10%] left-0 w-full opacity-20"
       />
       <UpDown>
         <AgendaIcon style={iconpos(16, '70%', '20%')} className={HIDDEN_MOBILE_CLASS} />

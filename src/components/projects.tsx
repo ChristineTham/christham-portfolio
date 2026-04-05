@@ -45,13 +45,7 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
       <img
         src={Background}
         alt="projects background"
-        style={{
-          position: 'fixed',
-          left: 0,
-          top: '25%',
-          width: '100%',
-          opacity: 0.3,
-        }}
+        className="fixed top-[25%] left-0 w-full opacity-30"
       />
       <UpDown>
         <WrenchIcon style={iconpos(16, '85%', '75%')} />
