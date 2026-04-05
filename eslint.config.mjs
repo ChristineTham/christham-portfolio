@@ -5,18 +5,17 @@ import betterTailwindcss from "eslint-plugin-better-tailwindcss";
 const eslintConfig = [
   ...nextCoreWebVitals,
   ...nextTypescript,
+  // Tailwind CSS linting: load the plugin with its recommended rules.
+  betterTailwindcss.configs.recommended,
   {
-    // Tailwind CSS linting via eslint-plugin-better-tailwindcss.
-    // Points to the Tailwind v4 CSS entry so the plugin can resolve all
+    // Point to the Tailwind v4 CSS entry so the plugin can resolve all
     // generated utilities (including theme overrides defined in @theme {}).
-    ...betterTailwindcss.configs.recommended,
     settings: {
       "better-tailwindcss": {
         entryPoint: "src/styles/global.css",
       },
     },
     rules: {
-      ...betterTailwindcss.configs.recommended.rules,
       // Custom plain-CSS classes defined outside @layer utilities are not
       // registered in Tailwind's utility set, so the no-unknown-classes rule
       // would flag them as unknown.  Ignore them explicitly.
