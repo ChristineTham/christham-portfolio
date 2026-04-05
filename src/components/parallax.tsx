@@ -16,34 +16,20 @@ interface ParallaxProps {
 }
 
 export function Parallax({ pages, children }: ParallaxProps) {
-  // ref is kept solely to measure the viewport height (clientHeight) inside
-  // ParallaxLayer transforms — it is not used as a scroll container.
   const ref = useRef<HTMLDivElement>(null)
-  // Track the native window / page scroll instead of a custom overflow div.
-  // This is the most reliable approach across all browsers and devices: the
-  // inner 500 vh content naturally makes the page scrollable, and touch /
-  // wheel events are handled by the browser without any custom container.
-  const { scrollY } = useScroll()
+  const { scrollY } = useScroll({ container: ref })
 
   return (
     <ParallaxContext.Provider value={{ scrollY, containerRef: ref }}>
-      {/*
-        This div has height: 100vh so that containerRef.current.clientHeight
-        equals the viewport height (used in ParallaxLayer transform maths).
-        It does NOT have overflow:scroll — the page scrolls natively.
-      */}
       <div
         ref={ref}
         style={{
           height: "100vh",
+          overflowY: "scroll",
+          overflowX: "hidden",
           position: "relative",
         }}
       >
-        {/*
-          500 vh inner div overflows the 100 vh outer div (overflow: visible).
-          Browsers extend the document scrollable height to accommodate this,
-          making the page scroll natively by the correct amount.
-        */}
         <div style={{ height: `${pages * 100}vh`, position: "relative" }}>
           {children}
         </div>
