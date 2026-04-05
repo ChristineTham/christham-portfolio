@@ -15,7 +15,7 @@ vi.mock('next/image', () => ({
     React.createElement('img', { src, alt, width, height, style, loading }),
 }))
 
-import ProjectCard from '../components/project-card'
+import ProjectCard from '@/components/project-card'
 
 describe('ProjectCard', () => {
   const defaultProps = {

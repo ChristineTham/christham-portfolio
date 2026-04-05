@@ -1,15 +1,15 @@
 'use client'
 
 import React from 'react'
-import Divider from '../elements/divider'
-import Inner from '../elements/inner'
-import Content from '../elements/content'
-import { UpDown, UpDownWide } from '../styles/animations'
+import Divider from '@/components/divider'
+import Inner from '@/components/inner'
+import Content from '@/components/content'
+import { UpDown, UpDownWide } from '@/components/animations'
 
 import Footer from './footer'
-import { HIDDEN_MOBILE_CLASS, iconpos } from '../styles/utils'
+import { HIDDEN_MOBILE_CLASS, iconpos } from '@/lib/utils'
 
-import ContactMDX from '../sections/contact.mdx'
+import ContactMDX from '@/sections/contact.mdx'
 
 import {
   AgendaIcon,
@@ -21,7 +21,7 @@ import {
   MessageIcon,
   SendIcon,
   PostItIcon,
-} from '../assets/icons'
+} from '@/assets/icons'
 
 const Background = '/backgrounds/lake.svg'
 

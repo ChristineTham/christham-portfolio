@@ -2,14 +2,14 @@
 
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { useColorMode } from '../hooks/useColorMode'
-import { fonts, rosely } from '../theme'
+import { useColorMode } from '@/hooks/useColorMode'
+import { fonts, rosely } from '@/theme'
 
-import Divider from '../elements/divider'
-import Inner from '../elements/inner'
-import Content from '../elements/content'
-import { UpDown, UpDownWide } from '../styles/animations'
-import { HIDDEN_MOBILE_CLASS, iconpos } from '../styles/utils'
+import Divider from '@/components/divider'
+import Inner from '@/components/inner'
+import Content from '@/components/content'
+import { UpDown, UpDownWide } from '@/components/animations'
+import { HIDDEN_MOBILE_CLASS, iconpos } from '@/lib/utils'
 
 const Background = '/backgrounds/garden-tree.svg'
 
@@ -41,7 +41,7 @@ import {
   PianoIcon,
   FloralIcon,
   GuitarIcon,
-} from '../assets/icons'
+} from '@/assets/icons'
 
 const Hero: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => {
   const [colorMode, setColorMode] = useColorMode()

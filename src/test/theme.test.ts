@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { fonts, rosely, lightColors, darkColors } from '../theme'
+import { fonts, rosely, lightColors, darkColors } from '@/theme'
 
 describe('fonts', () => {
   it('exports a body font stack', () => {

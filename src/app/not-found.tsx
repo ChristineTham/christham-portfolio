@@ -1,15 +1,14 @@
 import Link from "next/link"
-import { Parallax } from "../components/parallax"
-import Layout from "../components/layout"
-import Divider from "../elements/divider"
-import { UpDown, UpDownWide } from "../styles/animations"
-import Svg from "../components/svg"
-import Content from "../elements/content"
-import Inner from "../elements/inner"
+import { Parallax } from "@/components/parallax"
+import Divider from "@/components/divider"
+import { UpDown, UpDownWide } from "@/components/animations"
+import Svg from "@/components/svg"
+import Content from "@/components/content"
+import Inner from "@/components/inner"
 
 export default function NotFound() {
   return (
-    <Layout>
+    <main>
       <Parallax pages={1}>
         <div>
           <Divider speed={0.2} offset={0} factor={1}>
@@ -190,6 +189,6 @@ export default function NotFound() {
           </Content>
         </div>
       </Parallax>
-    </Layout>
+    </main>
   )
 }
