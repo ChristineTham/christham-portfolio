@@ -39,14 +39,7 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
       offset={1.1}
       factor={factor}
     />
-    <Content speed={0.4} offset={offset + 0.2} factor={factor}>
-      <Inner>
-        <div className="grid grid-cols-1 gap-2 xs:gap-8 sm:grid-cols-2 md:gap-16 projects-grid">
-          <ProjectsMDX />
-        </div>
-      </Inner>
-    </Content>
-    <Divider speed={0.1} offset={offset} factor={factor} className="z-10">
+    <Divider speed={0.1} offset={offset} factor={factor}>
       <img
         src={Background}
         alt="projects background"
@@ -79,6 +72,13 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
       <CalculatorIcon style={iconpos(16, '75%', '30%')} />
       <ChipIcon style={iconpos(16, '80%', '70%')} />
     </Divider>
+    <Content speed={0.4} offset={offset + 0.2} factor={factor}>
+      <Inner>
+        <div className="grid grid-cols-1 gap-2 xs:gap-8 sm:grid-cols-2 md:gap-16 projects-grid">
+          <ProjectsMDX />
+        </div>
+      </Inner>
+    </Content>
   </div>
 )
 
