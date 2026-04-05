@@ -182,7 +182,7 @@ export default function NotFound() {
           </Divider>
           <Content speed={0.4} offset={0} factor={1}>
             <Inner>
-              <h1 className="text-[var(--color-heading)]">404 - Page not found</h1>
+              <h1 className="text-(--color-heading)">404 - Page not found</h1>
               <p>
                 Go back to <Link href="/">homepage</Link>.
               </p>

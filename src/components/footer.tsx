@@ -2,10 +2,16 @@ import React from 'react'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-center block absolute bottom-0 text-[var(--color-textMuted)] p-2 xs:p-4 w-full">
+    <footer className="
+      absolute bottom-0 block w-full p-2 text-center text-(--color-textMuted)
+      xs:p-4
+    ">
       Copyright &copy; {new Date().getFullYear()}. All rights reserved.
       <br />
-      <div className="flex justify-center items-center mt-4 text-[var(--color-text)] font-semibold [&_a]:text-[var(--color-text)]">
+      <div className="
+        mt-4 flex items-center justify-center font-semibold text-(--color-text)
+        [&_a]:text-(--color-text)
+      ">
         <img width="30" height="30" src="/logo.svg" alt="Hello Tham Logo" />
         {` `}
         <a

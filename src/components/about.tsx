@@ -29,7 +29,9 @@ const Background = '/backgrounds/floral-spring.svg'
 const About: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>
     <Divider bg="var(--color-divider)" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={offset} factor={factor} />
-    <Divider speed={0.1} offset={offset} factor={factor} className="pointer-events-none">
+    <Divider speed={0.1} offset={offset} factor={factor} className="
+      pointer-events-none
+    ">
       <img
         src={Background}
         alt="about background"
