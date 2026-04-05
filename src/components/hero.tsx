@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { ReactTyped } from "react-typed"
+import dynamic from 'next/dynamic'
 import { useColorMode } from '../hooks/useColorMode'
 import { fonts, rosely } from '../theme'
 
@@ -12,6 +12,13 @@ import { UpDown, UpDownWide } from '../styles/animations'
 import { HIDDEN_MOBILE_CLASS, iconpos } from '../styles/utils'
 
 const Background = '/backgrounds/garden-tree.svg'
+
+// Loaded only on the client to avoid SSR/CSR hydration mismatches: the typing
+// animation produces different output on the server vs. the first client render.
+const ReactTyped = dynamic(
+  () => import('react-typed').then((m) => m.ReactTyped),
+  { ssr: false }
+)
 
 import {
   MonitorIcon,

@@ -45,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         {/* Injected before page render to apply stored color mode without flash */}
         <script dangerouslySetInnerHTML={{ __html: noFlashScript }} />
