@@ -32,14 +32,36 @@ with [Kawaii Flat Icons](https://www.flaticon.com/authors/kawaii/flat).
 src/
 ├── app/                # Next.js App Router (layout, page, not-found)
 ├── assets/
-│   ├── backgrounds/    # Background SVG images (in public/)
-│   └── icons/          # Kawaii Flat Icon SVG assets and index
-├── components/         # React page-section components (hero, about, projects, contact, parallax, …)
-├── elements/           # Low-level layout primitives (Divider, Content, Inner)
-├── hooks/              # Custom React hooks (useSiteMetadata, useColorMode)
+│   └── icons/          # Kawaii Flat Icon SVG assets and barrel index
+├── components/         # All React components:
+│   ├── hero.tsx        #   Page-section components (hero, about, projects, contact, footer)
+│   ├── about.tsx
+│   ├── projects.tsx
+│   ├── contact.tsx
+│   ├── footer.tsx
+│   ├── parallax.tsx    #   Custom Parallax / ParallaxLayer built on Motion
+│   ├── svg.tsx
+│   ├── project-card.tsx
+│   ├── animations.tsx  #   CSS animation wrapper components (UpDown, UpDownWide)
+│   ├── content.tsx     #   Layout primitives (Content, Divider, Inner)
+│   ├── divider.tsx
+│   └── inner.tsx
+├── hooks/              # Custom React hooks (useColorMode)
+├── lib/                # Non-component utilities and data
+│   ├── utils.ts        #   iconpos, makeIcon helpers and constants
+│   └── site-metadata.ts#   Site-wide metadata object
 ├── sections/           # MDX content files for each section
-├── styles/             # Animation helpers, utility functions and global CSS
+├── styles/             # Global CSS only (global.css)
+├── test/               # Vitest unit tests
 └── theme/              # Rosely colour theme tokens
+```
+
+Static assets served by Next.js directly (never imported by source files) live in `public/`:
+
+```
+public/
+├── backgrounds/        # Background SVG images used via URL strings
+└── portfolio/          # Portfolio screenshot images used via URL strings
 ```
 
 ## 🚀 Getting Started
@@ -81,7 +103,7 @@ migrated to [Next.js 16](https://nextjs.org) (App Router) with [Turbopack](https
 | Images | `gatsby-plugin-image` | Native `<img>` / Next.js `<Image>` |
 | Parallax | `@react-spring/parallax` | Custom `Parallax` / `ParallaxLayer` built on [Motion](https://motion.dev/) |
 | Emotion CSS | `@emotion/react` / `@emotion/styled` | [Tailwind CSS v4](https://tailwindcss.com) |
-| Tests | Vitest suite | Removed (to be re-added) |
+| Tests | Vitest suite | Vitest suite (re-added in `src/test/`) |
 | Deployment | Netlify (Gatsby adapter) | Netlify (Next.js adapter) |
 
 ### Key implementation notes
@@ -91,8 +113,9 @@ migrated to [Next.js 16](https://nextjs.org) (App Router) with [Turbopack](https
   It replicates the original offset/speed/factor API.
 - **SVG icons as React components:** The Kawaii icon SVGs are imported directly as React components
   via `@svgr/webpack`, configured in `next.config.ts` for both Turbopack and Webpack.
-- **Dark mode:** Implemented via a `useColorMode` hook that toggles a `data-theme` attribute on
-  `<html>`, with Tailwind CSS v4 custom properties driving the colour tokens from `src/theme/`.
+- **Dark mode:** Implemented via a `useColorMode` hook that toggles a `dark` class on `<html>` and
+  persists the preference to `localStorage`, with Tailwind CSS v4 custom properties driving the colour
+  tokens from `src/theme/`.
 - **Stacking contexts:** Each `ParallaxLayer` is a Motion `motion.div` with a CSS `transform`,
   which creates its own stacking context. Icon layers are placed before content layers in the DOM
   and marked `pointer-events-none` so content is always rendered and interactive on top.
