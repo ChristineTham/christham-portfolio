@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react"
-import { HIDDEN_MOBILE_CLASS } from "../styles/utils"
+import { HIDDEN_MOBILE_CLASS } from "@/lib/utils"
 
 type IconType = "triangle" | "circle" | "arrowUp" | "upDown" | "box" | "hexa" | "cross"
 

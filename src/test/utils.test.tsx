@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { iconpos, makeIcon, HIDDEN_MOBILE_CLASS, hidden } from '../styles/utils'
+import { iconpos, makeIcon, HIDDEN_MOBILE_CLASS, hidden } from '@/lib/utils'
 import React from 'react'
 import { render } from '@testing-library/react'
 

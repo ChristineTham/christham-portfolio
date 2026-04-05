@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { waveAnimation, wave, UpDown, UpDownWide } from '../styles/animations'
+import { waveAnimation, wave, UpDown, UpDownWide } from '@/components/animations'
 import { render } from '@testing-library/react'
 import React from 'react'
 

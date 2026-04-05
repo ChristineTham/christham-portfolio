@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import useSiteMetadata from '../hooks/use-site-metadata'
+import useSiteMetadata from '@/lib/site-metadata'
 
 describe('useSiteMetadata', () => {
   it('returns an object with siteTitle', () => {

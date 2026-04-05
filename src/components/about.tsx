@@ -1,14 +1,14 @@
 'use client'
 
 import React from 'react'
-import Divider from '../elements/divider'
-import Inner from '../elements/inner'
-import Content from '../elements/content'
-import { UpDown, UpDownWide } from '../styles/animations'
+import Divider from '@/components/divider'
+import Inner from '@/components/inner'
+import Content from '@/components/content'
+import { UpDown, UpDownWide } from '@/components/animations'
 
-import { HIDDEN_MOBILE_CLASS, iconpos } from '../styles/utils'
+import { HIDDEN_MOBILE_CLASS, iconpos } from '@/lib/utils'
 
-import AboutMDX from '../sections/about.mdx'
+import AboutMDX from '@/sections/about.mdx'
 
 import {
   CoffeeIcon,
@@ -22,7 +22,7 @@ import {
   DogIcon,
   FlowerIcon,
   RubikIcon,
-} from '../assets/icons'
+} from '@/assets/icons'
 
 const Background = '/backgrounds/floral-spring.svg'
 

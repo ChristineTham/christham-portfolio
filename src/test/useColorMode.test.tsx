@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest'
 import { renderHook, act } from '@testing-library/react'
-import { useColorMode } from '../hooks/useColorMode'
+import { useColorMode } from '@/hooks/useColorMode'
 
 const COLOR_MODE_KEY = 'color-mode'
 

@@ -1,14 +1,14 @@
 'use client'
 
 import React from 'react'
-import Divider from '../elements/divider'
-import Inner from '../elements/inner'
-import Content from '../elements/content'
-import { UpDown, UpDownWide } from '../styles/animations'
+import Divider from '@/components/divider'
+import Inner from '@/components/inner'
+import Content from '@/components/content'
+import { UpDown, UpDownWide } from '@/components/animations'
 
-import { iconpos } from '../styles/utils'
+import { iconpos } from '@/lib/utils'
 
-import ProjectsMDX from '../sections/projects.mdx'
+import ProjectsMDX from '@/sections/projects.mdx'
 
 import {
   WrenchIcon,
@@ -26,7 +26,7 @@ import {
   ChipIcon,
   CompassIcon,
   ProgrammingIcon,
-} from '../assets/icons'
+} from '@/assets/icons'
 
 const Background = '/backgrounds/river.svg'
 
