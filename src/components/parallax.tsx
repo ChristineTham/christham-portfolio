@@ -72,9 +72,11 @@ export function ParallaxLayer({
   // speed<0  → layer scrolls faster than the page (appears to rush ahead)
   const containerRef = ctx?.containerRef
   const y = useTransform(scrollY, (v: number) => {
-    const viewportHeight =
-      containerRef?.current?.clientHeight ??
-      (typeof window !== "undefined" ? window.innerHeight : 0)
+    // Use clientHeight when available (after mount). Fall back to 0 so that
+    // the initial server-rendered value and the first client render agree —
+    // reading window.innerHeight here would cause a hydration mismatch because
+    // it is defined on the client but not on the server.
+    const viewportHeight = containerRef?.current?.clientHeight ?? 0
     return -(v - offset * viewportHeight) * speed
   })
 
