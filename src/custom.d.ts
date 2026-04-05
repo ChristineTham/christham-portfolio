@@ -1,14 +1,16 @@
 declare module '*.svg' {
   import type React from 'react'
-  const content: React.FC<React.SVGProps<SVGSVGElement>> & { defaultProps?: { viewBox?: string } }
-  export default content
-}
-declare module '*.mdx' {
-  const content: JSX
+  const content: React.FC<React.SVGProps<SVGSVGElement>>
   export default content
 }
 
-declare module '*.jpg' {
-  const content: ImageData
+declare module '*.mdx' {
+  import type { MDXComponents } from 'mdx/types'
+  const content: React.FC<{ components?: MDXComponents }>
+  export default content
+}
+
+declare module '*.css' {
+  const content: Record<string, string>
   export default content
 }

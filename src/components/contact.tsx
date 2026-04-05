@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
@@ -8,8 +10,6 @@ import Footer from './footer'
 import { HIDDEN_MOBILE_CLASS, iconpos } from '../styles/utils'
 
 import ContactMDX from '../sections/contact.mdx'
-
-import Background from '../assets/backgrounds/lake.svg'
 
 import {
   AgendaIcon,
@@ -22,6 +22,8 @@ import {
   SendIcon,
   PostItIcon,
 } from '../assets/icons'
+
+const Background = '/backgrounds/lake.svg'
 
 const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 1 }) => (
   <div>
@@ -44,13 +46,7 @@ const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor
         </div>
       </div>
     </Divider>
-    <Content speed={0.4} offset={offset} factor={factor}>
-      <Inner>
-        <ContactMDX />
-      </Inner>
-      <Footer />
-    </Content>
-    <Divider speed={0.1} offset={offset} factor={factor}>
+    <Divider speed={0.1} offset={offset} factor={factor} className="pointer-events-none">
       <img
         src={Background}
         alt="contact background"
@@ -76,6 +72,12 @@ const Contact: React.FC<{ offset: number; factor?: number }> = ({ offset, factor
       <SendIcon style={iconpos(16, '20%', '25%')} />
       <PostItIcon style={iconpos(16, '80%', '70%')} />
     </Divider>
+    <Content speed={0.4} offset={offset} factor={factor}>
+      <Inner>
+        <ContactMDX />
+      </Inner>
+      <Footer />
+    </Content>
   </div>
 )
 

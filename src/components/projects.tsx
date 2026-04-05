@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Divider from '../elements/divider'
 import Inner from '../elements/inner'
@@ -5,8 +7,6 @@ import Content from '../elements/content'
 import { UpDown, UpDownWide } from '../styles/animations'
 
 import { iconpos } from '../styles/utils'
-
-import Background from '../assets/backgrounds/river.svg'
 
 import ProjectsMDX from '../sections/projects.mdx'
 
@@ -28,6 +28,8 @@ import {
   ProgrammingIcon,
 } from '../assets/icons'
 
+const Background = '/backgrounds/river.svg'
+
 const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, factor = 2 }) => (
   <div>
     <Divider
@@ -37,14 +39,7 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
       offset={1.1}
       factor={factor}
     />
-    <Content speed={0.4} offset={offset + 0.2} factor={factor}>
-      <Inner>
-        <div className="grid grid-cols-1 gap-2 xs:gap-8 sm:grid-cols-2 md:gap-16 projects-grid">
-          <ProjectsMDX />
-        </div>
-      </Inner>
-    </Content>
-    <Divider speed={0.1} offset={offset} factor={factor} className="z-10">
+    <Divider speed={0.1} offset={offset} factor={factor} className="pointer-events-none">
       <img
         src={Background}
         alt="projects background"
@@ -77,6 +72,13 @@ const Projects: React.FC<{ offset: number; factor?: number }> = ({ offset, facto
       <CalculatorIcon style={iconpos(16, '75%', '30%')} />
       <ChipIcon style={iconpos(16, '80%', '70%')} />
     </Divider>
+    <Content speed={0.4} offset={offset + 0.2} factor={factor}>
+      <Inner>
+        <div className="grid grid-cols-1 gap-2 xs:gap-8 sm:grid-cols-2 md:gap-16 projects-grid">
+          <ProjectsMDX />
+        </div>
+      </Inner>
+    </Content>
   </div>
 )
 

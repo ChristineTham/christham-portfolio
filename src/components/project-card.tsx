@@ -1,6 +1,7 @@
-import { graphql, useStaticQuery } from 'gatsby'
+'use client'
+
+import Image from 'next/image'
 import React from 'react'
-import { GatsbyImage } from 'gatsby-plugin-image'
 
 type ProjectCardProps = {
   link: string
@@ -11,27 +12,6 @@ type ProjectCardProps = {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image = 'portfolio.jpg', bg }) => {
-  const data = useStaticQuery(graphql`
-    query ImageQuery {
-      allFile(filter: { extension: { eq: "jpg" }, sourceInstanceName: { eq: "assets" } }) {
-        edges {
-          node {
-            base
-            childImageSharp {
-              gatsbyImageData(width: 800)
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  type EdgeType = {
-    node: { base: string }
-  }
-  const images = data.allFile.edges.map((item: EdgeType) => item.node.base)
-  const index = images.indexOf(image)
-
   return (
     <a
       href={link}
@@ -43,10 +23,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ link, title, children, image 
         transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
       }}
     >
-      <GatsbyImage
-        image={data.allFile.edges[index].node.childImageSharp.gatsbyImageData}
-        alt={image.replace(/.jpg$/, '')}
+      <Image
+        src={`/portfolio/${image}`}
+        alt={image.replace(/\.jpg$/, '')}
+        width={800}
+        height={533}
         loading="eager"
+        style={{ width: '100%', height: 'auto' }}
       />
       <div
         className="tracking-wide pt-2 text-2xl xs:text-3xl font-medium leading-none"
