@@ -5,16 +5,9 @@ const eslintConfig = [
   ...nextCoreWebVitals,
   ...nextTypescript,
   {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-    ],
-  },
-  {
     rules: {
+      // Several components use native <img> for decorative SVG backgrounds
+      // where next/image provides no optimisation benefit.
       "@next/next/no-img-element": "off",
     },
   },
