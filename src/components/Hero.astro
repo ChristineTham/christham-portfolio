@@ -68,7 +68,7 @@ import GardenTreeBackground from '../assets/backgrounds/garden-tree.svg'
     <Icon src={GuitarIcon} style={iconpos(24, '40%', '80%')} hiddenMobile />
   </Divider>
   <Content speed={0.4} offset={offset} factor={factor}>
-    <Inner>
+    <Inner class="max-w-4xl">
       <button
         id="color-mode-toggle"
         class="absolute top-2 left-2 mx-auto mb-4 block cursor-pointer self-center rounded-md border-0 bg-(--color-text) px-4 py-2 text-sm font-semibold text-(--color-background)"
@@ -77,14 +77,14 @@ import GardenTreeBackground from '../assets/backgrounds/garden-tree.svg'
       >
         Dark
       </button>
-      <div class="flex min-h-44 flex-col justify-start xs:min-h-52 sm:min-h-56">
+      <div class="flex min-h-44 flex-col justify-start sm:min-h-52 md:min-h-56">
         <h1
           id="hero-heading"
-          class="mt-2 mb-3 rounded-md bg-black/10 p-2 text-4xl leading-none tracking-wide text-(--color-heading) xs:text-5xl sm:text-6xl dark:bg-black/60"
+          class="mt-2 mb-3 rounded-md bg-black/10 p-2 text-4xl leading-none tracking-wide text-(--color-heading) sm:text-5xl md:text-6xl dark:bg-black/60"
         >
           Hi, I am <b>Chris Tham</b>
         </h1>
-        <span class="inline-flex min-h-8 items-baseline font-mono text-2xl/tight text-(--color-icon_purple) xs:min-h-12 xs:text-4xl">
+        <span class="inline-flex min-h-8 items-baseline font-mono text-2xl/tight text-(--color-icon_purple) sm:min-h-12 sm:text-4xl">
           <span
             id="typed-output"
             class="inline-block align-baseline"

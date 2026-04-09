@@ -17,7 +17,7 @@ const { link, title, image, bg } = Astro.props
   href={link}
   target="_blank"
   rel="noreferrer noopener"
-  class="relative block w-full rounded-lg px-4 py-2 text-white no-underline shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:text-white hover:shadow-xl xs:px-8 xs:py-4"
+  class="relative block w-full rounded-lg px-4 py-2 text-white no-underline shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:text-white hover:shadow-xl sm:px-8 sm:py-4"
   style={`background: ${bg || 'none'};`}
 >
   <Image
@@ -28,10 +28,10 @@ const { link, title, image, bg } = Astro.props
     loading="eager"
     class="h-auto w-full"
   />
-  <div class="pt-2 text-2xl leading-none font-medium tracking-wide xs:text-3xl">
+  <div class="pt-2 text-2xl leading-none font-medium tracking-wide sm:text-3xl">
     {title}
   </div>
-  <div class="text-sm opacity-80 xs:text-base">
+  <div class="text-sm opacity-80 sm:text-base">
     <slot />
   </div>
 </a>
