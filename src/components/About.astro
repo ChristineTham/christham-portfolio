@@ -4,7 +4,7 @@ import Content from './Content.astro'
 import Inner from './Inner.astro'
 import Icon from './Icon.astro'
 import { iconpos } from '@/lib/utils'
-import AboutMDX from '@/sections/about.mdx'
+import { getEntry, render } from 'astro:content'
 
 interface Props {
   offset: number
@@ -12,6 +12,13 @@ interface Props {
 }
 
 const { offset, factor = 1 } = Astro.props
+const aboutEntry = await getEntry('Sections', 'about')
+
+if (!aboutEntry) {
+  throw new Error('Sections entry "about" not found')
+}
+
+const { Content: AboutSection } = await render(aboutEntry)
 
 import CoffeeIconRaw from '@/assets/icons/coffee.svg?raw'
 import ReadingIconRaw from '@/assets/icons/reading.svg?raw'
@@ -52,7 +59,7 @@ import RubikIconRaw from '@/assets/icons/Rubik.svg?raw'
   </Divider>
   <Content speed={0.4} offset={offset} factor={factor}>
     <Inner>
-      <AboutMDX />
+      <AboutSection />
     </Inner>
   </Content>
 </div>

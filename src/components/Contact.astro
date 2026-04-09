@@ -5,7 +5,7 @@ import Inner from './Inner.astro'
 import Icon from './Icon.astro'
 import Footer from './Footer.astro'
 import { iconpos } from '@/lib/utils'
-import ContactMDX from '@/sections/contact.mdx'
+import { getEntry, render } from 'astro:content'
 
 interface Props {
   offset: number
@@ -13,6 +13,13 @@ interface Props {
 }
 
 const { offset, factor = 1 } = Astro.props
+const contactEntry = await getEntry('Sections', 'contact')
+
+if (!contactEntry) {
+  throw new Error('Sections entry "contact" not found')
+}
+
+const { Content: ContactSection } = await render(contactEntry)
 
 import AgendaIconRaw from '@/assets/icons/agenda.svg?raw'
 import CheckListIconRaw from '@/assets/icons/check-list.svg?raw'
@@ -66,7 +73,7 @@ import PostItIconRaw from '@/assets/icons/post-it.svg?raw'
   </Divider>
   <Content speed={0.4} offset={offset} factor={factor}>
     <Inner>
-      <ContactMDX />
+      <ContactSection />
     </Inner>
     <Footer />
   </Content>

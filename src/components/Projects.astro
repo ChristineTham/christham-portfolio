@@ -4,8 +4,8 @@ import Content from './Content.astro'
 import Inner from './Inner.astro'
 import Icon from './Icon.astro'
 import { iconpos } from '@/lib/utils'
-import ProjectsMDX from '@/sections/projects.mdx'
 import ProjectCard from './ProjectCard.astro'
+import { getCollection } from 'astro:content'
 
 interface Props {
   offset: number
@@ -13,6 +13,7 @@ interface Props {
 }
 
 const { offset, factor = 2 } = Astro.props
+const projects = (await getCollection('Projects')).sort((a, b) => a.data.order - b.data.order)
 
 import WrenchIconRaw from '@/assets/icons/adjustable-wrench.svg?raw'
 import RubikIconRaw from '@/assets/icons/Rubik.svg?raw'
@@ -69,7 +70,13 @@ import ProgrammingIconRaw from '@/assets/icons/programming.svg?raw'
   <Content speed={0.4} offset={offset + 0.2} factor={factor}>
     <Inner>
       <div class="projects-grid grid grid-cols-1 gap-2 xs:gap-8 sm:grid-cols-2 md:gap-16">
-        <ProjectsMDX components={{ ProjectCard }} />
+        {
+          projects.map(({ data }) => (
+            <ProjectCard title={data.title} link={data.link} bg={data.bg} image={data.image}>
+              {data.description}
+            </ProjectCard>
+          ))
+        }
       </div>
     </Inner>
   </Content>
