@@ -42,12 +42,6 @@ import GardenTreeBackground from '@/assets/backgrounds/garden-tree.svg'
     class="fixed top-0 left-0 w-full opacity-25"
   />
   <Divider speed={0.2} offset={offset} factor={factor} class="pointer-events-none">
-    <p class="absolute bottom-2 left-2 z-10 text-xs text-(--color-textMuted)">
-      <em>Kawaii Flat</em> Icons made by
-      <a href="https://www.flaticon.com/authors/freepik" title="Author">Freepik</a>
-      from
-      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-    </p>
     <div class="absolute inset-0 animate-[up-down_4s_ease-in-out_infinite_alternate]">
       <Icon src={WebsiteIcon} style={iconpos(48, '60%', '62%')} hiddenMobile />
       <Icon src={HomeIcon} style={iconpos(48, '10%', '12%')} />
@@ -77,22 +71,26 @@ import GardenTreeBackground from '@/assets/backgrounds/garden-tree.svg'
     <Inner>
       <button
         id="color-mode-toggle"
-        class="absolute top-2 left-2 mx-auto mb-4 block cursor-pointer self-center rounded-md border-0 bg-(--color-text) px-4 py-2 font-semibold text-(--color-background)"
+        class="absolute top-2 left-2 mx-auto mb-4 block cursor-pointer self-center rounded-md border-0 bg-(--color-text) px-4 py-2 text-sm font-semibold text-(--color-background)"
         type="button"
         aria-label="Toggle dark mode"
       >
-        Dark Theme
+        Dark
       </button>
-      <h1
-        id="hero-heading"
-        class="mt-2 mb-3 rounded-md bg-black/10 p-2 text-4xl tracking-wide text-(--color-heading) xs:text-5xl sm:text-6xl dark:bg-black/60"
-      >
-        Hi, I am Chris Tham
-      </h1>
-      <span
-        id="typed-output"
-        class="font-mono text-2xl text-(--color-icon_purple) xs:text-4xl"
-      ></span>
+      <div class="flex min-h-44 flex-col justify-start xs:min-h-52 sm:min-h-56">
+        <h1
+          id="hero-heading"
+          class="mt-2 mb-3 rounded-md bg-black/10 p-2 text-4xl leading-none tracking-wide text-(--color-heading) xs:text-5xl sm:text-6xl dark:bg-black/60"
+        >
+          Hi, I am <b>Chris Tham</b>
+        </h1>
+        <span class="inline-flex min-h-8 items-baseline font-mono text-2xl/tight text-(--color-icon_purple) xs:min-h-12 xs:text-4xl">
+          <span
+            id="typed-output"
+            class="inline-block align-baseline"
+          ></span>
+        </span>
+      </div>
     </Inner>
   </Content>
 </div>
@@ -104,8 +102,8 @@ import GardenTreeBackground from '@/assets/backgrounds/garden-tree.svg'
   function updateButton() {
     if (btn) {
       btn.textContent = document.documentElement.classList.contains('dark')
-        ? 'Light Theme'
-        : 'Dark Theme'
+        ? 'Light'
+        : 'Dark'
     }
   }
 
@@ -136,6 +134,26 @@ import GardenTreeBackground from '@/assets/backgrounds/garden-tree.svg'
     typeSpeed: 100,
     backSpeed: 50,
     backDelay: 2000,
+    showCursor: true,
+    cursorChar: '_',
+    autoInsertCss: false,
     loop: true,
   })
 </script>
+
+<style is:global>
+  .typed-cursor {
+    animation: typed-cursor-blink 1s step-end infinite;
+  }
+
+  @keyframes typed-cursor-blink {
+    from,
+    to {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
+</style>

@@ -22,18 +22,15 @@ for structured content.
 
 ## Features
 
-- Astro 6 with TypeScript
-- Tailwind CSS v4 integration via Vite plugin
-- Light/dark mode support
-- Custom parallax behavior for layered sections
-- Typed hero animation using [typed.js](https://github.com/mattboldt/typed.js/)
-- SVG icons imported and rendered as Astro SVG components
-- Astro image optimization for portfolio card images (`astro:assets`)
-- Structured content with Astro Content Collections:
-  - `Projects` collection (JSON entries)
-  - `Sections` collection (Markdown entries)
-- ESLint flat config with Astro, TypeScript, Tailwind, and accessibility rules
-- Vitest unit tests
+- Fast, modern portfolio site built with Astro and Tailwind
+- Responsive design that works across desktop and mobile
+- Light and dark mode toggle on the page
+- Smooth layered scrolling effects
+- Animated intro text in the hero section
+- SVG icons and optimized project images
+- Project and section content managed from structured content files
+- Centralised colour and theme styling
+- Automated checks for code quality and tests
 
 ## Current Project Structure
 
@@ -118,3 +115,38 @@ rendered through the `Sections` collection.
 
 Section background illustrations are sourced from `src/assets/backgrounds` and
 imported in components as module assets.
+
+## Styling and Interaction Notes
+
+- Light/dark mode is toggled from the hero section and persisted with `localStorage`.
+- Theme values are defined as CSS custom properties in `src/styles/global.css`.
+- Parallax layers use `data-parallax-*` attributes and are updated by
+  `src/scripts/parallax.ts` on scroll/resize, with an initial `requestAnimationFrame`
+  pass to reduce first-paint jumps.
+
+## How Animation Effects Are Achieved
+
+This site uses a few focused animation techniques that work together:
+
+- Layered parallax scrolling:
+  Content sections are rendered as layers with offset/speed values.
+  As you scroll, `src/scripts/parallax.ts` recalculates each layer's vertical
+  position and updates `transform: translateY(...)` to create depth.
+
+- Floating icon motion:
+  Hero icons are grouped into containers that use CSS keyframes
+  (`up-down` and `up-down-wide`) for gentle vertical movement.
+  These are applied with Tailwind animation utility classes.
+
+- Typed hero text:
+  The role text in the hero is animated with `typed.js`, cycling through words
+  using type speed, backspace speed, and delay settings.
+
+- Blinking cursor effect:
+  The typed cursor is styled globally with a custom blink keyframe
+  (`typed-cursor-blink`) so it stays visually consistent with the hero text.
+
+- First-paint stability:
+  Parallax transforms are set immediately and then re-applied in
+  `requestAnimationFrame` so the initial frame is positioned correctly and
+  avoids visible jumps.

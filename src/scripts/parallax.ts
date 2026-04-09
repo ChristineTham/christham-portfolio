@@ -5,12 +5,13 @@
 export function initParallax() {
   const container = document.querySelector<HTMLElement>('[data-parallax-container]')
   if (!container) return
+  const parallaxContainer = container
 
-  const layers = container.querySelectorAll<HTMLElement>('[data-parallax-layer]')
+  const layers = parallaxContainer.querySelectorAll<HTMLElement>('[data-parallax-layer]')
 
   function updateLayers() {
-    const scrollY = container!.scrollTop
-    const viewportHeight = container!.clientHeight
+    const scrollY = parallaxContainer.scrollTop
+    const viewportHeight = parallaxContainer.clientHeight
 
     layers.forEach((layer) => {
       const offset = parseFloat(layer.dataset.offset ?? '0')
@@ -20,6 +21,12 @@ export function initParallax() {
     })
   }
 
-  container.addEventListener('scroll', updateLayers, { passive: true })
+  parallaxContainer.addEventListener('scroll', updateLayers, { passive: true })
+  window.addEventListener('resize', updateLayers)
+
+  // Set transforms immediately so layout is correct for first paint in tests/runtime.
   updateLayers()
+
+  // Defer the first measurement until layout is stable to avoid first-paint jumps.
+  requestAnimationFrame(updateLayers)
 }
