@@ -1,0 +1,20 @@
+---
+interface Props {
+  pages: number
+}
+const { pages } = Astro.props
+---
+
+<div
+  data-parallax-container
+  style="height: 100vh; overflow-y: scroll; overflow-x: hidden; position: relative;"
+>
+  <div style={`height: ${pages * 100}vh; position: relative;`}>
+    <slot />
+  </div>
+</div>
+
+<script>
+  import { initParallax } from '@/scripts/parallax'
+  initParallax()
+</script>

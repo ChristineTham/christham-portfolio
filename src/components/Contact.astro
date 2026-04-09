@@ -1,0 +1,73 @@
+---
+import Divider from './Divider.astro'
+import Content from './Content.astro'
+import Inner from './Inner.astro'
+import Icon from './Icon.astro'
+import Footer from './Footer.astro'
+import { iconpos } from '@/lib/utils'
+import ContactMDX from '@/sections/contact.mdx'
+
+interface Props {
+  offset: number
+  factor?: number
+}
+
+const { offset, factor = 1 } = Astro.props
+
+import AgendaIconRaw from '@/assets/icons/agenda.svg?raw'
+import CheckListIconRaw from '@/assets/icons/check-list.svg?raw'
+import EmailIconRaw from '@/assets/icons/email.svg?raw'
+import PhoneIconRaw from '@/assets/icons/smartphone.svg?raw'
+import IDCardIconRaw from '@/assets/icons/id-card.svg?raw'
+import MapIconRaw from '@/assets/icons/map.svg?raw'
+import MessageIconRaw from '@/assets/icons/message.svg?raw'
+import SendIconRaw from '@/assets/icons/send.svg?raw'
+import PostItIconRaw from '@/assets/icons/post-it.svg?raw'
+---
+
+<div>
+  <Divider fill="#be9cc1" speed={0.2} offset={offset} factor={factor}>
+    <div class="absolute bottom-0 w-full transform-[matrix(1,0,0,-1,0,0)]">
+      <div class="contact-wave-wrapper relative h-full">
+        <svg xmlns="http://www.w3.org/2000/svg" id="contact-wave" viewBox="0 0 800 338.05" preserveAspectRatio="none">
+          <path>
+            <animate
+              attributeName="d"
+              values={`M 0 100 Q 250 50 400 200 Q 550 350 800 300 L 800 0 L 0 0 L 0 100 Z;
+              M 0 100 Q 200 150 400 200 Q 600 250 800 300 L 800 0 L 0 0 L 0 100 Z;
+              M 0 100 Q 150 350 400 200 Q 650 50 800 300 L 800 0 L 0 0 L 0 100 Z`}
+              repeatCount="indefinite"
+              dur="30s"
+            />
+          </path>
+        </svg>
+      </div>
+    </div>
+  </Divider>
+  <Divider speed={0.1} offset={offset} factor={factor} class="pointer-events-none">
+    <img
+      src="/backgrounds/lake.svg"
+      alt="contact background"
+      class="fixed top-[10%] left-0 w-full opacity-20"
+    />
+    <div class="animate-up-down">
+      <Icon src={AgendaIconRaw} style={iconpos(16, '70%', '20%')} hiddenMobile />
+      <Icon src={CheckListIconRaw} style={iconpos(16, '25%', '5%')} />
+    </div>
+    <div class="animate-up-down-wide">
+      <Icon src={EmailIconRaw} style={iconpos(16, '95%', '50%')} />
+      <Icon src={PhoneIconRaw} style={iconpos(16, '85%', '15%')} />
+      <Icon src={IDCardIconRaw} style={iconpos(48, '45%', '10%')} hiddenMobile />
+    </div>
+    <Icon src={MapIconRaw} style={iconpos(16, '4%', '20%')} />
+    <Icon src={MessageIconRaw} style={iconpos(16, '70%', '60%')} />
+    <Icon src={SendIconRaw} style={iconpos(16, '20%', '25%')} />
+    <Icon src={PostItIconRaw} style={iconpos(16, '80%', '70%')} />
+  </Divider>
+  <Content speed={0.4} offset={offset} factor={factor}>
+    <Inner>
+      <ContactMDX />
+    </Inner>
+    <Footer />
+  </Content>
+</div>

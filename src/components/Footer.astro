@@ -1,0 +1,23 @@
+---
+const year = new Date().getFullYear()
+---
+
+<footer class="absolute bottom-0 block w-full p-2 text-center text-(--color-textMuted) xs:p-4">
+  Copyright &copy; {year}. All rights reserved.
+  <br />
+  <div class="mt-4 flex items-center justify-center font-semibold text-(--color-text) [&_a]:text-(--color-text)">
+    <img width="30" height="30" src="/logo.svg" alt="Hello Tham Logo" />
+    {` `}
+    <a
+      aria-label="Link to the theme's GitHub repository"
+      class="ml-2"
+      href="https://github.com/ChristineTham/christham-portfolio"
+    >
+      Website
+    </a>
+    &nbsp;by&nbsp;
+    <a aria-label="Link to the theme author's website" href="https://hellotham.com">
+      Hello Tham Pty Ltd
+    </a>
+  </div>
+</footer>

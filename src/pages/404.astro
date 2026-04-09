@@ -1,0 +1,21 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Parallax from '@/components/Parallax.astro'
+import Divider from '@/components/Divider.astro'
+import Content from '@/components/Content.astro'
+import Inner from '@/components/Inner.astro'
+---
+
+<Layout>
+  <main>
+    <Parallax pages={1}>
+      <Divider speed={0.2} offset={0} factor={1} />
+      <Content speed={0.4} offset={0} factor={1}>
+        <Inner>
+          <h1 class="text-(--color-heading)">404 - Page not found</h1>
+          <p>Go back to <a href="/">homepage</a>.</p>
+        </Inner>
+      </Content>
+    </Parallax>
+  </main>
+</Layout>

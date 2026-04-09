@@ -1,0 +1,42 @@
+---
+import '../styles/global.css'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Chris Tham - Portfolio</title>
+    <meta name="description" content="Chris Tham Portfolio is a single page website showcasing my other websites" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chris Tham - Portfolio" />
+    <meta property="og:description" content="Chris Tham Portfolio is a single page website showcasing my other websites" />
+    <meta property="og:url" content="https://portfolio.christham.net" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/portfolio.jpg" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Chris Tham - Portfolio" />
+    <meta name="twitter:description" content="Chris Tham Portfolio is a single page website showcasing my other websites" />
+    <meta name="twitter:creator" content="@chris1tham" />
+    <meta name="twitter:image" content="/portfolio.jpg" />
+    <!-- No-flash dark mode: runs before first paint to avoid FOUC -->
+    <script is:inline>
+      (function() {
+        try {
+          var mode = localStorage.getItem('color-mode');
+          if (mode === 'dark') {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
