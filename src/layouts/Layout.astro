@@ -28,11 +28,13 @@ import '../styles/global.css'
     <script is:inline>
       (function() {
         try {
-          var mode = localStorage.getItem('color-mode');
+          const mode = localStorage.getItem('color-mode');
           if (mode === 'dark') {
             document.documentElement.classList.add('dark');
           }
-        } catch (e) {}
+        } catch {
+          // Ignore storage access failures in restricted browser contexts.
+        }
       })();
     </script>
   </head>

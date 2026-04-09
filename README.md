@@ -4,118 +4,114 @@
 
 ![screenshot](rawassets/screenshot.png)
 
-Chris Tham Portfolio is a [Netlify](https://www.netlify.com) site built using
-[Next.js](https://nextjs.org) (App Router), originally based on
-[gatsby-starter-portfolio-cara](https://cara.lekoarts.de). Rosely design theme,
-with [Kawaii Flat Icons](https://www.flaticon.com/authors/kawaii/flat).
-
-> **Migration note:** This project was migrated from [Gatsby](https://www.gatsbyjs.com) to
-> [Next.js 16](https://nextjs.org) in 2025. See [Migration](#-migration-from-gatsby) below for details.
+Chris Tham Portfolio is a personal site built with [Astro](https://astro.build),
+inspired by [gatsby-starter-portfolio-cara](https://cara.lekoarts.de), using a
+Rosely-inspired visual theme and [Kawaii Flat Icons](https://www.flaticon.com/authors/kawaii/flat).
 
 [**Website**](https://portfolio.christham.net)
 
-## ✨ Features
+## Migration Status
 
-- Light and dark modes
-- Parallax scrolling effect powered by [Framer Motion / Motion](https://motion.dev/)
-- CSS animations on Kawaii Flat Icons from freepik
-- [React Typed](https://github.com/mattboldt/typed.js/) animated text in hero section
-- Inline SVG icons via [@svgr/webpack](https://react-svgr.com) (Turbopack + Webpack compatible)
-- Content authored in [MDX](https://mdxjs.com) via `@next/mdx`
-- [Tailwind CSS v4](https://tailwindcss.com) for styling
-- [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans) and [Noto Sans Mono](https://fonts.google.com/noto/specimen/Noto+Sans+Mono) variable fonts via [Fontsource](https://fontsource.org)
-- TypeScript throughout
+This project has completed a multi-step migration:
 
-## 🗂️ Project Structure
+1. Gatsby -> Next.js (2025)
+2. Next.js -> Astro (2026)
 
-```
+The current codebase is Astro-first, component-driven, and uses Astro Content Collections
+for structured content.
+
+## Features
+
+- Astro 6 with TypeScript
+- Tailwind CSS v4 integration via Vite plugin
+- Light/dark mode support
+- Custom parallax behavior for layered sections
+- Typed hero animation using [typed.js](https://github.com/mattboldt/typed.js/)
+- Structured content with Astro Content Collections:
+  - `Projects` collection (JSON entries)
+  - `Sections` collection (Markdown entries)
+- ESLint flat config with Astro, TypeScript, Tailwind, and accessibility rules
+- Vitest unit tests
+
+## Current Project Structure
+
+```text
 src/
-├── app/                # Next.js App Router (layout, page, not-found)
-├── assets/
-│   └── icons/          # Kawaii Flat Icon SVG assets and barrel index
-├── components/         # All React components:
-│   ├── hero.tsx        #   Page-section components (hero, about, projects, contact, footer)
-│   ├── about.tsx
-│   ├── projects.tsx
-│   ├── contact.tsx
-│   ├── footer.tsx
-│   ├── parallax.tsx    #   Custom Parallax / ParallaxLayer built on Motion
-│   ├── svg.tsx
-│   ├── project-card.tsx
-│   ├── animations.tsx  #   CSS animation wrapper components (UpDown, UpDownWide)
-│   ├── content.tsx     #   Layout primitives (Content, Divider, Inner)
-│   ├── divider.tsx
-│   └── inner.tsx
-├── hooks/              # Custom React hooks (useColorMode)
-├── lib/                # Non-component utilities and data
-│   ├── utils.ts        #   iconpos, makeIcon helpers and constants
-│   └── site-metadata.ts#   Site-wide metadata object
-├── sections/           # MDX content files for each section
-├── styles/             # Global CSS only (global.css)
-├── test/               # Vitest unit tests
-└── theme/              # Rosely colour theme tokens
+  assets/
+    icons/                 # SVG icon assets
+  components/              # Astro UI sections and primitives
+    About.astro
+    Contact.astro
+    Content.astro
+    Divider.astro
+    Footer.astro
+    Hero.astro
+    Icon.astro
+    Inner.astro
+    Parallax.astro
+    ParallaxLayer.astro
+    ProjectCard.astro
+    Projects.astro
+  content/
+    Projects/              # Project entries (JSON)
+    Sections/              # Section content (Markdown)
+  content.config.ts        # Astro content collection definitions
+  layouts/
+    Layout.astro
+  lib/
+    site-metadata.ts
+    utils.ts
+  pages/
+    404.astro
+    index.astro
+  scripts/
+    parallax.ts
+  styles/
+    global.css
+  test/
+    content-structure.test.ts
+    parallax.test.ts
+    theme.test.ts
+    utils.test.ts
+  theme/
+    index.ts
 ```
 
-Static assets served by Next.js directly (never imported by source files) live in `public/`:
-
-```
+```text
 public/
-├── backgrounds/        # Background SVG images used via URL strings
-└── portfolio/          # Portfolio screenshot images used via URL strings
+  backgrounds/             # Section background images
+  portfolio/               # Portfolio card images
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
-**Prerequisites:** Node.js 20+
+Prerequisites:
+
+- Node.js 20+
+- pnpm 10+
+
+Install and run:
 
 ```bash
-# Install dependencies
-npm install
-
-# Start the development server (with Turbopack)
-npm run develop
-
-# Build for production
-npm run build
-
-# Serve the production build locally
-npm start
-
-# Lint
-npm run lint
+pnpm install
+pnpm dev
 ```
 
-## 🔄 Migration from Gatsby
+## Scripts
 
-This project was originally built with [Gatsby](https://www.gatsbyjs.com) and has been fully
-migrated to [Next.js 16](https://nextjs.org) (App Router) with [Turbopack](https://turbo.build/pack).
+- `pnpm dev` - run local development server
+- `pnpm build` - create production build
+- `pnpm preview` - preview production build locally
+- `pnpm check` - run Astro diagnostics/type checks
+- `pnpm lint` - run ESLint
+- `pnpm test` - run Vitest suite
+- `pnpm clean` - remove generated and dependency folders
+- `pnpm refresh` - run Astro upgrade helper and update dependencies
 
-### What changed
+## Content Authoring
 
-| Area | Before (Gatsby) | After (Next.js) |
-|---|---|---|
-| Framework | Gatsby 5 | Next.js 16 (App Router) |
-| Bundler | Webpack (via Gatsby) | Turbopack (default in Next.js 16) |
-| Pages | `src/pages/` + `src/templates/` | `src/app/` (App Router) |
-| Routing | Gatsby file-system routing | Next.js App Router |
-| MDX | `gatsby-plugin-mdx` | `@next/mdx` |
-| SVG icons | `gatsby-plugin-react-svg` | `@svgr/webpack` (Turbopack + Webpack rules) |
-| Images | `gatsby-plugin-image` | Native `<img>` / Next.js `<Image>` |
-| Parallax | `@react-spring/parallax` | Custom `Parallax` / `ParallaxLayer` built on [Motion](https://motion.dev/) |
-| Emotion CSS | `@emotion/react` / `@emotion/styled` | [Tailwind CSS v4](https://tailwindcss.com) |
-| Tests | Vitest suite | Vitest suite (re-added in `src/test/`) |
-| Deployment | Netlify (Gatsby adapter) | Netlify (Next.js adapter) |
+Projects are managed as JSON entries in `src/content/Projects` and rendered by
+the projects section component.
 
-### Key implementation notes
-
-- **Custom Parallax:** Because `@react-spring/parallax` is Gatsby/React-Spring-specific, a lightweight
-  `<Parallax>` and `<ParallaxLayer>` pair was built using Motion's `useScroll` and `useTransform`.
-  It replicates the original offset/speed/factor API.
-- **SVG icons as React components:** The Kawaii icon SVGs are imported directly as React components
-  via `@svgr/webpack`, configured in `next.config.ts` for both Turbopack and Webpack.
-- **Dark mode:** Implemented via a `useColorMode` hook that toggles a `dark` class on `<html>` and
-  persists the preference to `localStorage`, with Tailwind CSS v4 custom properties driving the colour
-  tokens from `src/theme/`.
-- **Stacking contexts:** Each `ParallaxLayer` is a Motion `motion.div` with a CSS `transform`,
-  which creates its own stacking context. Icon layers are placed before content layers in the DOM
-  and marked `pointer-events-none` so content is always rendered and interactive on top.
+About/contact copy is managed as Markdown entries in `src/content/Sections` and
+rendered through the `Sections` collection.
