@@ -67,6 +67,19 @@
   --color-icon_darkest: var(--rosely2);
 }
 
+/* Keep Tailwind Typography defaults and only override prose colors to Rosely tokens. */
+@layer components {
+  .prose[data-prose-theme='rosely'] {
+    --tw-prose-body: var(--color-text);
+    --tw-prose-headings: var(--color-heading);
+    --tw-prose-links: var(--color-primary);
+    --tw-prose-bold: var(--color-heading);
+    --tw-prose-bullets: var(--color-text);
+    --tw-prose-counters: var(--color-text);
+    --tw-prose-quotes: var(--color-heading);
+  }
+}
+
 /* ─── Keyframe animations ─────────────────────────────────────────────── */
 
 @keyframes up-down {

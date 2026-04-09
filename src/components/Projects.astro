@@ -101,7 +101,7 @@ import RiverBackground from '../assets/backgrounds/river.svg'
   </Divider>
   <Content speed={0.4} offset={offset + 0.2} factor={factor}>
     <Inner>
-      <div class="grid grid-cols-1 gap-2 lg:grid-cols-2 sm:gap-8 md:gap-16 [&_h2]:col-span-full [&_h2]:text-[#f7caca]">
+      <div class="grid grid-cols-1 gap-2 sm:gap-8 md:gap-16 lg:grid-cols-2 [&_h2]:col-span-full [&_h2]:text-[#f7caca]">
         {
           renderedProjects.map(({ data, Content: ProjectDescription }, index) => (
             <ProjectCard title={data.title} link={data.link} bg={projectBackgrounds[index]} image={data.image}>

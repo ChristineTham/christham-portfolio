@@ -98,4 +98,28 @@ describe('content structure', () => {
       expect(file).not.toContain('?raw')
     }
   })
+
+  it('uses Tailwind Typography prose wrappers for markdown section rendering', () => {
+    const aboutComponent = fs.readFileSync(path.join(componentsRoot, 'About.astro'), 'utf-8')
+    const contactComponent = fs.readFileSync(path.join(componentsRoot, 'Contact.astro'), 'utf-8')
+
+    expect(aboutComponent).toContain('class="prose max-w-none')
+    expect(contactComponent).toContain('class="prose max-w-none')
+    expect(aboutComponent).toContain('data-prose-theme="rosely"')
+    expect(contactComponent).toContain('data-prose-theme="rosely"')
+  })
+
+  it('does not keep legacy ProseLite wrapper component', () => {
+    expect(hasFile(path.join(componentsRoot, 'ProseLite.astro'))).toBe(false)
+  })
+
+  it('applies max-width constraints to Hero, About, and Contact section text wrappers', () => {
+    const heroComponent = fs.readFileSync(path.join(componentsRoot, 'Hero.astro'), 'utf-8')
+    const aboutComponent = fs.readFileSync(path.join(componentsRoot, 'About.astro'), 'utf-8')
+    const contactComponent = fs.readFileSync(path.join(componentsRoot, 'Contact.astro'), 'utf-8')
+
+    expect(heroComponent).toContain('<Inner class="max-w-4xl">')
+    expect(aboutComponent).toContain('<Inner class="max-w-4xl">')
+    expect(contactComponent).toContain('<Inner class="max-w-4xl">')
+  })
 })

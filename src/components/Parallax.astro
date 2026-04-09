@@ -7,7 +7,8 @@ const { pages } = Astro.props
 
 <div
   data-parallax-container
-  style="height: 100dvh; min-height: 100vh; overflow-y: auto; overflow-x: hidden; position: relative; overscroll-behavior-y: contain; -webkit-overflow-scrolling: touch; touch-action: pan-y;"
+  class="relative h-dvh min-h-screen touch-pan-y overflow-x-hidden overflow-y-auto overscroll-y-contain"
+  style="-webkit-overflow-scrolling: touch;"
 >
   <div style={`height: ${pages * 100}vh; position: relative;`}>
     <slot />

@@ -10,6 +10,7 @@ describe('global.css theme tokens', () => {
   it('imports font packages and defines font family theme variables', () => {
     expect(globalCss).toContain('@import "@fontsource-variable/noto-sans";')
     expect(globalCss).toContain('@import "@fontsource-variable/noto-sans-mono";')
+    expect(globalCss).toContain('@plugin "@tailwindcss/typography";')
     expect(globalCss).toContain('--font-sans: "Noto Sans Variable", "Noto Sans", sans-serif;')
     expect(globalCss).toContain('--font-mono: "Noto Sans Mono Variable", "Noto Sans Mono", monospace;')
   })
@@ -36,5 +37,12 @@ describe('global.css theme tokens', () => {
   it('keeps animation keyframes in global css', () => {
     expect(globalCss).toContain('@keyframes up-down {')
     expect(globalCss).toContain('@keyframes up-down-wide {')
+  })
+
+  it('defines centralized Rosely prose color overrides for Tailwind Typography', () => {
+    expect(globalCss).toContain(".prose[data-prose-theme='rosely'] {")
+    expect(globalCss).toContain('--tw-prose-body: var(--color-text);')
+    expect(globalCss).toContain('--tw-prose-headings: var(--color-heading);')
+    expect(globalCss).toContain('--tw-prose-links: var(--color-primary);')
   })
 })
