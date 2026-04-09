@@ -77,8 +77,6 @@ src/
     parallax.test.ts
     theme.test.ts
     utils.test.ts
-  theme/
-    index.ts
 ```
 
 ## Getting Started
