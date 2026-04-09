@@ -4,6 +4,7 @@ import path from 'node:path'
 
 const projectRoot = path.resolve(__dirname, '../..')
 const contentRoot = path.join(projectRoot, 'src/content')
+const componentsRoot = path.join(projectRoot, 'src/components')
 
 function hasFile(filePath: string) {
   return fs.existsSync(filePath)
@@ -41,6 +42,30 @@ describe('content structure', () => {
       expect(data).toHaveProperty('bg')
       expect(data).toHaveProperty('image')
       expect(data).toHaveProperty('description')
+    }
+  })
+
+  it('keeps section backgrounds in src/assets/backgrounds', () => {
+    const backgroundsDir = path.join(projectRoot, 'src/assets/backgrounds')
+    const files = fs.readdirSync(backgroundsDir)
+
+    expect(files.length).toBeGreaterThan(0)
+    expect(files).toContain('floral-spring.svg')
+    expect(files).toContain('garden-tree.svg')
+    expect(files).toContain('lake.svg')
+    expect(files).toContain('river.svg')
+  })
+
+  it('does not keep section backgrounds in public/backgrounds', () => {
+    expect(hasFile(path.join(projectRoot, 'public/backgrounds'))).toBe(false)
+  })
+
+  it('uses SVG component imports instead of raw SVG strings in section components', () => {
+    const sectionComponents = ['About.astro', 'Contact.astro', 'Hero.astro', 'Projects.astro']
+
+    for (const fileName of sectionComponents) {
+      const file = fs.readFileSync(path.join(componentsRoot, fileName), 'utf-8')
+      expect(file).not.toContain('?raw')
     }
   })
 })

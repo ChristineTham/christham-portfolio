@@ -27,6 +27,8 @@ for structured content.
 - Light/dark mode support
 - Custom parallax behavior for layered sections
 - Typed hero animation using [typed.js](https://github.com/mattboldt/typed.js/)
+- SVG icons imported and rendered as Astro SVG components
+- Astro image optimization for portfolio card images (`astro:assets`)
 - Structured content with Astro Content Collections:
   - `Projects` collection (JSON entries)
   - `Sections` collection (Markdown entries)
@@ -37,9 +39,8 @@ for structured content.
 
 ```text
 src/
-  asset/
-    backgrounds/           # Section background SVG images
   assets/
+    backgrounds/           # Section background SVG images
     icons/                 # SVG icon assets
     portfolio/             # Optimized project card images
   components/              # Astro UI sections and primitives
@@ -110,5 +111,12 @@ pnpm dev
 Projects are managed as JSON entries in `src/content/Projects` and rendered by
 the projects section component.
 
+Each project entry stores `image` as a relative file reference (for example
+`../../assets/portfolio/learning-jamstack.jpg`) and is validated by the
+`Projects` collection schema (`image()`), enabling optimized image rendering.
+
 About/contact copy is managed as Markdown entries in `src/content/Sections` and
 rendered through the `Sections` collection.
+
+Section background illustrations are sourced from `src/assets/backgrounds` and
+imported in components as module assets.
