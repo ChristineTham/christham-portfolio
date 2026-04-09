@@ -63,8 +63,9 @@ typings/
 .cache
 **/.cache
 
-# Next.js build output
-.next/
+# Astro build output
+.astro/
+dist/
 
 .idea
 .vscode

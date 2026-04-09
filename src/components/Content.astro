@@ -1,0 +1,21 @@
+---
+import ParallaxLayer from './ParallaxLayer.astro'
+
+interface Props {
+  speed: number
+  offset: number
+  factor?: number
+  class?: string
+}
+
+const { speed, offset, factor = 1, class: className = '' } = Astro.props
+---
+
+<ParallaxLayer
+  class={`flex flex-col items-center justify-center p-4 xs:p-8 md:p-16 z-50${className ? ` ${className}` : ''}`}
+  speed={speed}
+  offset={offset}
+  factor={factor}
+>
+  <slot />
+</ParallaxLayer>

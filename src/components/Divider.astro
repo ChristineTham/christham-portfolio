@@ -1,0 +1,32 @@
+---
+import ParallaxLayer from './ParallaxLayer.astro'
+
+interface Props {
+  speed: number
+  offset: number
+  factor?: number
+  bg?: string
+  fill?: string
+  clipPath?: string
+  class?: string
+}
+
+const { speed, offset, factor = 1, bg = '', fill = '', clipPath = '', class: className = '' } = Astro.props
+
+const styleParts: string[] = []
+if (bg) styleParts.push(`background: ${bg}`)
+if (clipPath) styleParts.push(`clip-path: ${clipPath}`)
+// `fill` controls the fill color of the #contact-wave SVG child via currentColor
+if (fill) styleParts.push(`color: ${fill}`)
+const style = styleParts.join('; ')
+---
+
+<ParallaxLayer
+  class={`absolute size-full${className ? ` ${className}` : ''}`}
+  style={style}
+  speed={speed}
+  offset={offset}
+  factor={factor}
+>
+  <slot />
+</ParallaxLayer>

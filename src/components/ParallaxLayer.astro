@@ -1,0 +1,21 @@
+---
+interface Props {
+  offset: number
+  speed: number
+  factor?: number
+  class?: string
+  style?: string
+}
+
+const { offset, speed, factor = 1, class: className = '', style = '' } = Astro.props
+---
+
+<div
+  data-parallax-layer
+  data-offset={offset}
+  data-speed={speed}
+  style={`position: absolute; top: ${offset * 100}vh; height: ${factor * 100}vh; width: 100%; ${style}`}
+  class={className}
+>
+  <slot />
+</div>

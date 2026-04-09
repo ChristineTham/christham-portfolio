@@ -1,0 +1,140 @@
+---
+import Divider from './Divider.astro'
+import Content from './Content.astro'
+import Inner from './Inner.astro'
+import Icon from './Icon.astro'
+import { iconpos } from '@/lib/utils'
+
+interface Props {
+  offset: number
+  factor?: number
+}
+
+const { offset, factor = 1 } = Astro.props
+
+import MonitorIconRaw from '@/assets/icons/monitor.svg?raw'
+import HeadphoneIconRaw from '@/assets/icons/headphones.svg?raw'
+import HeartIconRaw from '@/assets/icons/heart.svg?raw'
+import MusicIconRaw from '@/assets/icons/musicnote.svg?raw'
+import CameraIconRaw from '@/assets/icons/photo-camera.svg?raw'
+import TurntableIconRaw from '@/assets/icons/turntable.svg?raw'
+import PortfolioIconRaw from '@/assets/icons/portfolio.svg?raw'
+import WebsiteIconRaw from '@/assets/icons/website.svg?raw'
+import PaletteIconRaw from '@/assets/icons/paint-palette.svg?raw'
+import HomeIconRaw from '@/assets/icons/home.svg?raw'
+import TravelIconRaw from '@/assets/icons/travelling.svg?raw'
+import BicycleIconRaw from '@/assets/icons/bicycle.svg?raw'
+import NotebookIconRaw from '@/assets/icons/notebook.svg?raw'
+import AustraliaIconRaw from '@/assets/icons/australia.svg?raw'
+import SydneyIconRaw from '@/assets/icons/opera-house.svg?raw'
+import KoalaIconRaw from '@/assets/icons/koala.svg?raw'
+import SpeakerIconRaw from '@/assets/icons/speaker.svg?raw'
+import PianoIconRaw from '@/assets/icons/piano2.svg?raw'
+import FloralIconRaw from '@/assets/icons/floral-spring.svg?raw'
+import GuitarIconRaw from '@/assets/icons/guitar.svg?raw'
+---
+
+<div>
+  <img
+    src="/backgrounds/garden-tree.svg"
+    alt="hero background"
+    class="fixed top-0 left-0 w-full opacity-25"
+  />
+  <Divider speed={0.2} offset={offset} factor={factor} class="pointer-events-none">
+    <p class="absolute top-[94%] left-[1%] z-10 text-[12px] text-(--color-textMuted)">
+      <em>Kawaii Flat</em> Icons made by
+      <a href="https://www.flaticon.com/authors/freepik" title="Author">Freepik</a>
+      from
+      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </p>
+    <div class="animate-up-down">
+      <Icon src={WebsiteIconRaw} style={iconpos(48, '60%', '62%')} hiddenMobile />
+      <Icon src={HomeIconRaw} style={iconpos(48, '10%', '12%')} />
+      <Icon src={HeartIconRaw} style={iconpos(24, '60%', '15%')} hiddenMobile />
+    </div>
+    <div class="animate-up-down-wide">
+      <Icon src={PaletteIconRaw} style={iconpos(16, '35%', '5%')} />
+      <Icon src={NotebookIconRaw} style={iconpos(16, '45%', '10%')} hiddenMobile />
+      <Icon src={BicycleIconRaw} style={iconpos(20, '75%', '8%')} />
+      <Icon src={PortfolioIconRaw} style={iconpos(16, '85%', '20%')} />
+      <Icon src={CameraIconRaw} style={iconpos(16, '30%', '65%')} />
+      <Icon src={MusicIconRaw} style={iconpos(16, '19%', '58%')} />
+      <Icon src={TravelIconRaw} style={iconpos(20, '90%', '50%')} />
+      <Icon src={TurntableIconRaw} style={iconpos(48, '70%', '90%')} />
+    </div>
+    <Icon src={MonitorIconRaw} style={iconpos(24, '5%', '70%')} hiddenMobile />
+    <Icon src={HeadphoneIconRaw} style={iconpos(16, '50%', '65%')} hiddenMobile />
+    <Icon src={SydneyIconRaw} style={iconpos(12, '4%', '20%')} />
+    <Icon src={AustraliaIconRaw} style={iconpos(12, '20%', '5%')} />
+    <Icon src={KoalaIconRaw} style={iconpos(12, '8%', '8%')} />
+    <Icon src={SpeakerIconRaw} style={iconpos(12, '95%', '90%')} hiddenMobile />
+    <Icon src={PianoIconRaw} style={iconpos(20, '80%', '70%')} hiddenMobile />
+    <Icon src={FloralIconRaw} style={iconpos(64, '5%', '99%')} />
+    <Icon src={GuitarIconRaw} style={iconpos(24, '40%', '80%')} hiddenMobile />
+  </Divider>
+  <Content speed={0.4} offset={offset} factor={factor}>
+    <Inner>
+      <button
+        id="color-mode-toggle"
+        class="absolute top-[1%] left-[1%] mx-auto mb-4 block cursor-pointer self-center rounded-[5px] border-0 bg-(--color-text) px-4 py-2 font-semibold text-(--color-background)"
+        type="button"
+        aria-label="Toggle dark mode"
+      >
+        Dark Theme
+      </button>
+      <h1
+        id="hero-heading"
+        class="mt-2 mb-3 rounded-[5px] bg-black/10 p-2 text-4xl tracking-[0.025em] text-(--color-heading) [text-shadow:rgba(255,255,255,0.15)_0px_5px_35px] xs:text-5xl sm:text-6xl dark:bg-black/60"
+      >
+        Hi, I am Chris Tham
+      </h1>
+      <span
+        id="typed-output"
+        class="font-mono text-2xl text-[#b565a7] xs:text-4xl"
+      ></span>
+    </Inner>
+  </Content>
+</div>
+
+<script>
+  // Color mode toggle
+  const btn = document.getElementById('color-mode-toggle')
+
+  function updateButton() {
+    if (btn) {
+      btn.textContent = document.documentElement.classList.contains('dark')
+        ? 'Light Theme'
+        : 'Dark Theme'
+    }
+  }
+
+  updateButton()
+
+  btn?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.contains('dark')
+    const next = isDark ? 'light' : 'dark'
+    if (next === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+    try {
+      localStorage.setItem('color-mode', next)
+    } catch {
+      // ignore
+    }
+    updateButton()
+  })
+</script>
+
+<script>
+  import Typed from 'typed.js'
+
+  new Typed('#typed-output', {
+    strings: ['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller'],
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 2000,
+    loop: true,
+  })
+</script>
