@@ -45,15 +45,15 @@ import RiverBackground from '@/assets/backgrounds/river.svg'
     <img
       src={RiverBackground.src}
       alt="projects background"
-      class="fixed top-[25%] left-0 w-full opacity-30"
+      class="fixed top-24 left-0 w-full opacity-30"
     />
-    <div class="animate-up-down">
+    <div class="absolute inset-0 animate-[up-down_4s_ease-in-out_infinite_alternate]">
       <Icon src={WrenchIcon} style={iconpos(16, '85%', '75%')} />
       <Icon src={RubikIcon} style={iconpos(16, '70%', '20%')} />
       <Icon src={BlueprintIcon} style={iconpos(48, '25%', '5%')} />
       <Icon src={PuzzleIcon} style={iconpos(16, '17%', '60%')} />
     </div>
-    <div class="animate-up-down-wide">
+    <div class="absolute inset-0 animate-[up-down-wide_18s_ease-in-out_infinite_alternate]">
       <Icon src={AtomIcon} style={iconpos(64, '20%', '90%')} />
       <Icon src={CloudIcon} style={iconpos(16, '90%', '30%')} />
       <Icon src={FolderIcon} style={iconpos(48, '70%', '90%')} />
@@ -70,7 +70,7 @@ import RiverBackground from '@/assets/backgrounds/river.svg'
   </Divider>
   <Content speed={0.4} offset={offset + 0.2} factor={factor}>
     <Inner>
-      <div class="projects-grid grid grid-cols-1 gap-2 xs:gap-8 sm:grid-cols-2 md:gap-16">
+      <div class="grid grid-cols-1 gap-2 xs:gap-8 sm:grid-cols-2 md:gap-16 [&_h2]:col-span-full [&_h2]:text-[#f7caca]">
         {
           projects.map(({ data }) => (
             <ProjectCard title={data.title} link={data.link} bg={data.bg} image={data.image}>

@@ -42,18 +42,18 @@ import GardenTreeBackground from '@/assets/backgrounds/garden-tree.svg'
     class="fixed top-0 left-0 w-full opacity-25"
   />
   <Divider speed={0.2} offset={offset} factor={factor} class="pointer-events-none">
-    <p class="absolute top-[94%] left-[1%] z-10 text-[12px] text-(--color-textMuted)">
+    <p class="absolute bottom-2 left-2 z-10 text-xs text-(--color-textMuted)">
       <em>Kawaii Flat</em> Icons made by
       <a href="https://www.flaticon.com/authors/freepik" title="Author">Freepik</a>
       from
       <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
     </p>
-    <div class="animate-up-down">
+    <div class="absolute inset-0 animate-[up-down_4s_ease-in-out_infinite_alternate]">
       <Icon src={WebsiteIcon} style={iconpos(48, '60%', '62%')} hiddenMobile />
       <Icon src={HomeIcon} style={iconpos(48, '10%', '12%')} />
       <Icon src={HeartIcon} style={iconpos(24, '60%', '15%')} hiddenMobile />
     </div>
-    <div class="animate-up-down-wide">
+    <div class="absolute inset-0 animate-[up-down-wide_18s_ease-in-out_infinite_alternate]">
       <Icon src={PaletteIcon} style={iconpos(16, '35%', '5%')} />
       <Icon src={NotebookIcon} style={iconpos(16, '45%', '10%')} hiddenMobile />
       <Icon src={BicycleIcon} style={iconpos(20, '75%', '8%')} />
@@ -77,7 +77,7 @@ import GardenTreeBackground from '@/assets/backgrounds/garden-tree.svg'
     <Inner>
       <button
         id="color-mode-toggle"
-        class="absolute top-[1%] left-[1%] mx-auto mb-4 block cursor-pointer self-center rounded-[5px] border-0 bg-(--color-text) px-4 py-2 font-semibold text-(--color-background)"
+        class="absolute top-2 left-2 mx-auto mb-4 block cursor-pointer self-center rounded-md border-0 bg-(--color-text) px-4 py-2 font-semibold text-(--color-background)"
         type="button"
         aria-label="Toggle dark mode"
       >
@@ -85,13 +85,13 @@ import GardenTreeBackground from '@/assets/backgrounds/garden-tree.svg'
       </button>
       <h1
         id="hero-heading"
-        class="mt-2 mb-3 rounded-[5px] bg-black/10 p-2 text-4xl tracking-[0.025em] text-(--color-heading) [text-shadow:rgba(255,255,255,0.15)_0px_5px_35px] xs:text-5xl sm:text-6xl dark:bg-black/60"
+        class="mt-2 mb-3 rounded-md bg-black/10 p-2 text-4xl tracking-wide text-(--color-heading) xs:text-5xl sm:text-6xl dark:bg-black/60"
       >
         Hi, I am Chris Tham
       </h1>
       <span
         id="typed-output"
-        class="font-mono text-2xl text-[#b565a7] xs:text-4xl"
+        class="font-mono text-2xl text-(--color-icon_purple) xs:text-4xl"
       ></span>
     </Inner>
   </Content>

@@ -43,10 +43,6 @@ export default [
         'error',
         {
           ignore: [
-            'animate-up-down',
-            'animate-up-down-wide',
-            'contact-wave-wrapper',
-            'projects-grid',
           ],
         },
       ],

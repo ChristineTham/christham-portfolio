@@ -1,12 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { iconpos, HIDDEN_MOBILE_CLASS, styleToString } from '@/lib/utils'
-
-describe('HIDDEN_MOBILE_CLASS', () => {
-  it('is a non-empty string', () => {
-    expect(typeof HIDDEN_MOBILE_CLASS).toBe('string')
-    expect(HIDDEN_MOBILE_CLASS.length).toBeGreaterThan(0)
-  })
-})
+import { iconpos, styleToString } from '@/lib/utils'
 
 describe('iconpos', () => {
   it('returns an absolute-positioned style with numeric size converted to rem', () => {

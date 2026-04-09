@@ -35,9 +35,9 @@ import LakeBackground from '@/assets/backgrounds/lake.svg'
 
 <div>
   <Divider fill="#be9cc1" speed={0.2} offset={offset} factor={factor}>
-    <div class="absolute bottom-0 w-full transform-[matrix(1,0,0,-1,0,0)]">
-      <div class="contact-wave-wrapper relative h-full">
-        <svg xmlns="http://www.w3.org/2000/svg" id="contact-wave" viewBox="0 0 800 338.05" preserveAspectRatio="none">
+    <div class="absolute bottom-0 w-full -scale-y-100">
+      <div class="relative h-full">
+        <svg xmlns="http://www.w3.org/2000/svg" id="contact-wave" viewBox="0 0 800 338.05" preserveAspectRatio="none" class="h-96 w-full fill-current">
           <path>
             <animate
               attributeName="d"
@@ -56,13 +56,13 @@ import LakeBackground from '@/assets/backgrounds/lake.svg'
     <img
       src={LakeBackground.src}
       alt="contact background"
-      class="fixed top-[10%] left-0 w-full opacity-20"
+      class="fixed top-10 left-0 w-full opacity-20"
     />
-    <div class="animate-up-down">
+    <div class="absolute inset-0 animate-[up-down_4s_ease-in-out_infinite_alternate]">
       <Icon src={AgendaIcon} style={iconpos(16, '70%', '20%')} hiddenMobile />
       <Icon src={CheckListIcon} style={iconpos(16, '25%', '5%')} />
     </div>
-    <div class="animate-up-down-wide">
+    <div class="absolute inset-0 animate-[up-down-wide_18s_ease-in-out_infinite_alternate]">
       <Icon src={EmailIcon} style={iconpos(16, '95%', '50%')} />
       <Icon src={PhoneIcon} style={iconpos(16, '85%', '15%')} />
       <Icon src={IDCardIcon} style={iconpos(48, '45%', '10%')} hiddenMobile />

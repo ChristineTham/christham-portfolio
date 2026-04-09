@@ -1,5 +1,5 @@
 ---
-import { HIDDEN_MOBILE_CLASS, styleToString } from '@/lib/utils'
+import { styleToString } from '@/lib/utils'
 import type { SvgComponent } from 'astro/types'
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 const { src, style, class: className = '', hiddenMobile = false } = Astro.props
 
 const styleStr = styleToString(style)
-const classAttr = [className, hiddenMobile ? HIDDEN_MOBILE_CLASS : ''].filter(Boolean).join(' ')
+const classAttr = [className, hiddenMobile ? 'hidden sm:block' : ''].filter(Boolean).join(' ')
 const SvgIcon = src
 ---
 
