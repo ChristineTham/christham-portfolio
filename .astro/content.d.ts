@@ -124,7 +124,7 @@ declare module 'astro:content' {
   id: string;
   body?: string;
   collection: "Projects";
-  data: any;
+  data: InferEntrySchema<"Projects">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;

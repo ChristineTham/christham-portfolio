@@ -1,13 +1,16 @@
 ---
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
+
 interface Props {
   link: string
   title: string
   children?: unknown
-  image?: string
+  image: ImageMetadata
   bg: string
 }
 
-const { link, title, image = 'portfolio.jpg', bg } = Astro.props
+const { link, title, image, bg } = Astro.props
 ---
 
 <a
@@ -17,9 +20,9 @@ const { link, title, image = 'portfolio.jpg', bg } = Astro.props
   class="relative block w-full rounded-lg px-4 py-2 text-white no-underline shadow-lg [transition:all_0.4s_cubic-bezier(0.175,0.885,0.32,1.275)] hover:-translate-y-1 hover:text-white hover:shadow-xl xs:px-8 xs:py-4"
   style={`background: ${bg || 'none'};`}
 >
-  <img
-    src={`/portfolio/${image}`}
-    alt={image.replace(/\.jpg$/, '')}
+  <Image
+    src={image}
+    alt={title}
     width="800"
     height="533"
     loading="eager"

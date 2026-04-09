@@ -3,6 +3,6 @@
   "title": "Visual Voyager",
   "link": "https://visualvoyager.net",
   "bg": "linear-gradient(to right, #27272a 0%, #a49e9e 100%)",
-  "image": "visualvoyager.jpg",
+  "image": "../../assets/portfolio/visualvoyager.jpg",
   "description": "Explore the world we live in, as seen through our unique perspectives and experiences."
 }

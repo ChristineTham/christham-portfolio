@@ -37,8 +37,11 @@ for structured content.
 
 ```text
 src/
+  asset/
+    backgrounds/           # Section background SVG images
   assets/
     icons/                 # SVG icon assets
+    portfolio/             # Optimized project card images
   components/              # Astro UI sections and primitives
     About.astro
     Contact.astro
@@ -75,12 +78,6 @@ src/
     utils.test.ts
   theme/
     index.ts
-```
-
-```text
-public/
-  backgrounds/             # Section background images
-  portfolio/               # Portfolio card images
 ```
 
 ## Getting Started

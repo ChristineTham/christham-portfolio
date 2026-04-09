@@ -1,8 +1,9 @@
 ---
 import { HIDDEN_MOBILE_CLASS, styleToString } from '@/lib/utils'
+import type { SvgComponent } from 'astro/types'
 
 interface Props {
-  src: string
+  src: SvgComponent
   style?: Record<string, string | number> | string
   class?: string
   hiddenMobile?: boolean
@@ -12,31 +13,7 @@ const { src, style, class: className = '', hiddenMobile = false } = Astro.props
 
 const styleStr = styleToString(style)
 const classAttr = [className, hiddenMobile ? HIDDEN_MOBILE_CLASS : ''].filter(Boolean).join(' ')
-
-// Inject style and class into the root <svg> element
-let svgContent = src
-// Remove XML declaration if present
-svgContent = svgContent.replace(/<\?xml[^>]*\?>\s*/g, '').trim()
-// Inject attributes into the opening <svg ...> tag
-svgContent = svgContent.replace(/^<svg(\s[^>]*)?>/, (_match, attrs = '') => {
-  let newAttrs = attrs
-  if (styleStr) {
-    // Append to existing style or add new
-    if (/style="/.test(newAttrs)) {
-      newAttrs = newAttrs.replace(/style="([^"]*)"/, `style="$1; ${styleStr}"`)
-    } else {
-      newAttrs += ` style="${styleStr}"`
-    }
-  }
-  if (classAttr) {
-    if (/class="/.test(newAttrs)) {
-      newAttrs = newAttrs.replace(/class="([^"]*)"/, `class="$1 ${classAttr}"`)
-    } else {
-      newAttrs += ` class="${classAttr}"`
-    }
-  }
-  return `<svg${newAttrs}>`
-})
+const SvgIcon = src
 ---
 
-<Fragment set:html={svgContent} />
+<SvgIcon style={styleStr || undefined} class={classAttr || undefined} />

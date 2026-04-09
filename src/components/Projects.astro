@@ -15,21 +15,22 @@ interface Props {
 const { offset, factor = 2 } = Astro.props
 const projects = (await getCollection('Projects')).sort((a, b) => a.data.order - b.data.order)
 
-import WrenchIconRaw from '@/assets/icons/adjustable-wrench.svg?raw'
-import RubikIconRaw from '@/assets/icons/Rubik.svg?raw'
-import BlueprintIconRaw from '@/assets/icons/blueprint.svg?raw'
-import AtomIconRaw from '@/assets/icons/atom.svg?raw'
-import PuzzleIconRaw from '@/assets/icons/puzzle.svg?raw'
-import CloudIconRaw from '@/assets/icons/computing-cloud.svg?raw'
-import FolderIconRaw from '@/assets/icons/folders.svg?raw'
-import GearsIconRaw from '@/assets/icons/gears.svg?raw'
-import GraphicsIconRaw from '@/assets/icons/graphics.svg?raw'
-import NotebookIconRaw from '@/assets/icons/notebook2.svg?raw'
-import WorkflowIconRaw from '@/assets/icons/workflow.svg?raw'
-import CalculatorIconRaw from '@/assets/icons/calculator.svg?raw'
-import ChipIconRaw from '@/assets/icons/chip.svg?raw'
-import CompassIconRaw from '@/assets/icons/compass.svg?raw'
-import ProgrammingIconRaw from '@/assets/icons/programming.svg?raw'
+import WrenchIcon from '@/assets/icons/adjustable-wrench.svg'
+import RubikIcon from '@/assets/icons/Rubik.svg'
+import BlueprintIcon from '@/assets/icons/blueprint.svg'
+import AtomIcon from '@/assets/icons/atom.svg'
+import PuzzleIcon from '@/assets/icons/puzzle.svg'
+import CloudIcon from '@/assets/icons/computing-cloud.svg'
+import FolderIcon from '@/assets/icons/folders.svg'
+import GearsIcon from '@/assets/icons/gears.svg'
+import GraphicsIcon from '@/assets/icons/graphics.svg'
+import NotebookIcon from '@/assets/icons/notebook2.svg'
+import WorkflowIcon from '@/assets/icons/workflow.svg'
+import CalculatorIcon from '@/assets/icons/calculator.svg'
+import ChipIcon from '@/assets/icons/chip.svg'
+import CompassIcon from '@/assets/icons/compass.svg'
+import ProgrammingIcon from '@/assets/icons/programming.svg'
+import RiverBackground from '@/asset/backgrounds/river.svg'
 ---
 
 <div>
@@ -42,30 +43,30 @@ import ProgrammingIconRaw from '@/assets/icons/programming.svg?raw'
   />
   <Divider speed={0.1} offset={offset} factor={factor} class="pointer-events-none">
     <img
-      src="/backgrounds/river.svg"
+      src={RiverBackground.src}
       alt="projects background"
       class="fixed top-[25%] left-0 w-full opacity-30"
     />
     <div class="animate-up-down">
-      <Icon src={WrenchIconRaw} style={iconpos(16, '85%', '75%')} />
-      <Icon src={RubikIconRaw} style={iconpos(16, '70%', '20%')} />
-      <Icon src={BlueprintIconRaw} style={iconpos(48, '25%', '5%')} />
-      <Icon src={PuzzleIconRaw} style={iconpos(16, '17%', '60%')} />
+      <Icon src={WrenchIcon} style={iconpos(16, '85%', '75%')} />
+      <Icon src={RubikIcon} style={iconpos(16, '70%', '20%')} />
+      <Icon src={BlueprintIcon} style={iconpos(48, '25%', '5%')} />
+      <Icon src={PuzzleIcon} style={iconpos(16, '17%', '60%')} />
     </div>
     <div class="animate-up-down-wide">
-      <Icon src={AtomIconRaw} style={iconpos(64, '20%', '90%')} />
-      <Icon src={CloudIconRaw} style={iconpos(16, '90%', '30%')} />
-      <Icon src={FolderIconRaw} style={iconpos(48, '70%', '90%')} />
-      <Icon src={GearsIconRaw} style={iconpos(48, '18%', '75%')} />
-      <Icon src={GraphicsIconRaw} style={iconpos(16, '75%', '10%')} />
-      <Icon src={NotebookIconRaw} style={iconpos(48, '45%', '10%')} />
+      <Icon src={AtomIcon} style={iconpos(64, '20%', '90%')} />
+      <Icon src={CloudIcon} style={iconpos(16, '90%', '30%')} />
+      <Icon src={FolderIcon} style={iconpos(48, '70%', '90%')} />
+      <Icon src={GearsIcon} style={iconpos(48, '18%', '75%')} />
+      <Icon src={GraphicsIcon} style={iconpos(16, '75%', '10%')} />
+      <Icon src={NotebookIcon} style={iconpos(48, '45%', '10%')} />
     </div>
-    <Icon src={WorkflowIconRaw} style={iconpos(16, '4%', '20%')} />
-    <Icon src={CompassIconRaw} style={iconpos(16, '80%', '60%')} />
-    <Icon src={ProgrammingIconRaw} style={iconpos(16, '10%', '10%')} />
-    <Icon src={BlueprintIconRaw} style={iconpos(16, '29%', '26%')} />
-    <Icon src={CalculatorIconRaw} style={iconpos(16, '75%', '30%')} />
-    <Icon src={ChipIconRaw} style={iconpos(16, '80%', '70%')} />
+    <Icon src={WorkflowIcon} style={iconpos(16, '4%', '20%')} />
+    <Icon src={CompassIcon} style={iconpos(16, '80%', '60%')} />
+    <Icon src={ProgrammingIcon} style={iconpos(16, '10%', '10%')} />
+    <Icon src={BlueprintIcon} style={iconpos(16, '29%', '26%')} />
+    <Icon src={CalculatorIcon} style={iconpos(16, '75%', '30%')} />
+    <Icon src={ChipIcon} style={iconpos(16, '80%', '70%')} />
   </Divider>
   <Content speed={0.4} offset={offset + 0.2} factor={factor}>
     <Inner>

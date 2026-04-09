@@ -20,42 +20,43 @@ if (!aboutEntry) {
 
 const { Content: AboutSection } = await render(aboutEntry)
 
-import CoffeeIconRaw from '@/assets/icons/coffee.svg?raw'
-import ReadingIconRaw from '@/assets/icons/reading.svg?raw'
-import SunglassesIconRaw from '@/assets/icons/sunglasses.svg?raw'
-import WebsiteIconRaw from '@/assets/icons/website.svg?raw'
-import WineIconRaw from '@/assets/icons/wine.svg?raw'
-import PhotoIconRaw from '@/assets/icons/photo.svg?raw'
-import BooksIconRaw from '@/assets/icons/books.svg?raw'
-import PawIconRaw from '@/assets/icons/paw-print.svg?raw'
-import DogIconRaw from '@/assets/icons/dog.svg?raw'
-import FlowerIconRaw from '@/assets/icons/flower.svg?raw'
-import RubikIconRaw from '@/assets/icons/Rubik.svg?raw'
+import CoffeeIcon from '@/assets/icons/coffee.svg'
+import ReadingIcon from '@/assets/icons/reading.svg'
+import SunglassesIcon from '@/assets/icons/sunglasses.svg'
+import WebsiteIcon from '@/assets/icons/website.svg'
+import WineIcon from '@/assets/icons/wine.svg'
+import PhotoIcon from '@/assets/icons/photo.svg'
+import BooksIcon from '@/assets/icons/books.svg'
+import PawIcon from '@/assets/icons/paw-print.svg'
+import DogIcon from '@/assets/icons/dog.svg'
+import FlowerIcon from '@/assets/icons/flower.svg'
+import RubikIcon from '@/assets/icons/Rubik.svg'
+import FloralSpringBackground from '@/asset/backgrounds/floral-spring.svg'
 ---
 
 <div>
   <Divider bg="var(--color-divider)" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={offset} factor={factor} />
   <Divider speed={0.1} offset={offset} factor={factor} class="pointer-events-none">
     <img
-      src="/backgrounds/floral-spring.svg"
+      src={FloralSpringBackground.src}
       alt="about background"
       class="fixed top-0 left-0 w-full opacity-10"
     />
     <div class="animate-up-down">
-      <Icon src={PawIconRaw} style={iconpos(64, '50%', '75%')} hiddenMobile />
-      <Icon src={CoffeeIconRaw} style={iconpos(32, '60%', '20%')} hiddenMobile />
-      <Icon src={ReadingIconRaw} style={iconpos(16, '25%', '5%')} />
-      <Icon src={SunglassesIconRaw} style={iconpos(16, '80%', '80%')} hiddenMobile />
+      <Icon src={PawIcon} style={iconpos(64, '50%', '75%')} hiddenMobile />
+      <Icon src={CoffeeIcon} style={iconpos(32, '60%', '20%')} hiddenMobile />
+      <Icon src={ReadingIcon} style={iconpos(16, '25%', '5%')} />
+      <Icon src={SunglassesIcon} style={iconpos(16, '80%', '80%')} hiddenMobile />
     </div>
     <div class="animate-up-down-wide">
-      <Icon src={RubikIconRaw} style={iconpos(48, '5%', '80%')} hiddenMobile />
-      <Icon src={WineIconRaw} style={iconpos(16, '95%', '50%')} />
-      <Icon src={PhotoIconRaw} style={iconpos(16, '85%', '15%')} hiddenMobile />
-      <Icon src={BooksIconRaw} style={iconpos(16, '45%', '10%')} hiddenMobile />
+      <Icon src={RubikIcon} style={iconpos(48, '5%', '80%')} hiddenMobile />
+      <Icon src={WineIcon} style={iconpos(16, '95%', '50%')} />
+      <Icon src={PhotoIcon} style={iconpos(16, '85%', '15%')} hiddenMobile />
+      <Icon src={BooksIcon} style={iconpos(16, '45%', '10%')} hiddenMobile />
     </div>
-    <Icon src={FlowerIconRaw} style={iconpos(16, '4%', '20%')} hiddenMobile />
-    <Icon src={DogIconRaw} style={iconpos(16, '10%', '10%')} />
-    <Icon src={WebsiteIconRaw} style={iconpos(16, '80%', '70%')} />
+    <Icon src={FlowerIcon} style={iconpos(16, '4%', '20%')} hiddenMobile />
+    <Icon src={DogIcon} style={iconpos(16, '10%', '10%')} />
+    <Icon src={WebsiteIcon} style={iconpos(16, '80%', '70%')} />
   </Divider>
   <Content speed={0.4} offset={offset} factor={factor}>
     <Inner>

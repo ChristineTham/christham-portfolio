@@ -12,31 +12,32 @@ interface Props {
 
 const { offset, factor = 1 } = Astro.props
 
-import MonitorIconRaw from '@/assets/icons/monitor.svg?raw'
-import HeadphoneIconRaw from '@/assets/icons/headphones.svg?raw'
-import HeartIconRaw from '@/assets/icons/heart.svg?raw'
-import MusicIconRaw from '@/assets/icons/musicnote.svg?raw'
-import CameraIconRaw from '@/assets/icons/photo-camera.svg?raw'
-import TurntableIconRaw from '@/assets/icons/turntable.svg?raw'
-import PortfolioIconRaw from '@/assets/icons/portfolio.svg?raw'
-import WebsiteIconRaw from '@/assets/icons/website.svg?raw'
-import PaletteIconRaw from '@/assets/icons/paint-palette.svg?raw'
-import HomeIconRaw from '@/assets/icons/home.svg?raw'
-import TravelIconRaw from '@/assets/icons/travelling.svg?raw'
-import BicycleIconRaw from '@/assets/icons/bicycle.svg?raw'
-import NotebookIconRaw from '@/assets/icons/notebook.svg?raw'
-import AustraliaIconRaw from '@/assets/icons/australia.svg?raw'
-import SydneyIconRaw from '@/assets/icons/opera-house.svg?raw'
-import KoalaIconRaw from '@/assets/icons/koala.svg?raw'
-import SpeakerIconRaw from '@/assets/icons/speaker.svg?raw'
-import PianoIconRaw from '@/assets/icons/piano2.svg?raw'
-import FloralIconRaw from '@/assets/icons/floral-spring.svg?raw'
-import GuitarIconRaw from '@/assets/icons/guitar.svg?raw'
+import MonitorIcon from '@/assets/icons/monitor.svg'
+import HeadphoneIcon from '@/assets/icons/headphones.svg'
+import HeartIcon from '@/assets/icons/heart.svg'
+import MusicIcon from '@/assets/icons/musicnote.svg'
+import CameraIcon from '@/assets/icons/photo-camera.svg'
+import TurntableIcon from '@/assets/icons/turntable.svg'
+import PortfolioIcon from '@/assets/icons/portfolio.svg'
+import WebsiteIcon from '@/assets/icons/website.svg'
+import PaletteIcon from '@/assets/icons/paint-palette.svg'
+import HomeIcon from '@/assets/icons/home.svg'
+import TravelIcon from '@/assets/icons/travelling.svg'
+import BicycleIcon from '@/assets/icons/bicycle.svg'
+import NotebookIcon from '@/assets/icons/notebook.svg'
+import AustraliaIcon from '@/assets/icons/australia.svg'
+import SydneyIcon from '@/assets/icons/opera-house.svg'
+import KoalaIcon from '@/assets/icons/koala.svg'
+import SpeakerIcon from '@/assets/icons/speaker.svg'
+import PianoIcon from '@/assets/icons/piano2.svg'
+import FloralIcon from '@/assets/icons/floral-spring.svg'
+import GuitarIcon from '@/assets/icons/guitar.svg'
+import GardenTreeBackground from '@/asset/backgrounds/garden-tree.svg'
 ---
 
 <div>
   <img
-    src="/backgrounds/garden-tree.svg"
+    src={GardenTreeBackground.src}
     alt="hero background"
     class="fixed top-0 left-0 w-full opacity-25"
   />
@@ -48,29 +49,29 @@ import GuitarIconRaw from '@/assets/icons/guitar.svg?raw'
       <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
     </p>
     <div class="animate-up-down">
-      <Icon src={WebsiteIconRaw} style={iconpos(48, '60%', '62%')} hiddenMobile />
-      <Icon src={HomeIconRaw} style={iconpos(48, '10%', '12%')} />
-      <Icon src={HeartIconRaw} style={iconpos(24, '60%', '15%')} hiddenMobile />
+      <Icon src={WebsiteIcon} style={iconpos(48, '60%', '62%')} hiddenMobile />
+      <Icon src={HomeIcon} style={iconpos(48, '10%', '12%')} />
+      <Icon src={HeartIcon} style={iconpos(24, '60%', '15%')} hiddenMobile />
     </div>
     <div class="animate-up-down-wide">
-      <Icon src={PaletteIconRaw} style={iconpos(16, '35%', '5%')} />
-      <Icon src={NotebookIconRaw} style={iconpos(16, '45%', '10%')} hiddenMobile />
-      <Icon src={BicycleIconRaw} style={iconpos(20, '75%', '8%')} />
-      <Icon src={PortfolioIconRaw} style={iconpos(16, '85%', '20%')} />
-      <Icon src={CameraIconRaw} style={iconpos(16, '30%', '65%')} />
-      <Icon src={MusicIconRaw} style={iconpos(16, '19%', '58%')} />
-      <Icon src={TravelIconRaw} style={iconpos(20, '90%', '50%')} />
-      <Icon src={TurntableIconRaw} style={iconpos(48, '70%', '90%')} />
+      <Icon src={PaletteIcon} style={iconpos(16, '35%', '5%')} />
+      <Icon src={NotebookIcon} style={iconpos(16, '45%', '10%')} hiddenMobile />
+      <Icon src={BicycleIcon} style={iconpos(20, '75%', '8%')} />
+      <Icon src={PortfolioIcon} style={iconpos(16, '85%', '20%')} />
+      <Icon src={CameraIcon} style={iconpos(16, '30%', '65%')} />
+      <Icon src={MusicIcon} style={iconpos(16, '19%', '58%')} />
+      <Icon src={TravelIcon} style={iconpos(20, '90%', '50%')} />
+      <Icon src={TurntableIcon} style={iconpos(48, '70%', '90%')} />
     </div>
-    <Icon src={MonitorIconRaw} style={iconpos(24, '5%', '70%')} hiddenMobile />
-    <Icon src={HeadphoneIconRaw} style={iconpos(16, '50%', '65%')} hiddenMobile />
-    <Icon src={SydneyIconRaw} style={iconpos(12, '4%', '20%')} />
-    <Icon src={AustraliaIconRaw} style={iconpos(12, '20%', '5%')} />
-    <Icon src={KoalaIconRaw} style={iconpos(12, '8%', '8%')} />
-    <Icon src={SpeakerIconRaw} style={iconpos(12, '95%', '90%')} hiddenMobile />
-    <Icon src={PianoIconRaw} style={iconpos(20, '80%', '70%')} hiddenMobile />
-    <Icon src={FloralIconRaw} style={iconpos(64, '5%', '99%')} />
-    <Icon src={GuitarIconRaw} style={iconpos(24, '40%', '80%')} hiddenMobile />
+    <Icon src={MonitorIcon} style={iconpos(24, '5%', '70%')} hiddenMobile />
+    <Icon src={HeadphoneIcon} style={iconpos(16, '50%', '65%')} hiddenMobile />
+    <Icon src={SydneyIcon} style={iconpos(12, '4%', '20%')} />
+    <Icon src={AustraliaIcon} style={iconpos(12, '20%', '5%')} />
+    <Icon src={KoalaIcon} style={iconpos(12, '8%', '8%')} />
+    <Icon src={SpeakerIcon} style={iconpos(12, '95%', '90%')} hiddenMobile />
+    <Icon src={PianoIcon} style={iconpos(20, '80%', '70%')} hiddenMobile />
+    <Icon src={FloralIcon} style={iconpos(64, '5%', '99%')} />
+    <Icon src={GuitarIcon} style={iconpos(24, '40%', '80%')} hiddenMobile />
   </Divider>
   <Content speed={0.4} offset={offset} factor={factor}>
     <Inner>
