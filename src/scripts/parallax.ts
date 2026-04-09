@@ -7,6 +7,10 @@ export function initParallax() {
   if (!container) return
   const parallaxContainer = container
 
+  // Guard against duplicate listeners if initParallax is called more than once.
+  if (parallaxContainer.dataset.parallaxInitialized === 'true') return
+  parallaxContainer.dataset.parallaxInitialized = 'true'
+
   const layers = parallaxContainer.querySelectorAll<HTMLElement>('[data-parallax-layer]')
 
   function updateLayers() {
