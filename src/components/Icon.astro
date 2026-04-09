@@ -1,5 +1,5 @@
 ---
-import { HIDDEN_MOBILE_CLASS } from '@/lib/utils'
+import { HIDDEN_MOBILE_CLASS, styleToString } from '@/lib/utils'
 
 interface Props {
   src: string
@@ -9,15 +9,6 @@ interface Props {
 }
 
 const { src, style, class: className = '', hiddenMobile = false } = Astro.props
-
-// Convert style object to CSS string
-function styleToString(s: Record<string, string | number> | string | undefined): string {
-  if (!s) return ''
-  if (typeof s === 'string') return s
-  return Object.entries(s)
-    .map(([k, v]) => `${k.replace(/([A-Z])/g, (m) => `-${m.toLowerCase()}`)}: ${v}`)
-    .join('; ')
-}
 
 const styleStr = styleToString(style)
 const classAttr = [className, hiddenMobile ? HIDDEN_MOBILE_CLASS : ''].filter(Boolean).join(' ')
