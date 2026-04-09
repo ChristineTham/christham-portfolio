@@ -1,8 +1,0 @@
-{
-  "order": 7,
-  "title": "My Chakra Components",
-  "link": "https://my-chakra-components.vercel.app/",
-  "bg": "linear-gradient(to right, #b565a7 0%, #be9cc1 100%)",
-  "image": "../../assets/portfolio/my-chakra-components.jpg",
-  "description": "This site showcases example Chakra components (based on MerakiUI but rewritten in chakra-ui using the NextJS framework and React)."
-}

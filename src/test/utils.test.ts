@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { iconpos, styleToString } from '@/lib/utils'
+import { iconpos, styleToString } from '../lib/utils'
 
 describe('iconpos', () => {
   it('returns an absolute-positioned style with numeric size converted to rem', () => {

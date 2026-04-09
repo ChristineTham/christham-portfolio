@@ -4,9 +4,11 @@
 
 ![screenshot](rawassets/screenshot.png)
 
-Chris Tham Portfolio is a personal site built with [Astro](https://astro.build),
-inspired by [gatsby-starter-portfolio-cara](https://cara.lekoarts.de), using a
-Rosely-inspired visual theme and [Kawaii Flat Icons](https://www.flaticon.com/authors/kawaii/flat).
+Chris Tham Portfolio is a personal site built with [Astro](https://astro.build)
+and [Tailwind CSS](https://tailwindcss.com), inspired by
+[gatsby-starter-portfolio-cara](https://cara.lekoarts.de), using a visual theme
+based on the [Rosely palette](src/styles/global.css) and
+[Kawaii Flat Icons](https://www.flaticon.com/authors/kawaii/flat).
 
 [**Website**](https://portfolio.christham.net)
 
@@ -22,14 +24,14 @@ for structured content.
 
 ## Features
 
-- Fast, modern portfolio site built with Astro and Tailwind
+- Fast, modern portfolio site built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
 - Responsive design that works across desktop and mobile
 - Light and dark mode toggle on the page
 - Smooth layered scrolling effects
 - Animated intro text in the hero section
 - SVG icons and optimized project images
 - Project and section content managed from structured content files
-- Centralised colour and theme styling
+- Centralised colour and theme styling based on [Rosely](https://rosely.hellotham.com)
 - Automated checks for code quality and tests
 
 ## Current Project Structure
@@ -54,7 +56,7 @@ src/
     ProjectCard.astro
     Projects.astro
   content/
-    Projects/              # Project entries (JSON)
+    Projects/              # Project entries (Markdown)
     Sections/              # Section content (Markdown)
   content.config.ts        # Astro content collection definitions
   layouts/
@@ -103,12 +105,25 @@ pnpm dev
 
 ## Content Authoring
 
-Projects are managed as JSON entries in `src/content/Projects` and rendered by
-the projects section component.
+Projects are managed as Markdown entries in `src/content/Projects` and rendered
+by the projects section component.
+
+Each project file uses frontmatter for structured fields:
+
+- `order`
+- `title`
+- `link`
+- `image`
+
+The project card description is the Markdown body content (instead of a
+frontmatter field).
 
 Each project entry stores `image` as a relative file reference (for example
 `../../assets/portfolio/learning-jamstack.jpg`) and is validated by the
 `Projects` collection schema (`image()`), enabling optimized image rendering.
+
+Project card backgrounds are generated at render time with random
+`linear-gradient(...)` combinations from the Rosely palette tokens.
 
 About/contact copy is managed as Markdown entries in `src/content/Sections` and
 rendered through the `Sections` collection.
@@ -120,6 +135,7 @@ imported in components as module assets.
 
 - Light/dark mode is toggled from the hero section and persisted with `localStorage`.
 - Theme values are defined as CSS custom properties in `src/styles/global.css`.
+- Source files use relative import paths (no `@/` alias or custom TypeScript path mappings).
 - Parallax layers use `data-parallax-*` attributes and are updated by
   `src/scripts/parallax.ts` on scroll/resize, with an initial `requestAnimationFrame`
   pass to reduce first-paint jumps.

@@ -1,8 +1,0 @@
-{
-  "order": 4,
-  "title": "Travels Through A Lens",
-  "link": "https://travel.christham.net",
-  "bg": "linear-gradient(to right, #64bfa4 0%, #919bc9 100%)",
-  "image": "../../assets/portfolio/travel.jpg",
-  "description": "This is a web site that documents my travel adventures."
-}

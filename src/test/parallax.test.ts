@@ -1,6 +1,6 @@
 // @vitest-environment happy-dom
 import { describe, it, expect, beforeEach, afterEach } from 'vitest'
-import { initParallax } from '@/scripts/parallax'
+import { initParallax } from '../scripts/parallax'
 
 // Helper: create the container + layer DOM structure
 function buildDOM(layers: Array<{ offset: string; speed: string }> = []) {

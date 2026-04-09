@@ -3,9 +3,9 @@ import Divider from './Divider.astro'
 import Content from './Content.astro'
 import Inner from './Inner.astro'
 import Icon from './Icon.astro'
-import { iconpos } from '@/lib/utils'
+import { iconpos } from '../lib/utils'
 import ProjectCard from './ProjectCard.astro'
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 
 interface Props {
   offset: number
@@ -14,23 +14,54 @@ interface Props {
 
 const { offset, factor = 2 } = Astro.props
 const projects = (await getCollection('Projects')).sort((a, b) => a.data.order - b.data.order)
+const renderedProjects = await Promise.all(
+  projects.map(async (project) => ({
+    ...project,
+    Content: (await render(project)).Content,
+  })),
+)
 
-import WrenchIcon from '@/assets/icons/adjustable-wrench.svg'
-import RubikIcon from '@/assets/icons/Rubik.svg'
-import BlueprintIcon from '@/assets/icons/blueprint.svg'
-import AtomIcon from '@/assets/icons/atom.svg'
-import PuzzleIcon from '@/assets/icons/puzzle.svg'
-import CloudIcon from '@/assets/icons/computing-cloud.svg'
-import FolderIcon from '@/assets/icons/folders.svg'
-import GearsIcon from '@/assets/icons/gears.svg'
-import GraphicsIcon from '@/assets/icons/graphics.svg'
-import NotebookIcon from '@/assets/icons/notebook2.svg'
-import WorkflowIcon from '@/assets/icons/workflow.svg'
-import CalculatorIcon from '@/assets/icons/calculator.svg'
-import ChipIcon from '@/assets/icons/chip.svg'
-import CompassIcon from '@/assets/icons/compass.svg'
-import ProgrammingIcon from '@/assets/icons/programming.svg'
-import RiverBackground from '@/assets/backgrounds/river.svg'
+const roselyStops = [
+  'var(--rosely0)',
+  'var(--rosely1)',
+  'var(--rosely2)',
+  'var(--rosely9)',
+  'var(--rosely10)',
+  'var(--rosely11)',
+  'var(--rosely14)',
+  'var(--rosely15)',
+]
+
+function getRandomProjectBg() {
+  const start = roselyStops[Math.floor(Math.random() * roselyStops.length)]
+  let end = roselyStops[Math.floor(Math.random() * roselyStops.length)]
+
+  // Ensure gradients use two different stops for visual contrast.
+  while (end === start) {
+    end = roselyStops[Math.floor(Math.random() * roselyStops.length)]
+  }
+
+  return `linear-gradient(to right, ${start} 0%, ${end} 100%)`
+}
+
+const projectBackgrounds = renderedProjects.map(() => getRandomProjectBg())
+
+import WrenchIcon from '../assets/icons/adjustable-wrench.svg'
+import RubikIcon from '../assets/icons/Rubik.svg'
+import BlueprintIcon from '../assets/icons/blueprint.svg'
+import AtomIcon from '../assets/icons/atom.svg'
+import PuzzleIcon from '../assets/icons/puzzle.svg'
+import CloudIcon from '../assets/icons/computing-cloud.svg'
+import FolderIcon from '../assets/icons/folders.svg'
+import GearsIcon from '../assets/icons/gears.svg'
+import GraphicsIcon from '../assets/icons/graphics.svg'
+import NotebookIcon from '../assets/icons/notebook2.svg'
+import WorkflowIcon from '../assets/icons/workflow.svg'
+import CalculatorIcon from '../assets/icons/calculator.svg'
+import ChipIcon from '../assets/icons/chip.svg'
+import CompassIcon from '../assets/icons/compass.svg'
+import ProgrammingIcon from '../assets/icons/programming.svg'
+import RiverBackground from '../assets/backgrounds/river.svg'
 ---
 
 <div>
@@ -72,9 +103,9 @@ import RiverBackground from '@/assets/backgrounds/river.svg'
     <Inner>
       <div class="grid grid-cols-1 gap-2 xs:gap-8 sm:grid-cols-2 md:gap-16 [&_h2]:col-span-full [&_h2]:text-[#f7caca]">
         {
-          projects.map(({ data }) => (
-            <ProjectCard title={data.title} link={data.link} bg={data.bg} image={data.image}>
-              {data.description}
+          renderedProjects.map(({ data, Content: ProjectDescription }, index) => (
+            <ProjectCard title={data.title} link={data.link} bg={projectBackgrounds[index]} image={data.image}>
+              <ProjectDescription />
             </ProjectCard>
           ))
         }

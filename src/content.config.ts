@@ -4,7 +4,7 @@ import { z } from 'astro/zod'
 
 const Projects = defineCollection({
   loader: glob({
-    pattern: '**/*.json',
+    pattern: '**/*.md',
     base: './src/content/Projects',
   }),
   schema: ({ image }) =>
@@ -12,9 +12,7 @@ const Projects = defineCollection({
       order: z.number().int().nonnegative(),
       title: z.string(),
       link: z.url(),
-      bg: z.string(),
       image: image(),
-      description: z.string(),
     }),
 })
 

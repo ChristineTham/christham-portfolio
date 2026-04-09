@@ -5,6 +5,29 @@ import path from 'node:path'
 const projectRoot = path.resolve(__dirname, '../..')
 const contentRoot = path.join(projectRoot, 'src/content')
 const componentsRoot = path.join(projectRoot, 'src/components')
+const projectsDir = path.join(contentRoot, 'Projects')
+
+const requiredProjectFrontmatterKeys = ['order', 'title', 'link', 'image']
+
+function getProjectMarkdownFiles() {
+  return fs.readdirSync(projectsDir).filter((file) => file.endsWith('.md'))
+}
+
+function getProjectJsonFiles() {
+  return fs.readdirSync(projectsDir).filter((file) => file.endsWith('.json'))
+}
+
+function parseFrontmatterAndBody(raw: string) {
+  const match = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/)
+  if (!match) {
+    return { frontmatter: '', body: '' }
+  }
+
+  return {
+    frontmatter: match[1],
+    body: match[2].trim(),
+  }
+}
 
 function hasFile(filePath: string) {
   return fs.existsSync(filePath)
@@ -21,27 +44,34 @@ describe('content structure', () => {
     expect(hasFile(path.join(projectRoot, 'src/pages/contact.md'))).toBe(false)
   })
 
-  it('defines project entries as JSON files in src/content/Projects', () => {
-    const projectsDir = path.join(contentRoot, 'Projects')
-    const files = fs.readdirSync(projectsDir).filter((file) => file.endsWith('.json'))
+  it('defines project entries as markdown files in src/content/Projects', () => {
+    const files = getProjectMarkdownFiles()
 
     expect(files.length).toBeGreaterThan(0)
+    expect(getProjectJsonFiles()).toHaveLength(0)
   })
 
-  it('ensures every project entry has required keys', () => {
-    const projectsDir = path.join(contentRoot, 'Projects')
-    const files = fs.readdirSync(projectsDir).filter((file) => file.endsWith('.json'))
+  it('ensures every project entry has required frontmatter and markdown content', () => {
+    const files = getProjectMarkdownFiles()
 
     for (const file of files) {
       const raw = fs.readFileSync(path.join(projectsDir, file), 'utf-8')
-      const data = JSON.parse(raw) as Record<string, unknown>
+      const { frontmatter, body } = parseFrontmatterAndBody(raw)
 
-      expect(data).toHaveProperty('order')
-      expect(data).toHaveProperty('title')
-      expect(data).toHaveProperty('link')
-      expect(data).toHaveProperty('bg')
-      expect(data).toHaveProperty('image')
-      expect(data).toHaveProperty('description')
+      expect(frontmatter.length).toBeGreaterThan(0)
+      for (const key of requiredProjectFrontmatterKeys) {
+        expect(frontmatter).toMatch(new RegExp(`^${key}:\\s*.+`, 'm'))
+      }
+
+      expect(frontmatter).toMatch(/^order:\s*\d+/m)
+      expect(frontmatter).toMatch(/^link:\s*https?:\/\/.+/m)
+
+      const imageMatch = frontmatter.match(/^image:\s*(.+)$/m)
+      expect(imageMatch).not.toBeNull()
+      const imagePath = imageMatch?.[1]?.trim() ?? ''
+      expect(hasFile(path.resolve(projectsDir, imagePath))).toBe(true)
+
+      expect(body.length).toBeGreaterThan(0)
     }
   })
 
