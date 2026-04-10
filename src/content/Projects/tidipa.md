@@ -1,5 +1,5 @@
 ---
-title: "Tidipa - What the Buddha Understood(tidipa.github.io)"
+title: "Tidipa - What the Buddha Understood"
 link: "https://tidipa.github.io/"
 image: ../../assets/portfolio/tidipa.jpg
 ---
