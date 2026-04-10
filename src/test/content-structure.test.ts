@@ -7,7 +7,7 @@ const contentRoot = path.join(projectRoot, 'src/content')
 const componentsRoot = path.join(projectRoot, 'src/components')
 const projectsDir = path.join(contentRoot, 'Projects')
 
-const requiredProjectFrontmatterKeys = ['order', 'title', 'link', 'image']
+const requiredProjectFrontmatterKeys = ['title', 'link', 'image']
 
 function getProjectMarkdownFiles() {
   return fs.readdirSync(projectsDir).filter((file) => file.endsWith('.md'))
@@ -63,8 +63,14 @@ describe('content structure', () => {
         expect(frontmatter).toMatch(new RegExp(`^${key}:\\s*.+`, 'm'))
       }
 
-      expect(frontmatter).toMatch(/^order:\s*\d+/m)
       expect(frontmatter).toMatch(/^link:\s*https?:\/\/.+/m)
+
+      const weightMatch = frontmatter.match(/^weight:\s*(.+)$/m)
+      if (weightMatch) {
+        const weightValue = Number(weightMatch[1]?.trim())
+        expect(Number.isInteger(weightValue)).toBe(true)
+        expect(weightValue).toBeGreaterThanOrEqual(0)
+      }
 
       const imageMatch = frontmatter.match(/^image:\s*(.+)$/m)
       expect(imageMatch).not.toBeNull()

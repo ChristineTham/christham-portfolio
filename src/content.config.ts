@@ -9,7 +9,8 @@ const Projects = defineCollection({
   }),
   schema: ({ image }) =>
     z.object({
-      order: z.number().int().nonnegative(),
+      weight: z.number().int().nonnegative().optional(),
+      draft: z.boolean().default(false),
       title: z.string(),
       link: z.url(),
       image: image(),

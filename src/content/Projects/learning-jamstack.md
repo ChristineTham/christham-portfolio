@@ -1,5 +1,4 @@
 ---
-order: 1
 title: Learning Jamstack
 link: https://learning-jamstack.now.sh
 image: ../../assets/portfolio/learning-jamstack.jpg

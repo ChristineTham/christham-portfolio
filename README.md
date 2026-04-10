@@ -100,6 +100,7 @@ pnpm dev
 - `pnpm check` - run Astro diagnostics/type checks
 - `pnpm lint` - run ESLint
 - `pnpm test` - run Vitest suite
+- `pnpm portfolio:add <url>` - create a project entry from a URL (infers title/body, captures screenshot)
 - `pnpm clean` - remove generated and dependency folders
 - `pnpm refresh` - run Astro upgrade helper and update dependencies
 
@@ -110,10 +111,10 @@ by the projects section component.
 
 Each project file uses frontmatter for structured fields:
 
-- `order`
 - `title`
 - `link`
 - `image`
+- `weight` (optional; weighted entries are shown first)
 
 The project card description is the Markdown body content (instead of a
 frontmatter field).
@@ -124,6 +125,28 @@ Each project entry stores `image` as a relative file reference (for example
 
 Project card backgrounds are generated at render time with random
 `linear-gradient(...)` combinations from the Rosely palette tokens.
+
+### Add Portfolio Item From URL
+
+Use the URL ingestion script to create a new project entry with inferred content
+and a screenshot:
+
+```bash
+pnpm portfolio:add https://example.com
+```
+
+What it does:
+
+- Fetches the page and infers `title` from metadata/title tags
+- Infers a short description paragraph for the markdown body
+- Captures a screenshot and saves it under `src/assets/portfolio`
+- Creates a markdown file under `src/content/Projects`
+
+Use `--dry-run` to preview without writing files:
+
+```bash
+pnpm portfolio:add https://example.com --dry-run
+```
 
 About/contact copy is managed as Markdown entries in `src/content/Sections` and
 rendered through the `Sections` collection.

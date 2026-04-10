@@ -1,5 +1,4 @@
 ---
-order: 5
 title: Visual Voyager
 link: https://visualvoyager.net
 image: ../../assets/portfolio/visualvoyager.jpg

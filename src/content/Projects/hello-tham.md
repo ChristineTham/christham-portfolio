@@ -1,5 +1,4 @@
 ---
-order: 3
 title: Hello Tham
 link: https://hellotham.com
 image: ../../assets/portfolio/hellotham.jpg
