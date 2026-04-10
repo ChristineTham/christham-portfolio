@@ -100,7 +100,8 @@ pnpm dev
 - `pnpm check` - run Astro diagnostics/type checks
 - `pnpm lint` - run ESLint
 - `pnpm test` - run Vitest suite
-- `pnpm portfolio:add <url>` - create a project entry from a URL (infers title/body, captures screenshot)
+- `pnpm additem <url>` - create a project entry from a URL (infers title/body, captures a 4K screenshot)
+- `pnpm updateitem` - refresh all existing project entries from their source URLs
 - `pnpm clean` - remove generated and dependency folders
 - `pnpm refresh` - run Astro upgrade helper and update dependencies
 
@@ -132,20 +133,35 @@ Use the URL ingestion script to create a new project entry with inferred content
 and a screenshot:
 
 ```bash
-pnpm portfolio:add https://example.com
+pnpm additem https://example.com
 ```
 
 What it does:
 
 - Fetches the page and infers `title` from metadata/title tags
 - Infers a short description paragraph for the markdown body
-- Captures a screenshot and saves it under `src/assets/portfolio`
+- Captures a 4K 16:9 screenshot and saves it under `src/assets/portfolio`
 - Creates a markdown file under `src/content/Projects`
 
 Use `--dry-run` to preview without writing files:
 
 ```bash
-pnpm portfolio:add https://example.com --dry-run
+pnpm additem https://example.com --dry-run
+```
+
+### Refresh Existing Portfolio Items
+
+Use the update script to re-fetch all existing project entries and refresh their
+title, link, image screenshot, and markdown description from each project's URL:
+
+```bash
+pnpm updateitem
+```
+
+Use `--dry-run` to validate without writing changes:
+
+```bash
+pnpm updateitem --dry-run
 ```
 
 About/contact copy is managed as Markdown entries in `src/content/Sections` and

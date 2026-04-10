@@ -20,14 +20,16 @@ const { link, title, image, bg } = Astro.props
   class="relative block w-full rounded-lg px-4 py-2 text-white no-underline shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl sm:px-8 sm:py-4"
   style={`background: ${bg || 'none'};`}
 >
-  <Image
-    src={image}
-    alt={title}
-    width="800"
-    height="533"
-    loading="eager"
-    class="h-auto w-full"
-  />
+  <div class="aspect-video w-full overflow-hidden rounded-md bg-white/10">
+    <Image
+      src={image}
+      alt={title}
+      width="960"
+      height="540"
+      loading="lazy"
+      class="size-full object-contain"
+    />
+  </div>
   <div class="pt-2 text-2xl leading-none font-medium tracking-wide sm:text-3xl">
     {title}
   </div>

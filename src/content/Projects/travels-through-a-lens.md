@@ -1,6 +1,6 @@
 ---
 title: Travels Through A Lens
-link: https://travel.christham.net
+link: https://travelens.github.io
 image: ../../assets/portfolio/travel.jpg
 ---
 

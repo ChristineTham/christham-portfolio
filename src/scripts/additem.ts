@@ -10,15 +10,25 @@ const __dirname = path.dirname(__filename)
 const projectRoot = path.resolve(__dirname, '../..')
 const projectsDir = path.join(projectRoot, 'src/content/Projects')
 const portfolioAssetsDir = path.join(projectRoot, 'src/assets/portfolio')
+const SCREENSHOT_VIEWPORT = {
+  width: 1920,
+  height: 1080,
+} as const
+const SCREENSHOT_SCALE_FACTOR = 2
 
-function parseArgs(argv) {
+type UniquePath = {
+  filePath: string
+  fileName: string
+}
+
+function parseArgs(argv: string[]) {
   const [, , ...args] = argv
   const dryRun = args.includes('--dry-run')
   const urlArg = args.find((arg) => !arg.startsWith('--'))
   return { urlArg, dryRun }
 }
 
-function slugify(input) {
+function slugify(input: string) {
   return input
     .toLowerCase()
     .replace(/https?:\/\//g, '')
@@ -27,7 +37,7 @@ function slugify(input) {
     .slice(0, 70)
 }
 
-function stripTags(input) {
+function stripTags(input: string) {
   return input
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
@@ -36,7 +46,7 @@ function stripTags(input) {
     .trim()
 }
 
-function decodeHtmlEntities(input) {
+function decodeHtmlEntities(input: string) {
   return input
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -45,7 +55,7 @@ function decodeHtmlEntities(input) {
     .replace(/&#39;/g, "'")
 }
 
-function extractMetaContent(html, nameOrProperty) {
+function extractMetaContent(html: string, nameOrProperty: string) {
   const escaped = nameOrProperty.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   const patterns = [
     new RegExp(`<meta[^>]+property=["']${escaped}["'][^>]*content=["']([^"']+)["'][^>]*>`, 'i'),
@@ -64,7 +74,7 @@ function extractMetaContent(html, nameOrProperty) {
   return null
 }
 
-function extractTitle(html, urlObject) {
+function extractTitle(html: string, urlObject: URL) {
   const ogTitle = extractMetaContent(html, 'og:title')
   if (ogTitle) {
     return ogTitle
@@ -83,7 +93,7 @@ function extractTitle(html, urlObject) {
   return urlObject.hostname.replace(/^www\./, '')
 }
 
-function extractDescription(html, title, urlObject) {
+function extractDescription(html: string, title: string, urlObject: URL) {
   const candidates = [
     extractMetaContent(html, 'og:description'),
     extractMetaContent(html, 'twitter:description'),
@@ -107,7 +117,7 @@ function extractDescription(html, title, urlObject) {
   return `${title} is a website hosted at ${urlObject.hostname} that showcases its core content and purpose.`
 }
 
-function toShortParagraph(input) {
+function toShortParagraph(input: string) {
   const cleaned = input.replace(/\s+/g, ' ').trim()
   if (cleaned.length <= 220) {
     return cleaned
@@ -122,7 +132,7 @@ function toShortParagraph(input) {
   return `${truncated.trimEnd()}...`
 }
 
-async function findUniquePath(dir, baseSlug, extension) {
+async function findUniquePath(dir: string, baseSlug: string, extension: string): Promise<UniquePath> {
   let counter = 0
   while (true) {
     const suffix = counter === 0 ? '' : `-${counter + 1}`
@@ -138,7 +148,7 @@ async function findUniquePath(dir, baseSlug, extension) {
   }
 }
 
-function yamlString(value) {
+function yamlString(value: string) {
   return `"${value
     .replace(/\\/g, '\\\\')
     .replace(/"/g, '\\"')
@@ -146,21 +156,32 @@ function yamlString(value) {
     .trim()}"`
 }
 
-async function captureScreenshot(url, targetPath) {
+async function captureScreenshot(url: string, targetPath: string) {
   const browser = await chromium.launch({ headless: true })
-  const page = await browser.newPage({ viewport: { width: 1600, height: 1000 } })
+  const page = await browser.newPage({
+    viewport: SCREENSHOT_VIEWPORT,
+    screen: SCREENSHOT_VIEWPORT,
+    deviceScaleFactor: SCREENSHOT_SCALE_FACTOR,
+    isMobile: false,
+    hasTouch: false,
+  })
 
   try {
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 })
     await page.waitForLoadState('networkidle', { timeout: 5000 }).catch(() => {})
-    await page.screenshot({ path: targetPath, fullPage: true, type: 'jpeg', quality: 84 })
+    await page.evaluate(() => window.scrollTo(0, 0))
+    await page.screenshot({
+      path: targetPath,
+      type: 'jpeg',
+      quality: 84,
+    })
   } finally {
     await browser.close()
   }
 }
 
-async function fetchPageHtml(url) {
-  let response
+async function fetchPageHtml(url: string) {
+  let response: Response
   try {
     response = await fetch(url, {
       redirect: 'follow',
@@ -186,11 +207,11 @@ async function main() {
   const { urlArg, dryRun } = parseArgs(process.argv)
 
   if (!urlArg) {
-    console.error('Usage: pnpm portfolio:add <url> [--dry-run]')
+    console.error('Usage: pnpm additem <url> [--dry-run]')
     process.exit(1)
   }
 
-  let normalizedUrl
+  let normalizedUrl: string
   try {
     normalizedUrl = new URL(urlArg).toString()
   } catch {
@@ -213,7 +234,7 @@ async function main() {
   const screenshotTarget = await findUniquePath(portfolioAssetsDir, baseSlug, 'jpg')
 
   if (!dryRun) {
-    console.log(`Capturing screenshot to ${path.relative(projectRoot, screenshotTarget.filePath)}...`)
+    console.log(`Capturing 4K screenshot to ${path.relative(projectRoot, screenshotTarget.filePath)}...`)
     await captureScreenshot(normalizedUrl, screenshotTarget.filePath)
   }
 
@@ -244,7 +265,7 @@ async function main() {
   console.log(`- Screenshot: ${path.relative(projectRoot, screenshotTarget.filePath)}`)
 }
 
-main().catch((error) => {
+main().catch((error: unknown) => {
   console.error(error instanceof Error ? error.message : String(error))
   process.exit(1)
 })

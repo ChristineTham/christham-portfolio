@@ -63,7 +63,7 @@ describe('content structure', () => {
         expect(frontmatter).toMatch(new RegExp(`^${key}:\\s*.+`, 'm'))
       }
 
-      expect(frontmatter).toMatch(/^link:\s*https?:\/\/.+/m)
+      expect(frontmatter).toMatch(/^link:\s*"?https?:\/\/.+"?$/m)
 
       const weightMatch = frontmatter.match(/^weight:\s*(.+)$/m)
       if (weightMatch) {

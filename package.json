@@ -12,7 +12,8 @@
     "preview": "astro preview",
     "lint": "eslint .",
     "test": "vitest run",
-    "add": "node src/scripts/create-portfolio-item-from-url.mjs",
+    "additem": "tsx src/scripts/additem.ts",
+    "updateitem": "tsx src/scripts/updateitem.ts",
     "clean": "rm -rf .astro dist node_modules",
     "refresh": "pnpm dlx @astrojs/upgrade; pnpm up -L"
   },
@@ -37,6 +38,7 @@
     "playwright": "^1.59.1",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.2.2",
+    "tsx": "^4.21.0",
     "typescript": "^6.0.2",
     "typescript-eslint": "^8.58.1",
     "vitest": "^4.1.4"
