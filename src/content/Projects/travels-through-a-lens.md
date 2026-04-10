@@ -4,4 +4,4 @@ link: https://travelens.github.io
 image: ../../assets/portfolio/travel.jpg
 ---
 
-This is a web site that documents my travel adventures.
+Chris Tham's travelogue web site. This site documents all the trips we have taken over the years, to various countries.

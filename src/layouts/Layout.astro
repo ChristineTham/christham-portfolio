@@ -1,5 +1,17 @@
 ---
 import '../styles/global.css'
+import { getImage } from 'astro:assets'
+import ogImageSource from '../assets/portfolio/chris-tham-portfolio.jpg'
+
+const optimizedOgImage = await getImage({
+  src: ogImageSource,
+  width: 1200,
+  height: 630,
+  format: 'jpg',
+  quality: 85,
+})
+
+const ogImageUrl = new URL(optimizedOgImage.src, Astro.site).toString()
 ---
 
 <!doctype html>
@@ -17,13 +29,15 @@ import '../styles/global.css'
     <meta property="og:description" content="Chris Tham Portfolio is a single page website showcasing my other websites" />
     <meta property="og:url" content="https://portfolio.christham.net" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/portfolio.jpg" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Chris Tham - Portfolio" />
     <meta name="twitter:description" content="Chris Tham Portfolio is a single page website showcasing my other websites" />
     <meta name="twitter:creator" content="@chris1tham" />
-    <meta name="twitter:image" content="/portfolio.jpg" />
+    <meta name="twitter:image" content={ogImageUrl} />
     <!-- No-flash dark mode: runs before first paint to avoid FOUC -->
     <script is:inline>
       (function() {

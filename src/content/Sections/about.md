@@ -5,15 +5,8 @@
 ### *artist, consultant, cyclist, designer, musician, photographer, world traveller*
 
 I live in Sydney, and love cycling, photography, music, and travel (not necessarily in that order).
-Lately I have been learning how to design and code.
 
-This website is written in [Astro](https://astro.build) based on the
-[Cara](https://cara.lekoarts.de) theme by [LekoArts](https://www.lekoarts.de/en/).
-The source code for this website is available on
-[Github](https://github.com/ChristineTham/christham-portfolio) and it is hosted on
-Vercel.
-
-The websites featured on this page have been written in a mixture of React,
-NextJS and Wordpress (using my own Genesis child themes).
+This website is written in [Astro](https://astro.build) and showcases various websites I have created. All websites (including this one) are open source and available on
+[Github](https://github.com/ChristineTham) 
 
 I am available for work should you wish to hire me.

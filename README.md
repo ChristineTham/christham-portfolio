@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ebf8fae8-4b81-4c53-ac38-3684ccbd6cf1/deploy-status)](https://app.netlify.com/projects/christham-portfolio/deploys)
 
-![screenshot](rawassets/screenshot.png)
+![screenshot](src/assets/portfolio/chris-tham-portfolio.jpg)
 
 Chris Tham Portfolio is a personal site built with [Astro](https://astro.build)
 and [Tailwind CSS](https://tailwindcss.com), inspired by

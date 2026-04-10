@@ -6,6 +6,8 @@ const projectRoot = path.resolve(__dirname, '../..')
 const contentRoot = path.join(projectRoot, 'src/content')
 const componentsRoot = path.join(projectRoot, 'src/components')
 const projectsDir = path.join(contentRoot, 'Projects')
+const layoutsRoot = path.join(projectRoot, 'src/layouts')
+const assetsRoot = path.join(projectRoot, 'src/assets')
 
 const requiredProjectFrontmatterKeys = ['title', 'link', 'image']
 
@@ -127,5 +129,23 @@ describe('content structure', () => {
     expect(heroComponent).toContain('<Inner class="max-w-4xl">')
     expect(aboutComponent).toContain('<Inner class="max-w-4xl">')
     expect(contactComponent).toContain('<Inner class="max-w-4xl">')
+  })
+
+  it('uses Astro image optimization for Open Graph and Twitter images', () => {
+    const layoutFile = fs.readFileSync(path.join(layoutsRoot, 'Layout.astro'), 'utf-8')
+
+    expect(layoutFile).toContain("import { getImage } from 'astro:assets'")
+    expect(layoutFile).toContain("import ogImageSource from '../assets/portfolio/chris-tham-portfolio.jpg'")
+    expect(layoutFile).toContain('const optimizedOgImage = await getImage({')
+    expect(layoutFile).toContain('width: 1200')
+    expect(layoutFile).toContain('height: 630')
+    expect(layoutFile).toContain("format: 'jpg'")
+    expect(layoutFile).toContain('const ogImageUrl = new URL(optimizedOgImage.src, Astro.site).toString()')
+    expect(layoutFile).toContain('<meta property="og:image" content={ogImageUrl} />')
+    expect(layoutFile).toContain('<meta name="twitter:image" content={ogImageUrl} />')
+    expect(layoutFile).not.toContain('<meta property="og:image" content="/portfolio.jpg" />')
+    expect(layoutFile).not.toContain('<meta name="twitter:image" content="/portfolio.jpg" />')
+
+    expect(hasFile(path.join(assetsRoot, 'portfolio/chris-tham-portfolio.jpg'))).toBe(true)
   })
 })

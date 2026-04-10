@@ -1,8 +1,8 @@
 {
   "private": true,
   "name": "christham-portfolio",
-  "description": "Chris Tham Portfolio is a personal portfolio site built using Astro, originally based on gatsby-starter-portfolio-cara. Rosely design theme, with Kawaii Flat Icons.",
-  "version": "1.0.0",
+  "description": "Chris Tham Portfolio is a personal portfolio site built using Astro, Tailwind CSS, Rosely design theme, with Kawaii Flat Icons.",
+  "version": "2.0.0",
   "author": "Chris Tham <chris.tham@hellotham.com>",
   "license": "0BSD",
   "scripts": {
