@@ -11,6 +11,28 @@
   /* Font families */
   --font-sans: var(--font-sans-variable), "Noto Sans", sans-serif;
   --font-mono: var(--font-mono-variable), "Noto Sans Mono", monospace;
+
+  /* Animations */
+  --animate-up-down: up-down 4s ease-in-out infinite alternate;
+  --animate-up-down-wide: up-down-wide 18s ease-in-out infinite alternate;
+
+  @keyframes up-down {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(30px);
+    }
+  }
+
+  @keyframes up-down-wide {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(200px);
+    }
+  }
 }
 
 /* ─── CSS custom properties (design tokens) ───────────────────────────── */
@@ -78,24 +100,5 @@
   }
 }
 
-/* ─── Keyframe animations ─────────────────────────────────────────────── */
-
-@keyframes up-down {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(30px);
-  }
-}
-
-@keyframes up-down-wide {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(200px);
-  }
-}
-
 /* Keyframes are consumed via Tailwind arbitrary animation utilities. */
+
