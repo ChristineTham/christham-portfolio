@@ -18,20 +18,22 @@ This project has completed a multi-step migration:
 
 1. Gatsby -> Next.js (2025)
 2. Next.js -> Astro (2026)
+3. Tailwind v3 -> Tailwind v4 (2026)
 
 The current codebase is Astro-first, component-driven, and uses Astro Content Collections
 for structured content.
 
 ## Features
 
-- Fast, modern portfolio site built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
+- Fast, modern portfolio site built with [Astro](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com)
 - Responsive design that works across desktop and mobile
 - Light and dark mode toggle on the page
 - Smooth layered scrolling effects
 - Animated intro text in the hero section
 - SVG icons and optimized project images
 - Project and section content managed from structured content files
-- Centralised colour and theme styling based on [Rosely](https://rosely.hellotham.com)
+- Centralised site constants and profile links in `src/lib/site-metadata.ts`
+- Theme styling based on [Rosely](https://rosely.hellotham.com) using CSS-first Tailwind configuration
 - Automated checks for code quality and tests
 
 ## Current Project Structure
@@ -62,13 +64,17 @@ src/
   layouts/
     Layout.astro
   lib/
-    site-metadata.ts
+    site-metadata.ts       # Centralised constants and profile links
     utils.ts
   pages/
     404.astro
     index.astro
   scripts/
-    parallax.ts
+    lib/
+      scraper.ts           # Shared scraping and screenshot logic
+    additem.ts             # Portfolio URL ingestion script
+    parallax.ts            # Client-side parallax handler
+    updateitem.ts          # Portfolio refresh script
   styles/
     global.css
   test/

@@ -2,7 +2,7 @@
   "private": true,
   "name": "christham-portfolio",
   "description": "Chris Tham Portfolio is a personal portfolio site built using Astro, Tailwind CSS, Rosely design theme, with Kawaii Flat Icons.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Chris Tham <chris.tham@hellotham.com>",
   "license": "0BSD",
   "scripts": {
@@ -18,8 +18,6 @@
     "refresh": "pnpm dlx @astrojs/upgrade; pnpm up -L"
   },
   "dependencies": {
-    "@fontsource-variable/noto-sans": "^5.2.10",
-    "@fontsource-variable/noto-sans-mono": "^5.2.10",
     "astro": "^6.1.9",
     "typed.js": "^3.0.0"
   },

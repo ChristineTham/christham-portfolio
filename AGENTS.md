@@ -4,10 +4,11 @@ This repository uses Astro with content collections for a personal portfolio sit
 
 ## Workspace Guidance
 
-- Prefer minimal, focused changes that preserve the current Astro and Tailwind patterns.
+- Prefer minimal, focused changes that preserve the current Astro and Tailwind v4 patterns.
 - Keep source files ASCII unless an existing file already requires other characters.
 - Use relative imports; do not introduce path aliases unless the repo already adopts them.
 - Prefer updating content collections, components, and tests together when a content model changes.
+- Centralise site-wide constants (links, author info) in `src/lib/site-metadata.ts`.
 
 ## Project Structure
 
@@ -15,6 +16,8 @@ This repository uses Astro with content collections for a personal portfolio sit
 - `src/content/Sections`: Markdown content for static sections.
 - `src/components`: Astro UI components.
 - `src/scripts`: project scripts such as `additem.ts`, `updateitem.ts`, and `parallax.ts`.
+- `src/scripts/lib/scraper.ts`: shared scraping and screenshot logic for portfolio scripts.
+- `src/lib/site-metadata.ts`: central repository for site constants and profile links.
 - `src/assets/portfolio`: generated portfolio screenshots and images.
 
 ## Common Commands
