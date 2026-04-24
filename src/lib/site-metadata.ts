@@ -7,6 +7,15 @@ export const siteMetadata = {
   siteLanguage: `en`,
   siteImage: `/portfolio.jpg`,
   author: `@chris1tham`,
+  repoUrl: 'https://github.com/ChristineTham/christham-portfolio',
+  authorUrl: 'https://hellotham.com',
+  authorName: 'Hello Tham Pty Ltd',
+  social: {
+    email: 'chris.tham@hellotham.com',
+    github: 'https://github.com/ChristineTham',
+    linkedin: 'https://www.linkedin.com/in/christham/',
+    facebook: 'https://www.facebook.com/chris1.tham',
+  },
 }
 
 export default siteMetadata
