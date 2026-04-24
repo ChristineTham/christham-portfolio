@@ -16,25 +16,11 @@ const { offset, factor = 2 } = Astro.props
 const projects = (await getCollection('Projects'))
   .filter((project) => !project.data.draft)
   .sort((a, b) => {
-  const aHasWeight = typeof a.data.weight === 'number'
-  const bHasWeight = typeof b.data.weight === 'number'
+    const weightA = a.data.weight ?? Infinity
+    const weightB = b.data.weight ?? Infinity
 
-  if (aHasWeight && bHasWeight) {
-    const aWeight = a.data.weight as number
-    const bWeight = b.data.weight as number
-    return aWeight - bWeight || a.data.title.localeCompare(b.data.title)
-  }
-
-  if (aHasWeight) {
-    return -1
-  }
-
-  if (bHasWeight) {
-    return 1
-  }
-
-  return a.data.title.localeCompare(b.data.title)
-})
+    return weightA - weightB || a.data.title.localeCompare(b.data.title)
+  })
 const renderedProjects = await Promise.all(
   projects.map(async (project) => ({
     ...project,

@@ -96,10 +96,12 @@ import GardenTreeBackground from '../assets/backgrounds/garden-tree.svg'
 </div>
 
 <script>
+  import Typed from 'typed.js'
+
   // Color mode toggle
   const btn = document.getElementById('color-mode-toggle')
 
-  function updateButton() {
+  const updateButton = () => {
     if (btn) {
       btn.textContent = document.documentElement.classList.contains('dark')
         ? 'Light'
@@ -110,27 +112,22 @@ import GardenTreeBackground from '../assets/backgrounds/garden-tree.svg'
   updateButton()
 
   btn?.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.contains('dark')
-    const next = isDark ? 'light' : 'dark'
-    if (next === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-    try {
-      localStorage.setItem('color-mode', next)
-    } catch {
-      // ignore
-    }
+    const isDark = document.documentElement.classList.toggle('dark')
+    localStorage.setItem('color-mode', isDark ? 'dark' : 'light')
     updateButton()
   })
-</script>
 
-<script>
-  import Typed from 'typed.js'
-
+  // Hero typed text
   new Typed('#typed-output', {
-    strings: ['artist', 'consultant', 'cyclist', 'designer', 'musician', 'photographer', 'world traveller'],
+    strings: [
+      'artist',
+      'consultant',
+      'cyclist',
+      'designer',
+      'musician',
+      'photographer',
+      'world traveller',
+    ],
     typeSpeed: 100,
     backSpeed: 50,
     backDelay: 2000,

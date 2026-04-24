@@ -140,7 +140,7 @@ describe('content structure', () => {
     expect(layoutFile).toContain('width: 1200')
     expect(layoutFile).toContain('height: 630')
     expect(layoutFile).toContain("format: 'jpg'")
-    expect(layoutFile).toContain('const ogImageUrl = new URL(optimizedOgImage.src, Astro.site).toString()')
+    expect(layoutFile).toContain('const ogImageUrl = new URL(optimizedOgImage.src, Astro.site ?? siteMetadata.siteUrl).toString()')
     expect(layoutFile).toContain('<meta property="og:image" content={ogImageUrl} />')
     expect(layoutFile).toContain('<meta name="twitter:image" content={ogImageUrl} />')
     expect(layoutFile).not.toContain('<meta property="og:image" content="/portfolio.jpg" />')

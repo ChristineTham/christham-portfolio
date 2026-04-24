@@ -2,6 +2,7 @@
 import '../styles/global.css'
 import { getImage, Font } from 'astro:assets'
 import ogImageSource from '../assets/portfolio/chris-tham-portfolio.jpg'
+import { siteMetadata } from '../lib/site-metadata'
 
 const optimizedOgImage = await getImage({
   src: ogImageSource,
@@ -11,34 +12,34 @@ const optimizedOgImage = await getImage({
   quality: 85,
 })
 
-const ogImageUrl = new URL(optimizedOgImage.src, Astro.site).toString()
+const ogImageUrl = new URL(optimizedOgImage.src, Astro.site ?? siteMetadata.siteUrl).toString()
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={siteMetadata.siteLanguage}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Chris Tham - Portfolio</title>
-    <meta name="description" content="Chris Tham Portfolio is a single page website showcasing my other websites" />
+    <title>{siteMetadata.siteTitleAlt}</title>
+    <meta name="description" content={siteMetadata.siteDescription} />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <Font cssVariable="--font-sans-variable" />
     <Font cssVariable="--font-mono-variable" />
     <!-- Open Graph -->
-    <meta property="og:title" content="Chris Tham - Portfolio" />
-    <meta property="og:description" content="Chris Tham Portfolio is a single page website showcasing my other websites" />
-    <meta property="og:url" content="https://portfolio.christham.net" />
+    <meta property="og:title" content={siteMetadata.siteTitleAlt} />
+    <meta property="og:description" content={siteMetadata.siteDescription} />
+    <meta property="og:url" content={siteMetadata.siteUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Chris Tham - Portfolio" />
-    <meta name="twitter:description" content="Chris Tham Portfolio is a single page website showcasing my other websites" />
-    <meta name="twitter:creator" content="@chris1tham" />
+    <meta name="twitter:title" content={siteMetadata.siteTitleAlt} />
+    <meta name="twitter:description" content={siteMetadata.siteDescription} />
+    <meta name="twitter:creator" content={siteMetadata.author} />
     <meta name="twitter:image" content={ogImageUrl} />
     <!-- No-flash dark mode: runs before first paint to avoid FOUC -->
     <script is:inline>

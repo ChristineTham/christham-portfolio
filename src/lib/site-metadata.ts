@@ -1,4 +1,4 @@
-const siteMetadata = {
+export const siteMetadata = {
   siteTitle: `portfolio.christham.net`,
   siteTitleAlt: `Chris Tham - Portfolio`,
   siteHeadline: `Chris Tham - Portfolio`,
@@ -9,6 +9,4 @@ const siteMetadata = {
   author: `@chris1tham`,
 }
 
-const useSiteMetadata = () => siteMetadata
-
-export default useSiteMetadata
+export default siteMetadata
