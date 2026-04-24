@@ -7,12 +7,11 @@ const globalCssPath = path.join(projectRoot, 'src/styles/global.css')
 const globalCss = fs.readFileSync(globalCssPath, 'utf-8')
 
 describe('global.css theme tokens', () => {
-  it('imports font packages and defines font family theme variables', () => {
-    expect(globalCss).toContain('@import "@fontsource-variable/noto-sans";')
-    expect(globalCss).toContain('@import "@fontsource-variable/noto-sans-mono";')
+  it('imports tailwind and typography, and defines font family theme variables', () => {
+    expect(globalCss).toContain('@import "tailwindcss";')
     expect(globalCss).toContain('@plugin "@tailwindcss/typography";')
-    expect(globalCss).toContain('--font-sans: "Noto Sans Variable", "Noto Sans", sans-serif;')
-    expect(globalCss).toContain('--font-mono: "Noto Sans Mono Variable", "Noto Sans Mono", monospace;')
+    expect(globalCss).toContain('--font-sans: var(--font-sans-variable), "Noto Sans", sans-serif;')
+    expect(globalCss).toContain('--font-mono: var(--font-mono-variable), "Noto Sans Mono", monospace;')
   })
 
   it('defines rosely scale variables and jamstack token', () => {

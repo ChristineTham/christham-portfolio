@@ -19,6 +19,8 @@ This repository uses Astro with content collections for a personal portfolio sit
 
 ## Common Commands
 
+Don't use npm.
+
 - `pnpm dev`: run the Astro dev server.
 - `pnpm check`: run Astro diagnostics.
 - `pnpm lint`: run ESLint.

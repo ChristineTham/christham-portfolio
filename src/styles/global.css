@@ -1,5 +1,3 @@
-@import "@fontsource-variable/noto-sans";
-@import "@fontsource-variable/noto-sans-mono";
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -11,8 +9,8 @@
 
 @theme {
   /* Font families */
-  --font-sans: "Noto Sans Variable", "Noto Sans", sans-serif;
-  --font-mono: "Noto Sans Mono Variable", "Noto Sans Mono", monospace;
+  --font-sans: var(--font-sans-variable), "Noto Sans", sans-serif;
+  --font-mono: var(--font-mono-variable), "Noto Sans Mono", monospace;
 }
 
 /* ─── CSS custom properties (design tokens) ───────────────────────────── */

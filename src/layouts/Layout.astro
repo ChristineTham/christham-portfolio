@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css'
-import { getImage } from 'astro:assets'
+import { getImage, Font } from 'astro:assets'
 import ogImageSource from '../assets/portfolio/chris-tham-portfolio.jpg'
 
 const optimizedOgImage = await getImage({
@@ -24,6 +24,8 @@ const ogImageUrl = new URL(optimizedOgImage.src, Astro.site).toString()
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <Font cssVariable="--font-sans-variable" />
+    <Font cssVariable="--font-mono-variable" />
     <!-- Open Graph -->
     <meta property="og:title" content="Chris Tham - Portfolio" />
     <meta property="og:description" content="Chris Tham Portfolio is a single page website showcasing my other websites" />

@@ -134,7 +134,7 @@ describe('content structure', () => {
   it('uses Astro image optimization for Open Graph and Twitter images', () => {
     const layoutFile = fs.readFileSync(path.join(layoutsRoot, 'Layout.astro'), 'utf-8')
 
-    expect(layoutFile).toContain("import { getImage } from 'astro:assets'")
+    expect(layoutFile).toContain("import { getImage, Font } from 'astro:assets'")
     expect(layoutFile).toContain("import ogImageSource from '../assets/portfolio/chris-tham-portfolio.jpg'")
     expect(layoutFile).toContain('const optimizedOgImage = await getImage({')
     expect(layoutFile).toContain('width: 1200')
